@@ -1,0 +1,14 @@
+{
+  "name": "practice-school",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Procvičování učiva pro základní školu — static site, no build step.",
+  "scripts": {
+    "validate": "node tools/validate.js",
+    "test": "playwright test --config tests/playwright.config.js",
+    "serve": "node tools/serve.js 8080"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

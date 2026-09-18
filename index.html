@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="Procvičování učiva pro základní školu">
+  <title>Procvičování</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="app-header no-print">
+    <a class="brand" href="#/"><span aria-hidden="true">🎒</span> Procvičování</a>
+    <nav class="header-nav">
+      <a class="profile-chip" id="profile-chip" href="#/profiles" title="Změnit profil">Vybrat profil</a>
+      <a class="icon-btn" href="#/settings" title="Nastavení" aria-label="Nastavení">⚙️</a>
+    </nav>
+  </header>
+
+  <main id="view" class="container"></main>
+
+  <!-- Load order: util → store → content metadata → catalog → engine → print → import → views → app -->
+  <script src="js/util.js"></script>
+  <script src="js/store.js"></script>
+  <script src="content/subjects.js"></script>
+  <script src="content/catalog.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/print.js"></script>
+  <script src="js/legacy-import.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/update-checker.js"></script>
+</body>
+</html>

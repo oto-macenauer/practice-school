@@ -1,0 +1,1835 @@
+// Migrated from practice-english/modules/practice-tests/unit6/data.json
+School.register({
+  "id": "4-anglictina-unit6-test",
+  "groups": {
+    "reading": 2
+  },
+  "sections": [
+    {
+      "id": "modals",
+      "title": "Obligation, Suggestion & Prohibition",
+      "icon": "📋",
+      "image": "content/4/anglictina/img/unit6-modals.webp",
+      "instructions": "Choose the correct word to complete each sentence. Think about obligation (must, have to), suggestion (should) and prohibition (can't, mustn't).",
+      "type": "choice",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "You ___ wear a school uniform. The headteacher told us.",
+          "options": [
+            "must",
+            "should",
+            "have to"
+          ],
+          "answer": "have to",
+          "explanation": "'Have to' is used when someone else (the school) makes the rule for you."
+        },
+        {
+          "prompt": "You ___ eat more fruit. It's good for you.",
+          "options": [
+            "must",
+            "should",
+            "can't"
+          ],
+          "answer": "should",
+          "explanation": "'Should' is used for advice — eating fruit is a good idea, not an obligation."
+        },
+        {
+          "prompt": "You ___ not use your phone in class!",
+          "options": [
+            "must",
+            "should",
+            "have to"
+          ],
+          "answer": "must",
+          "explanation": "'Must not' means it is forbidden — a strong prohibition."
+        },
+        {
+          "prompt": "I ___ do my homework before I go out. My parents say so.",
+          "options": [
+            "have to",
+            "should",
+            "can't"
+          ],
+          "answer": "have to",
+          "explanation": "'Have to' because the parents make the rule — it's an external obligation."
+        },
+        {
+          "prompt": "Students ___ be quiet in the library. It's a strict rule.",
+          "options": [
+            "must",
+            "should",
+            "can't"
+          ],
+          "answer": "must",
+          "explanation": "'Must' is used for official rules that everyone has to follow."
+        },
+        {
+          "prompt": "You ___ study harder if you want to pass the exam.",
+          "options": [
+            "must",
+            "should",
+            "can't"
+          ],
+          "answer": "should",
+          "explanation": "'Should' gives advice — it's a good idea, but nobody is forcing you."
+        },
+        {
+          "prompt": "We ___ get up early tomorrow. The bus leaves at 6.",
+          "options": [
+            "have to",
+            "should",
+            "mustn't"
+          ],
+          "answer": "have to",
+          "explanation": "'Have to' because the bus schedule forces this — it's an external requirement."
+        },
+        {
+          "prompt": "You ___ not run in the corridors.",
+          "options": [
+            "must",
+            "should",
+            "have to"
+          ],
+          "answer": "must",
+          "explanation": "'Must not' is a prohibition — running in corridors is forbidden."
+        },
+        {
+          "prompt": "I think you ___ say sorry to her.",
+          "options": [
+            "should",
+            "mustn't",
+            "have to"
+          ],
+          "answer": "should",
+          "explanation": "'I think you should ...' gives personal advice or a suggestion."
+        },
+        {
+          "prompt": "You ___ park here. It's a no-parking zone.",
+          "options": [
+            "can't",
+            "should",
+            "must"
+          ],
+          "answer": "can't",
+          "explanation": "'Can't' means it's not allowed — the sign prohibits parking here."
+        },
+        {
+          "prompt": "She ___ finish the project by Friday. The teacher said so.",
+          "options": [
+            "has to",
+            "should",
+            "can't"
+          ],
+          "answer": "has to",
+          "explanation": "'Has to' because the teacher imposed a deadline — it's an external obligation."
+        },
+        {
+          "prompt": "You ___ swim in this lake. It's too dangerous.",
+          "options": [
+            "mustn't",
+            "should",
+            "have to"
+          ],
+          "answer": "mustn't",
+          "explanation": "'Mustn't' is a strong prohibition — swimming here is forbidden because of danger."
+        },
+        {
+          "prompt": "All passengers ___ fasten their seatbelts. It's the law.",
+          "options": [
+            "must",
+            "should",
+            "can't"
+          ],
+          "answer": "must",
+          "explanation": "'Must' is used for laws and official regulations."
+        },
+        {
+          "prompt": "I ___ take the dog for a walk every morning. It's my job.",
+          "options": [
+            "have to",
+            "mustn't",
+            "should"
+          ],
+          "answer": "have to",
+          "explanation": "'Have to' because it's a duty assigned to you — an external obligation."
+        },
+        {
+          "prompt": "I think you ___ visit Prague one day. It's a beautiful city.",
+          "options": [
+            "should",
+            "must",
+            "can't"
+          ],
+          "answer": "should",
+          "explanation": "'Should' is used for recommendations and advice."
+        },
+        {
+          "prompt": "You ___ take photos in the museum. It's not allowed.",
+          "options": [
+            "can't",
+            "should",
+            "must"
+          ],
+          "answer": "can't",
+          "explanation": "'Can't' means it's not permitted — the museum forbids it."
+        },
+        {
+          "prompt": "He ___ wear glasses. He can't see well without them.",
+          "options": [
+            "has to",
+            "should",
+            "mustn't"
+          ],
+          "answer": "has to",
+          "explanation": "'Has to' because his poor eyesight makes it a necessity, not a choice."
+        },
+        {
+          "prompt": "You ___ touch that! It's very hot.",
+          "options": [
+            "mustn't",
+            "should",
+            "have to"
+          ],
+          "answer": "mustn't",
+          "explanation": "'Mustn't' is a strong warning — touching it is forbidden because it's dangerous."
+        },
+        {
+          "prompt": "A good friend ___ be kind to everyone.",
+          "options": [
+            "should",
+            "mustn't",
+            "can't"
+          ],
+          "answer": "should",
+          "explanation": "'Should' expresses what is expected or ideal — advice about behaviour."
+        },
+        {
+          "prompt": "A good friend ___ lie to you.",
+          "options": [
+            "mustn't",
+            "should",
+            "has to"
+          ],
+          "answer": "mustn't",
+          "explanation": "'Mustn't' means it's not acceptable — lying to a friend is wrong."
+        },
+        {
+          "prompt": "My friend ___ help me when I need it.",
+          "options": [
+            "should",
+            "can't",
+            "mustn't"
+          ],
+          "answer": "should",
+          "explanation": "'Should' expresses a moral expectation — good friends help each other."
+        },
+        {
+          "prompt": "You ___ enter this room. It's private.",
+          "options": [
+            "can't",
+            "should",
+            "must"
+          ],
+          "answer": "can't",
+          "explanation": "'Can't' means you are not allowed to enter — it's prohibited."
+        },
+        {
+          "prompt": "We ___ tidy our rooms before Mum comes home.",
+          "options": [
+            "have to",
+            "mustn't",
+            "can't"
+          ],
+          "answer": "have to",
+          "explanation": "'Have to' because Mum expects it — it's an obligation from someone else."
+        },
+        {
+          "prompt": "A good friend ___ keep your secrets.",
+          "options": [
+            "should",
+            "can't",
+            "mustn't"
+          ],
+          "answer": "should",
+          "explanation": "'Should' gives advice about what a good friend is expected to do."
+        },
+        {
+          "prompt": "You ___ be late for school. It's against the rules.",
+          "options": [
+            "mustn't",
+            "should",
+            "have to"
+          ],
+          "answer": "mustn't",
+          "explanation": "'Mustn't' is a prohibition — being late breaks the school rules."
+        },
+        {
+          "prompt": "Everyone ___ have a passport to travel abroad. It's the law.",
+          "options": [
+            "must",
+            "should",
+            "can't"
+          ],
+          "answer": "must",
+          "explanation": "'Must' is used for legal requirements — it's a law, not advice."
+        },
+        {
+          "prompt": "My friend ___ make fun of other people.",
+          "options": [
+            "mustn't",
+            "should",
+            "has to"
+          ],
+          "answer": "mustn't",
+          "explanation": "'Mustn't' means it's not acceptable — making fun of people is wrong."
+        },
+        {
+          "prompt": "You ___ take an umbrella. It might rain.",
+          "options": [
+            "should",
+            "mustn't",
+            "have to"
+          ],
+          "answer": "should",
+          "explanation": "'Should' gives advice — nobody is forcing you, but it's a good idea."
+        },
+        {
+          "prompt": "My friend ___ be honest with me. We made a promise.",
+          "options": [
+            "has to",
+            "can't",
+            "mustn't"
+          ],
+          "answer": "has to",
+          "explanation": "'Has to' because a promise creates an obligation — it's not optional."
+        },
+        {
+          "prompt": "You ___ use a calculator in this test. The teacher said no.",
+          "options": [
+            "can't",
+            "should",
+            "must"
+          ],
+          "answer": "can't",
+          "explanation": "'Can't' means you are not allowed — the teacher has forbidden it."
+        }
+      ]
+    },
+    {
+      "id": "maps",
+      "title": "Maps, Directions & Landforms",
+      "icon": "🗺️",
+      "image": "content/4/anglictina/img/unit6-maps.webp",
+      "instructions": "Choose the correct word or phrase. Some questions are about giving directions, others are about maps and famous landforms.",
+      "type": "choice",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "Go ___ and then turn left at the traffic lights.",
+          "options": [
+            "straight on",
+            "round",
+            "past"
+          ],
+          "answer": "straight on"
+        },
+        {
+          "prompt": "Turn ___ at the corner. The shop is on your left.",
+          "options": [
+            "right",
+            "straight",
+            "opposite"
+          ],
+          "answer": "right"
+        },
+        {
+          "prompt": "The bank is ___ the supermarket. They are next to each other.",
+          "options": [
+            "opposite",
+            "next to",
+            "between"
+          ],
+          "answer": "next to"
+        },
+        {
+          "prompt": "Go ___ the bridge and the park is on your right.",
+          "options": [
+            "across",
+            "between",
+            "along"
+          ],
+          "answer": "across"
+        },
+        {
+          "prompt": "The library is ___ the school and the post office.",
+          "options": [
+            "between",
+            "opposite",
+            "along"
+          ],
+          "answer": "between"
+        },
+        {
+          "prompt": "Walk ___ this street for about 200 metres.",
+          "options": [
+            "along",
+            "across",
+            "into"
+          ],
+          "answer": "along"
+        },
+        {
+          "prompt": "The cinema is ___ the restaurant. It's on the other side of the road.",
+          "options": [
+            "opposite",
+            "next to",
+            "behind"
+          ],
+          "answer": "opposite"
+        },
+        {
+          "prompt": "Take the first turning ___ the left.",
+          "options": [
+            "on",
+            "at",
+            "in"
+          ],
+          "answer": "on"
+        },
+        {
+          "prompt": "Go ___ the roundabout and take the second exit.",
+          "options": [
+            "round",
+            "across",
+            "between"
+          ],
+          "answer": "round"
+        },
+        {
+          "prompt": "The hospital is ___ the end of this road.",
+          "options": [
+            "at",
+            "on",
+            "in"
+          ],
+          "answer": "at"
+        },
+        {
+          "prompt": "Walk ___ the park and turn right.",
+          "options": [
+            "past",
+            "between",
+            "on"
+          ],
+          "answer": "past"
+        },
+        {
+          "prompt": "Go ___ the tunnel. The station is on the other side.",
+          "options": [
+            "through",
+            "across",
+            "along"
+          ],
+          "answer": "through"
+        },
+        {
+          "prompt": "Turn left ___ the crossroads.",
+          "options": [
+            "at",
+            "on",
+            "in"
+          ],
+          "answer": "at"
+        },
+        {
+          "prompt": "The museum is ___ to the town hall.",
+          "options": [
+            "next",
+            "opposite",
+            "between"
+          ],
+          "answer": "next"
+        },
+        {
+          "prompt": "You'll see the park ___ your left.",
+          "options": [
+            "on",
+            "at",
+            "in"
+          ],
+          "answer": "on"
+        },
+        {
+          "prompt": "Walk ___ the square to get to the fountain.",
+          "options": [
+            "across",
+            "along",
+            "past"
+          ],
+          "answer": "across"
+        },
+        {
+          "prompt": "Mount Everest is the ___ mountain in the world.",
+          "options": [
+            "highest",
+            "longest",
+            "biggest"
+          ],
+          "answer": "highest"
+        },
+        {
+          "prompt": "The ___ is the longest river in the world. It is in Africa.",
+          "options": [
+            "Nile",
+            "Amazon",
+            "Mississippi"
+          ],
+          "answer": "Nile"
+        },
+        {
+          "prompt": "The Sahara is the biggest hot ___ in the world.",
+          "options": [
+            "desert",
+            "forest",
+            "ocean"
+          ],
+          "answer": "desert"
+        },
+        {
+          "prompt": "The Amazon Rainforest is the biggest tropical rainforest. More than half of it is in ___.",
+          "options": [
+            "Brazil",
+            "Peru",
+            "Colombia"
+          ],
+          "answer": "Brazil"
+        },
+        {
+          "prompt": "Mount Everest is part of the ___ mountain range.",
+          "options": [
+            "Himalayas",
+            "Alps",
+            "Andes"
+          ],
+          "answer": "Himalayas"
+        },
+        {
+          "prompt": "The Sahara Desert is in ___.",
+          "options": [
+            "Africa",
+            "Asia",
+            "South America"
+          ],
+          "answer": "Africa"
+        },
+        {
+          "prompt": "The Nile goes through Egypt and ___.",
+          "options": [
+            "Sudan",
+            "Libya",
+            "Morocco"
+          ],
+          "answer": "Sudan"
+        },
+        {
+          "prompt": "A mountain, a river and a desert are all types of ___.",
+          "options": [
+            "landform",
+            "continent",
+            "country"
+          ],
+          "answer": "landform"
+        },
+        {
+          "prompt": "A ___ map shows countries and their borders.",
+          "options": [
+            "political",
+            "physical",
+            "road"
+          ],
+          "answer": "political"
+        },
+        {
+          "prompt": "A ___ map shows mountains, rivers and landforms.",
+          "options": [
+            "physical",
+            "political",
+            "road"
+          ],
+          "answer": "physical"
+        },
+        {
+          "prompt": "The ___ on a map explains what the symbols mean.",
+          "options": [
+            "key",
+            "scale",
+            "title"
+          ],
+          "answer": "key"
+        },
+        {
+          "prompt": "A ___ shows the distance between places on a map.",
+          "options": [
+            "scale",
+            "key",
+            "compass"
+          ],
+          "answer": "scale"
+        },
+        {
+          "prompt": "North is usually at the ___ of a map.",
+          "options": [
+            "top",
+            "bottom",
+            "left"
+          ],
+          "answer": "top"
+        },
+        {
+          "prompt": "A compass ___ shows north, south, east and west on a map.",
+          "options": [
+            "rose",
+            "key",
+            "scale"
+          ],
+          "answer": "rose"
+        }
+      ]
+    },
+    {
+      "id": "subjects",
+      "title": "School Subjects",
+      "icon": "🏫",
+      "image": "content/4/anglictina/img/unit6-subjects.webp",
+      "instructions": "Match each description to the correct school subject.",
+      "type": "match",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "You work with numbers, shapes and equations in this class.",
+          "answer": "Maths"
+        },
+        {
+          "prompt": "In this lesson you practise addition, subtraction and multiplication.",
+          "answer": "Maths"
+        },
+        {
+          "prompt": "In this class you do experiments and learn about plants and animals.",
+          "answer": "Science"
+        },
+        {
+          "prompt": "You learn how the human body works and test ideas in this class.",
+          "answer": "Science"
+        },
+        {
+          "prompt": "You draw, paint and create pictures in this class.",
+          "answer": "Art"
+        },
+        {
+          "prompt": "In this lesson you use colours, brushes and clay to make art.",
+          "answer": "Art"
+        },
+        {
+          "prompt": "You run, jump and play team games in this class.",
+          "answer": "Sports"
+        },
+        {
+          "prompt": "In this lesson you do exercises and play football or basketball outside.",
+          "answer": "Sports"
+        },
+        {
+          "prompt": "You sing songs and learn to play instruments in this class.",
+          "answer": "Music"
+        },
+        {
+          "prompt": "In this lesson you listen to music and learn about rhythm and notes.",
+          "answer": "Music"
+        },
+        {
+          "prompt": "You use computers and learn about technology in this class.",
+          "answer": "IT"
+        },
+        {
+          "prompt": "In this lesson you use the Internet, apps and websites.",
+          "answer": "IT"
+        },
+        {
+          "prompt": "You learn about events from the past in this class.",
+          "answer": "History"
+        },
+        {
+          "prompt": "In this lesson you study kings, wars and famous people from long ago.",
+          "answer": "History"
+        },
+        {
+          "prompt": "You learn about countries, continents and maps in this class.",
+          "answer": "Geography"
+        },
+        {
+          "prompt": "In this lesson you study rivers, mountains and volcanoes.",
+          "answer": "Geography"
+        },
+        {
+          "prompt": "You read stories, learn grammar and practise writing in this class.",
+          "answer": "English"
+        },
+        {
+          "prompt": "In this lesson you practise speaking and listening in a foreign language.",
+          "answer": "English"
+        },
+        {
+          "prompt": "P.E. is the short form of this school subject.",
+          "answer": "Physical Education"
+        },
+        {
+          "prompt": "I.T. is the short form of this school subject.",
+          "answer": "Information Technology"
+        }
+      ]
+    },
+    {
+      "id": "good-at",
+      "title": "To be good at",
+      "icon": "⭐",
+      "instructions": "Complete each sentence with the correct form of 'be good at' + verb(-ing). Use the hint in brackets.",
+      "type": "write",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "She ___ (be good at / draw) portraits.",
+          "answer": "is good at drawing"
+        },
+        {
+          "prompt": "I ___ (not / be good at / cook).",
+          "answer": "am not good at cooking"
+        },
+        {
+          "prompt": "They ___ (be good at / play) football.",
+          "answer": "are good at playing"
+        },
+        {
+          "prompt": "He ___ (not / be good at / sing).",
+          "answer": "is not good at singing"
+        },
+        {
+          "prompt": "We ___ (be good at / swim).",
+          "answer": "are good at swimming"
+        },
+        {
+          "prompt": "___ you ___ (be good at / dance)?",
+          "answer": "Are you good at dancing"
+        },
+        {
+          "prompt": "My sister ___ (be good at / run) fast.",
+          "answer": "is good at running"
+        },
+        {
+          "prompt": "I ___ (be good at / remember) new words.",
+          "answer": "am good at remembering"
+        },
+        {
+          "prompt": "Tom ___ (be good at / take) photos.",
+          "answer": "is good at taking"
+        },
+        {
+          "prompt": "We ___ (not / be good at / spell) long words.",
+          "answer": "are not good at spelling"
+        },
+        {
+          "prompt": "She ___ (be good at / make) cakes.",
+          "answer": "is good at making"
+        },
+        {
+          "prompt": "___ he ___ (be good at / fix) things?",
+          "answer": "Is he good at fixing"
+        },
+        {
+          "prompt": "They ___ (be good at / tell) jokes.",
+          "answer": "are good at telling"
+        },
+        {
+          "prompt": "I ___ (not / be good at / wake) up early.",
+          "answer": "am not good at waking"
+        },
+        {
+          "prompt": "My brother ___ (be good at / ride) a bike.",
+          "answer": "is good at riding"
+        },
+        {
+          "prompt": "You ___ (be good at / write) stories.",
+          "answer": "are good at writing"
+        },
+        {
+          "prompt": "___ she ___ (be good at / speak) English?",
+          "answer": "Is she good at speaking"
+        },
+        {
+          "prompt": "The dog ___ (be good at / catch) balls.",
+          "answer": "is good at catching"
+        },
+        {
+          "prompt": "We ___ (be good at / work) in a team.",
+          "answer": "are good at working"
+        },
+        {
+          "prompt": "He ___ (not / be good at / listen) carefully.",
+          "answer": "is not good at listening"
+        },
+        {
+          "prompt": "I ___ (be good at / solve) puzzles.",
+          "answer": "am good at solving"
+        },
+        {
+          "prompt": "They ___ (not / be good at / keep) secrets.",
+          "answer": "are not good at keeping"
+        },
+        {
+          "prompt": "___ we ___ (be good at / organise) events?",
+          "answer": "Are we good at organising"
+        },
+        {
+          "prompt": "My mum ___ (be good at / grow) flowers.",
+          "answer": "is good at growing"
+        },
+        {
+          "prompt": "He ___ (be good at / build) model aeroplanes.",
+          "answer": "is good at building"
+        },
+        {
+          "prompt": "I ___ (not / be good at / park) the car.",
+          "answer": "am not good at parking"
+        },
+        {
+          "prompt": "She ___ (be good at / learn) languages.",
+          "answer": "is good at learning"
+        },
+        {
+          "prompt": "We ___ (be good at / find) cheap flights.",
+          "answer": "are good at finding"
+        },
+        {
+          "prompt": "___ they ___ (be good at / clean) the house?",
+          "answer": "Are they good at cleaning"
+        },
+        {
+          "prompt": "My dad ___ (be good at / repair) computers.",
+          "answer": "is good at repairing"
+        }
+      ]
+    },
+    {
+      "id": "tech-vocab",
+      "title": "Technology Vocabulary",
+      "icon": "💻",
+      "image": "content/4/anglictina/img/unit6-technology.webp",
+      "instructions": "Match each technology word to its definition.",
+      "type": "match",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "A small portable computer you can carry around.",
+          "answer": "laptop"
+        },
+        {
+          "prompt": "Small programs you can use on a phone or computer.",
+          "answer": "apps"
+        },
+        {
+          "prompt": "Wireless internet connection.",
+          "answer": "wifi"
+        },
+        {
+          "prompt": "A book you read on an electronic screen.",
+          "answer": "e-book"
+        },
+        {
+          "prompt": "A bag you carry on your back.",
+          "answer": "rucksack"
+        },
+        {
+          "prompt": "A book or website that explains what words mean.",
+          "answer": "dictionary"
+        },
+        {
+          "prompt": "The flat surface you look at on a computer or phone.",
+          "answer": "screen"
+        },
+        {
+          "prompt": "A global network that connects computers worldwide.",
+          "answer": "the Internet"
+        },
+        {
+          "prompt": "A page or group of pages you visit online.",
+          "answer": "website"
+        },
+        {
+          "prompt": "The system of linked pages on the Internet (www).",
+          "answer": "World Wide Web"
+        },
+        {
+          "prompt": "To make a duplicate of text or an image.",
+          "answer": "copy"
+        },
+        {
+          "prompt": "To place copied text or an image in a new position.",
+          "answer": "paste"
+        },
+        {
+          "prompt": "A sticky substance used to join things together.",
+          "answer": "glue"
+        },
+        {
+          "prompt": "A tool with two blades used for cutting paper.",
+          "answer": "scissors"
+        },
+        {
+          "prompt": "A container for rubbish; also the recycle bin on a computer.",
+          "answer": "bin"
+        },
+        {
+          "prompt": "The buttons with letters and numbers you type on.",
+          "answer": "keyboard"
+        },
+        {
+          "prompt": "A small device you move with your hand to control a cursor.",
+          "answer": "mouse"
+        },
+        {
+          "prompt": "A machine that puts text or images onto paper.",
+          "answer": "printer"
+        },
+        {
+          "prompt": "A flat portable computer with a touchscreen.",
+          "answer": "tablet"
+        },
+        {
+          "prompt": "A secret word or phrase you use to log in.",
+          "answer": "password"
+        },
+        {
+          "prompt": "An electronic message sent over the Internet.",
+          "answer": "email"
+        },
+        {
+          "prompt": "To save a file from the Internet to your computer.",
+          "answer": "download"
+        },
+        {
+          "prompt": "To send a file from your computer to the Internet.",
+          "answer": "upload"
+        },
+        {
+          "prompt": "A program you use to visit websites (e.g. Chrome, Firefox).",
+          "answer": "browser"
+        },
+        {
+          "prompt": "A tool that helps you find information online (e.g. Google).",
+          "answer": "search engine"
+        },
+        {
+          "prompt": "A small stick you plug into a computer to store files.",
+          "answer": "USB stick"
+        },
+        {
+          "prompt": "A device you plug in to give power to a phone or laptop.",
+          "answer": "charger"
+        },
+        {
+          "prompt": "A device you wear on your ears to listen to sound.",
+          "answer": "headphones"
+        },
+        {
+          "prompt": "A document or piece of data stored on a computer.",
+          "answer": "file"
+        },
+        {
+          "prompt": "A place on a computer where you keep files together.",
+          "answer": "folder"
+        }
+      ]
+    },
+    {
+      "id": "listening",
+      "title": "Listening",
+      "icon": "🎧",
+      "instructions": "Press Listen, then answer the question about what you heard.",
+      "type": "choice",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "Where do you turn?",
+          "say": "Go straight on and turn left at the traffic lights.",
+          "options": [
+            "At the traffic lights",
+            "At the roundabout",
+            "At the bridge"
+          ],
+          "answer": "At the traffic lights"
+        },
+        {
+          "prompt": "Can you use your phone?",
+          "say": "You mustn't use your phone during the exam.",
+          "options": [
+            "No, it's forbidden",
+            "Yes, sometimes",
+            "Only for calls"
+          ],
+          "answer": "No, it's forbidden"
+        },
+        {
+          "prompt": "What is on each side of the library?",
+          "say": "The library is between the school and the post office.",
+          "options": [
+            "School and post office",
+            "Bank and cinema",
+            "Park and shop"
+          ],
+          "answer": "School and post office"
+        },
+        {
+          "prompt": "Is this a rule or advice?",
+          "say": "You should drink more water. It's good for you.",
+          "options": [
+            "Advice",
+            "A strict rule",
+            "A warning"
+          ],
+          "answer": "Advice"
+        },
+        {
+          "prompt": "Where is the file going?",
+          "say": "I need to download this file from the Internet to my laptop.",
+          "options": [
+            "To the laptop",
+            "To the Internet",
+            "To a USB stick"
+          ],
+          "answer": "To the laptop"
+        },
+        {
+          "prompt": "Where is the hospital?",
+          "say": "Walk past the cinema and the hospital is on your right.",
+          "options": [
+            "Past the cinema, on the right",
+            "Opposite the cinema",
+            "Next to the cinema"
+          ],
+          "answer": "Past the cinema, on the right"
+        },
+        {
+          "prompt": "Who made this rule?",
+          "say": "We have to wear a uniform. The headteacher said so.",
+          "options": [
+            "The headteacher",
+            "The students",
+            "The parents"
+          ],
+          "answer": "The headteacher"
+        },
+        {
+          "prompt": "What is Google?",
+          "say": "Use a search engine like Google to find information.",
+          "options": [
+            "A search engine",
+            "A browser",
+            "An email app"
+          ],
+          "answer": "A search engine"
+        }
+      ]
+    },
+    {
+      "id": "cappadocia",
+      "title": "Reading: Cappadocia",
+      "icon": "🏔️",
+      "instructions": "Read the text about Cappadocia, then answer the questions.",
+      "type": "choice",
+      "pick": "auto",
+      "passage": "Cappadocia, Turkey, is different from any other place on Earth. It is a very high area: over 1,000 metres above the sea. There are many mountains across this area which are thousands of years old and made from volcanic rock. Some of these mountains are really high. Mt Kayseri, which is the highest, is 3,916 metres!\n\nBecause Cappadocia is so high, the weather can change a lot. It can be very hot some days and very cold other days.\n\nThe people who lived in Cappadocia many years ago made small houses inside the mountains and rocks. You should visit it because you can explore inside the mountains and see how the people lived!",
+      "items": [
+        {
+          "prompt": "In which country is Cappadocia?",
+          "options": [
+            "Turkey",
+            "Greece",
+            "Italy",
+            "Egypt"
+          ],
+          "answer": "Turkey"
+        },
+        {
+          "prompt": "How high is Cappadocia above the sea?",
+          "options": [
+            "Over 500 metres",
+            "Over 1,000 metres",
+            "Over 2,000 metres",
+            "Over 5,000 metres"
+          ],
+          "answer": "Over 1,000 metres"
+        },
+        {
+          "prompt": "What are the mountains made from?",
+          "options": [
+            "Limestone",
+            "Volcanic rock",
+            "Sandstone",
+            "Clay"
+          ],
+          "answer": "Volcanic rock"
+        },
+        {
+          "prompt": "What is the name of the highest mountain?",
+          "options": [
+            "Mt Everest",
+            "Mt Kayseri",
+            "Mt Olympus",
+            "Mt Ararat"
+          ],
+          "answer": "Mt Kayseri"
+        },
+        {
+          "prompt": "How high is Mt Kayseri?",
+          "options": [
+            "1,916 metres",
+            "2,916 metres",
+            "3,916 metres",
+            "4,916 metres"
+          ],
+          "answer": "3,916 metres"
+        },
+        {
+          "prompt": "What is the weather like in Cappadocia?",
+          "options": [
+            "Always hot",
+            "Always cold",
+            "It can change a lot",
+            "Always rainy"
+          ],
+          "answer": "It can change a lot"
+        },
+        {
+          "prompt": "How old are the mountains?",
+          "options": [
+            "Hundreds of years",
+            "Thousands of years",
+            "Millions of years",
+            "Tens of years"
+          ],
+          "answer": "Thousands of years"
+        },
+        {
+          "prompt": "What did people build inside the mountains?",
+          "options": [
+            "Castles",
+            "Small houses",
+            "Temples",
+            "Schools"
+          ],
+          "answer": "Small houses"
+        },
+        {
+          "prompt": "Why should you visit Cappadocia?",
+          "options": [
+            "For the beaches",
+            "To explore the mountains and see how people lived",
+            "For the food",
+            "For shopping"
+          ],
+          "answer": "To explore the mountains and see how people lived"
+        },
+        {
+          "prompt": "Cappadocia is described as different from …",
+          "options": [
+            "Other Turkish cities",
+            "Any other place on Earth",
+            "European countries",
+            "Asian countries"
+          ],
+          "answer": "Any other place on Earth"
+        },
+        {
+          "prompt": "What can the weather be like on some days?",
+          "options": [
+            "Very hot",
+            "Very windy",
+            "Very foggy",
+            "Very snowy"
+          ],
+          "answer": "Very hot"
+        },
+        {
+          "prompt": "The text says you 'should' visit. This means …",
+          "options": [
+            "You must go",
+            "It is a good idea to go",
+            "You are not allowed to go",
+            "You have to go"
+          ],
+          "answer": "It is a good idea to go"
+        }
+      ],
+      "group": "reading"
+    },
+    {
+      "id": "the-project",
+      "title": "Reading: The Project",
+      "icon": "📚",
+      "instructions": "Read the story about Katy, Mike and Harold, then answer the questions.",
+      "type": "choice",
+      "pick": "auto",
+      "passage": "Katy, Mike and Harold were in the library talking about a project about Turkey. Mr Carlton, their teacher, said they could choose any topic for their project, but it should be about Turkey.\n\n'Betty's group is doing their project about the geography of Turkey,' said Katy.\n\nHarold was reading about Turkey on a website. 'The history of Turkey is very interesting. It was part of the Ottoman Empire!'\n\n'Freddy's group's doing their project about that,' said Katy. 'What about science?'\n\n'No,' said Harold. He didn't like science. 'The project's for Friday,' she said. 'Let's hurry up!'\n\nKaty looked at her timetable. 'I'm sure that Turkey has lots of stories and myths. These can teach us a lot about a place. Our project can be about Turkish literature.'\n\n'Great idea! We should find one on the Internet. Mr Carlton likes us to use IT,' said Mike.\n\n'Why don't we do something original, like re-write the story as a poem? I'm good at writing poems,' said Katy. 'Mike's good at art. He can draw the pictures. And you're good at acting, Harold. You can read it to the class!'\n\n'Perfect,' said Mike. So that's what they did!",
+      "items": [
+        {
+          "prompt": "Where were Katy, Mike and Harold?",
+          "options": [
+            "In the classroom",
+            "In the library",
+            "At home",
+            "In the park"
+          ],
+          "answer": "In the library"
+        },
+        {
+          "prompt": "Who is their teacher?",
+          "options": [
+            "Mr Brown",
+            "Mr Carlton",
+            "Mr Smith",
+            "Mr Wilson"
+          ],
+          "answer": "Mr Carlton"
+        },
+        {
+          "prompt": "What must the project be about?",
+          "options": [
+            "France",
+            "Turkey",
+            "Greece",
+            "Spain"
+          ],
+          "answer": "Turkey"
+        },
+        {
+          "prompt": "What is Betty's group doing their project about?",
+          "options": [
+            "History",
+            "Science",
+            "Geography",
+            "Literature"
+          ],
+          "answer": "Geography"
+        },
+        {
+          "prompt": "What empire was Turkey part of?",
+          "options": [
+            "Roman Empire",
+            "Ottoman Empire",
+            "British Empire",
+            "Byzantine Empire"
+          ],
+          "answer": "Ottoman Empire"
+        },
+        {
+          "prompt": "Which subject does Harold NOT like?",
+          "options": [
+            "Geography",
+            "History",
+            "Science",
+            "Literature"
+          ],
+          "answer": "Science"
+        },
+        {
+          "prompt": "When is the project due?",
+          "options": [
+            "Monday",
+            "Wednesday",
+            "Friday",
+            "Next week"
+          ],
+          "answer": "Friday"
+        },
+        {
+          "prompt": "What did Katy suggest as the topic?",
+          "options": [
+            "Turkish food",
+            "Turkish music",
+            "Turkish literature",
+            "Turkish sport"
+          ],
+          "answer": "Turkish literature"
+        },
+        {
+          "prompt": "What is Katy good at?",
+          "options": [
+            "Writing poems",
+            "Drawing",
+            "Acting",
+            "Singing"
+          ],
+          "answer": "Writing poems"
+        },
+        {
+          "prompt": "What is Mike good at?",
+          "options": [
+            "Writing",
+            "Art",
+            "Acting",
+            "Science"
+          ],
+          "answer": "Art"
+        },
+        {
+          "prompt": "What is Harold good at?",
+          "options": [
+            "Writing",
+            "Drawing",
+            "Acting",
+            "Singing"
+          ],
+          "answer": "Acting"
+        },
+        {
+          "prompt": "Where will they find information?",
+          "options": [
+            "In books",
+            "On the Internet",
+            "From the teacher",
+            "From their parents"
+          ],
+          "answer": "On the Internet"
+        }
+      ],
+      "group": "reading"
+    },
+    {
+      "id": "barrier-reef",
+      "title": "Reading: The Great Barrier Reef",
+      "icon": "🐠",
+      "instructions": "Read the text about the Great Barrier Reef, then answer the questions.",
+      "type": "choice",
+      "pick": "auto",
+      "passage": "The Great Barrier Reef is in the sea near Australia. It is the largest coral reef in the world. It is so big that you can see it from space! The reef is about 2,300 kilometres long.\n\nThe reef is home to many different animals. There are over 1,500 types of fish, 400 types of coral and many sea turtles, dolphins and sharks. The water is warm and very clear, so you can see the colourful fish and coral under the water.\n\nMany people visit the Great Barrier Reef every year. They go snorkelling and diving to see the beautiful animals and plants under the sea. Some people take boat trips to see the reef from above.\n\nBut the Great Barrier Reef is in danger. The water is getting warmer because of climate change. When the water is too warm, the coral turns white and dies. Scientists are working hard to protect the reef and keep it healthy for the future.",
+      "items": [
+        {
+          "prompt": "Where is the Great Barrier Reef?",
+          "options": [
+            "Near Africa",
+            "Near Australia",
+            "Near South America",
+            "Near Europe"
+          ],
+          "answer": "Near Australia"
+        },
+        {
+          "prompt": "How long is the reef?",
+          "options": [
+            "About 230 kilometres",
+            "About 1,300 kilometres",
+            "About 2,300 kilometres",
+            "About 5,000 kilometres"
+          ],
+          "answer": "About 2,300 kilometres"
+        },
+        {
+          "prompt": "Can you see the reef from space?",
+          "options": [
+            "Yes",
+            "No",
+            "Only with a telescope",
+            "The text does not say"
+          ],
+          "answer": "Yes"
+        },
+        {
+          "prompt": "How many types of fish live on the reef?",
+          "options": [
+            "Over 150",
+            "Over 400",
+            "Over 1,500",
+            "Over 2,300"
+          ],
+          "answer": "Over 1,500"
+        },
+        {
+          "prompt": "What is the water like near the reef?",
+          "options": [
+            "Cold and dark",
+            "Warm and clear",
+            "Warm and dirty",
+            "Cold and clear"
+          ],
+          "answer": "Warm and clear"
+        },
+        {
+          "prompt": "What do visitors do at the reef?",
+          "options": [
+            "Skiing and skating",
+            "Snorkelling and diving",
+            "Climbing and hiking",
+            "Running and cycling"
+          ],
+          "answer": "Snorkelling and diving"
+        },
+        {
+          "prompt": "Why is the reef in danger?",
+          "options": [
+            "Too many fish",
+            "The water is getting warmer",
+            "There are too many visitors",
+            "It is too far from land"
+          ],
+          "answer": "The water is getting warmer"
+        },
+        {
+          "prompt": "What happens when the water is too warm?",
+          "options": [
+            "The fish grow bigger",
+            "The coral turns white and dies",
+            "The water turns green",
+            "The reef gets longer"
+          ],
+          "answer": "The coral turns white and dies"
+        },
+        {
+          "prompt": "Who is working to protect the reef?",
+          "options": [
+            "Teachers",
+            "Scientists",
+            "Tourists",
+            "Fishermen"
+          ],
+          "answer": "Scientists"
+        },
+        {
+          "prompt": "How many types of coral are there on the reef?",
+          "options": [
+            "About 40",
+            "About 150",
+            "About 400",
+            "About 1,500"
+          ],
+          "answer": "About 400"
+        },
+        {
+          "prompt": "What animals live on the reef besides fish?",
+          "options": [
+            "Bears and wolves",
+            "Turtles, dolphins and sharks",
+            "Elephants and lions",
+            "Birds and butterflies"
+          ],
+          "answer": "Turtles, dolphins and sharks"
+        },
+        {
+          "prompt": "The reef is described as the ___ in the world.",
+          "options": [
+            "Oldest coral reef",
+            "Deepest coral reef",
+            "Largest coral reef",
+            "Most colourful coral reef"
+          ],
+          "answer": "Largest coral reef"
+        }
+      ],
+      "group": "reading"
+    },
+    {
+      "id": "sports-day",
+      "title": "Reading: Sports Day",
+      "icon": "🏅",
+      "instructions": "Read the story about Sports Day at Greenfield School, then answer the questions.",
+      "type": "choice",
+      "pick": "auto",
+      "passage": "Last Friday was Sports Day at Greenfield School. All the students were very excited. There were many different events: running, jumping, throwing and team races.\n\nEmma was in the 100-metre race. She practised every day after school for two weeks. On Sports Day, she ran as fast as she could and came second! She was very happy because last year she came fifth.\n\nTom was good at throwing. He threw the ball 25 metres in the javelin event. That was the best throw of the day! His teacher, Mrs Davies, gave him a gold medal.\n\nThe best part of the day was the team relay race. Each team had four runners. Emma's team, the Blue Team, was winning, but then Jake dropped the baton. The Red Team won the race in the end.\n\nAfter all the events, everyone had ice cream and lemonade. The headteacher, Mr Patel, said it was the best Sports Day ever. Everyone agreed!",
+      "items": [
+        {
+          "prompt": "When was Sports Day?",
+          "options": [
+            "Last Monday",
+            "Last Wednesday",
+            "Last Friday",
+            "Last Saturday"
+          ],
+          "answer": "Last Friday"
+        },
+        {
+          "prompt": "What is the name of the school?",
+          "options": [
+            "Oakwood School",
+            "Greenfield School",
+            "Riverside School",
+            "Hilltop School"
+          ],
+          "answer": "Greenfield School"
+        },
+        {
+          "prompt": "What position did Emma finish in the 100-metre race?",
+          "options": [
+            "First",
+            "Second",
+            "Third",
+            "Fifth"
+          ],
+          "answer": "Second"
+        },
+        {
+          "prompt": "What position did Emma finish in last year?",
+          "options": [
+            "First",
+            "Second",
+            "Third",
+            "Fifth"
+          ],
+          "answer": "Fifth"
+        },
+        {
+          "prompt": "How far did Tom throw the javelin?",
+          "options": [
+            "15 metres",
+            "20 metres",
+            "25 metres",
+            "30 metres"
+          ],
+          "answer": "25 metres"
+        },
+        {
+          "prompt": "Who gave Tom the gold medal?",
+          "options": [
+            "Mr Patel",
+            "Mrs Davies",
+            "Mr Carlton",
+            "Miss Wilson"
+          ],
+          "answer": "Mrs Davies"
+        },
+        {
+          "prompt": "How many runners were in each relay team?",
+          "options": [
+            "Two",
+            "Three",
+            "Four",
+            "Five"
+          ],
+          "answer": "Four"
+        },
+        {
+          "prompt": "Why did Emma's team lose the relay?",
+          "options": [
+            "They were too slow",
+            "Jake dropped the baton",
+            "Emma fell down",
+            "They started late"
+          ],
+          "answer": "Jake dropped the baton"
+        },
+        {
+          "prompt": "Which team won the relay race?",
+          "options": [
+            "The Blue Team",
+            "The Green Team",
+            "The Red Team",
+            "The Yellow Team"
+          ],
+          "answer": "The Red Team"
+        },
+        {
+          "prompt": "What did everyone have after the events?",
+          "options": [
+            "Pizza and juice",
+            "Cake and tea",
+            "Ice cream and lemonade",
+            "Sandwiches and water"
+          ],
+          "answer": "Ice cream and lemonade"
+        },
+        {
+          "prompt": "Who is the headteacher?",
+          "options": [
+            "Mrs Davies",
+            "Mr Carlton",
+            "Mr Patel",
+            "Miss Wilson"
+          ],
+          "answer": "Mr Patel"
+        },
+        {
+          "prompt": "How long did Emma practise before Sports Day?",
+          "options": [
+            "One week",
+            "Two weeks",
+            "Three weeks",
+            "One month"
+          ],
+          "answer": "Two weeks"
+        }
+      ],
+      "group": "reading"
+    },
+    {
+      "id": "iceland",
+      "title": "Reading: Iceland",
+      "icon": "🌋",
+      "instructions": "Read the text about Iceland, then answer the questions.",
+      "type": "choice",
+      "pick": "auto",
+      "passage": "Iceland is a small country in the north of Europe. It is an island in the Atlantic Ocean. About 370,000 people live there. The capital city is Reykjavik.\n\nIceland is famous for its volcanoes. There are over 30 active volcanoes on the island. Sometimes the volcanoes erupt and hot lava comes out. Iceland also has many geysers. A geyser is a hole in the ground where hot water shoots up into the air. The most famous geyser in Iceland is called Strokkur. It erupts every 6 to 10 minutes!\n\nIn winter, the days in Iceland are very short. In December, there are only about 4 hours of daylight. But you can see the Northern Lights — beautiful green, purple and pink lights that dance across the sky at night.\n\nIn summer, it is the opposite. The sun almost never goes down! In June, it is light for almost 24 hours. People call this the 'midnight sun.'",
+      "items": [
+        {
+          "prompt": "Where is Iceland?",
+          "options": [
+            "In the south of Europe",
+            "In the north of Europe",
+            "In Asia",
+            "In North America"
+          ],
+          "answer": "In the north of Europe"
+        },
+        {
+          "prompt": "What is the capital of Iceland?",
+          "options": [
+            "Oslo",
+            "Helsinki",
+            "Reykjavik",
+            "Copenhagen"
+          ],
+          "answer": "Reykjavik"
+        },
+        {
+          "prompt": "How many people live in Iceland?",
+          "options": [
+            "About 37,000",
+            "About 370,000",
+            "About 3,700,000",
+            "About 37,000,000"
+          ],
+          "answer": "About 370,000"
+        },
+        {
+          "prompt": "How many active volcanoes are there in Iceland?",
+          "options": [
+            "Over 10",
+            "Over 20",
+            "Over 30",
+            "Over 50"
+          ],
+          "answer": "Over 30"
+        },
+        {
+          "prompt": "What is a geyser?",
+          "options": [
+            "A type of volcano",
+            "A hole where hot water shoots up",
+            "A frozen lake",
+            "A mountain"
+          ],
+          "answer": "A hole where hot water shoots up"
+        },
+        {
+          "prompt": "What is the most famous geyser called?",
+          "options": [
+            "Geysir",
+            "Strokkur",
+            "Gullfoss",
+            "Thingvellir"
+          ],
+          "answer": "Strokkur"
+        },
+        {
+          "prompt": "How often does Strokkur erupt?",
+          "options": [
+            "Every 1 to 2 minutes",
+            "Every 6 to 10 minutes",
+            "Every 30 minutes",
+            "Once a day"
+          ],
+          "answer": "Every 6 to 10 minutes"
+        },
+        {
+          "prompt": "How many hours of daylight are there in December?",
+          "options": [
+            "About 2",
+            "About 4",
+            "About 8",
+            "About 12"
+          ],
+          "answer": "About 4"
+        },
+        {
+          "prompt": "What can you see in the winter sky?",
+          "options": [
+            "Shooting stars",
+            "The Northern Lights",
+            "Rainbows",
+            "Fireworks"
+          ],
+          "answer": "The Northern Lights"
+        },
+        {
+          "prompt": "What colours are the Northern Lights?",
+          "options": [
+            "Red, orange and yellow",
+            "Green, purple and pink",
+            "Blue, white and grey",
+            "Black, brown and gold"
+          ],
+          "answer": "Green, purple and pink"
+        },
+        {
+          "prompt": "What is the 'midnight sun'?",
+          "options": [
+            "A very hot day",
+            "When it is light for almost 24 hours",
+            "A sunset at midnight",
+            "A special lamp"
+          ],
+          "answer": "When it is light for almost 24 hours"
+        },
+        {
+          "prompt": "Iceland is in which ocean?",
+          "options": [
+            "The Pacific Ocean",
+            "The Indian Ocean",
+            "The Atlantic Ocean",
+            "The Arctic Ocean"
+          ],
+          "answer": "The Atlantic Ocean"
+        }
+      ],
+      "group": "reading"
+    },
+    {
+      "id": "school-trip",
+      "title": "Reading: The School Trip",
+      "icon": "🚌",
+      "instructions": "Read the story about the school trip to the museum, then answer the questions.",
+      "type": "choice",
+      "pick": "auto",
+      "passage": "On Wednesday, Class 4B went on a school trip to the Natural History Museum. Their teacher, Miss Wilson, took them on the bus. The journey took about 45 minutes.\n\nWhen they arrived, a museum guide called Anna showed them around. First, they went to the dinosaur room. There was a huge skeleton of a Tyrannosaurus Rex. It was 12 metres long! Jack said it was the best thing he had ever seen.\n\nNext, they visited the room about oceans. They learned about whales, sharks and jellyfish. There was a model of a blue whale hanging from the ceiling. Lily thought it was amazing.\n\nAfter lunch, they went to the rock and mineral room. They saw diamonds, gold and many colourful crystals. The guide told them that some rocks are millions of years old.\n\nBefore they left, everyone visited the gift shop. Jack bought a small model dinosaur and Lily bought a book about ocean animals. On the bus home, Miss Wilson asked them what they had learned. Everyone had a favourite fact to share!",
+      "items": [
+        {
+          "prompt": "Which class went on the trip?",
+          "options": [
+            "Class 3A",
+            "Class 4B",
+            "Class 5C",
+            "Class 6D"
+          ],
+          "answer": "Class 4B"
+        },
+        {
+          "prompt": "Where did they go?",
+          "options": [
+            "The Science Museum",
+            "The Natural History Museum",
+            "The Art Gallery",
+            "The Zoo"
+          ],
+          "answer": "The Natural History Museum"
+        },
+        {
+          "prompt": "How did they get there?",
+          "options": [
+            "By train",
+            "By bus",
+            "By car",
+            "On foot"
+          ],
+          "answer": "By bus"
+        },
+        {
+          "prompt": "How long was the journey?",
+          "options": [
+            "About 15 minutes",
+            "About 30 minutes",
+            "About 45 minutes",
+            "About 60 minutes"
+          ],
+          "answer": "About 45 minutes"
+        },
+        {
+          "prompt": "What was the guide's name?",
+          "options": [
+            "Anna",
+            "Emma",
+            "Lily",
+            "Sarah"
+          ],
+          "answer": "Anna"
+        },
+        {
+          "prompt": "How long was the T-Rex skeleton?",
+          "options": [
+            "6 metres",
+            "9 metres",
+            "12 metres",
+            "15 metres"
+          ],
+          "answer": "12 metres"
+        },
+        {
+          "prompt": "What was hanging from the ceiling?",
+          "options": [
+            "A model aeroplane",
+            "A model of a blue whale",
+            "A dinosaur skeleton",
+            "A giant spider"
+          ],
+          "answer": "A model of a blue whale"
+        },
+        {
+          "prompt": "What did they see in the rock room?",
+          "options": [
+            "Paintings",
+            "Dinosaur bones",
+            "Diamonds, gold and crystals",
+            "Old books"
+          ],
+          "answer": "Diamonds, gold and crystals"
+        },
+        {
+          "prompt": "How old can some rocks be?",
+          "options": [
+            "Hundreds of years",
+            "Thousands of years",
+            "Millions of years",
+            "Billions of years"
+          ],
+          "answer": "Millions of years"
+        },
+        {
+          "prompt": "What did Jack buy in the gift shop?",
+          "options": [
+            "A book",
+            "A poster",
+            "A small model dinosaur",
+            "A T-shirt"
+          ],
+          "answer": "A small model dinosaur"
+        },
+        {
+          "prompt": "What did Lily buy in the gift shop?",
+          "options": [
+            "A model whale",
+            "A book about ocean animals",
+            "A crystal",
+            "A pencil"
+          ],
+          "answer": "A book about ocean animals"
+        },
+        {
+          "prompt": "Who is their teacher?",
+          "options": [
+            "Mrs Davies",
+            "Miss Wilson",
+            "Mr Carlton",
+            "Mr Patel"
+          ],
+          "answer": "Miss Wilson"
+        }
+      ],
+      "group": "reading"
+    }
+  ]
+});

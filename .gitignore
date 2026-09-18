@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Node / Playwright
+node_modules/
+test-results/
+tests/specs/test-results/
+playwright-report/
+
+# Secrets for tools/generate_images.py
+.env
+
+# Python
+__pycache__/

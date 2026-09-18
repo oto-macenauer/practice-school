@@ -1,0 +1,1535 @@
+// Migrated from practice-english/modules/practice-tests/unit5/data.json
+School.register({
+  "id": "4-anglictina-unit5-test",
+  "sections": [
+    {
+      "id": "materials",
+      "title": "Materials",
+      "icon": "🧱",
+      "image": "content/4/anglictina/img/unit5-passive.webp",
+      "instructions": "Match each description to the correct material.",
+      "type": "match",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "Scissors are made of this strong, shiny material.",
+          "answer": "metal"
+        },
+        {
+          "prompt": "Windows are made of this transparent material. You can see through it.",
+          "answer": "glass"
+        },
+        {
+          "prompt": "Toys, bottles and bags can be made of this light, cheap material.",
+          "answer": "plastic"
+        },
+        {
+          "prompt": "Scarves and jumpers are made of this soft, warm material from sheep.",
+          "answer": "wool"
+        },
+        {
+          "prompt": "Tables and chairs are often made of this material that comes from trees.",
+          "answer": "wood"
+        },
+        {
+          "prompt": "Birthday cards and boxes are made of this thick paper material.",
+          "answer": "card"
+        },
+        {
+          "prompt": "Books and newspapers are made of this thin, light material.",
+          "answer": "paper"
+        },
+        {
+          "prompt": "Expensive jewellery and coins are sometimes made of this precious yellow material.",
+          "answer": "gold"
+        },
+        {
+          "prompt": "This precious material is grey-white and used for jewellery and coins.",
+          "answer": "silver"
+        },
+        {
+          "prompt": "Erasers and tyres are made of this stretchy, bouncy material.",
+          "answer": "rubber"
+        },
+        {
+          "prompt": "This material comes from sheep and is used to make warm clothes.",
+          "answer": "wool"
+        },
+        {
+          "prompt": "Rings and crowns can be made of this very expensive yellow material.",
+          "answer": "gold"
+        },
+        {
+          "prompt": "This material is used for writing on and comes from trees.",
+          "answer": "paper"
+        },
+        {
+          "prompt": "A mirror has this material so you can see your reflection.",
+          "answer": "glass"
+        },
+        {
+          "prompt": "This material is hard and strong. Knives, forks and keys are made of it.",
+          "answer": "metal"
+        },
+        {
+          "prompt": "Bags and containers are often made of this cheap, waterproof material.",
+          "answer": "plastic"
+        },
+        {
+          "prompt": "A guitar can be made of this material that grows in forests.",
+          "answer": "wood"
+        },
+        {
+          "prompt": "Gloves can be made of this material. It is flexible and waterproof.",
+          "answer": "rubber"
+        },
+        {
+          "prompt": "Greeting cards are made of this — it's thicker than paper.",
+          "answer": "card"
+        },
+        {
+          "prompt": "A necklace might be made of this shiny, grey-white precious material.",
+          "answer": "silver"
+        }
+      ]
+    },
+    {
+      "id": "properties",
+      "title": "Properties of Materials",
+      "icon": "⚖️",
+      "instructions": "Choose the correct property to describe each material or object.",
+      "type": "choice",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "A crown made of gold is very ___. It weighs a lot.",
+          "options": [
+            "heavy",
+            "light",
+            "flexible"
+          ],
+          "answer": "heavy",
+          "explanation": "Gold is a heavy material — objects made of gold weigh a lot."
+        },
+        {
+          "prompt": "A table made of wood is ___. It doesn't bend.",
+          "options": [
+            "rigid",
+            "flexible",
+            "smooth"
+          ],
+          "answer": "rigid",
+          "explanation": "Wood is rigid — it keeps its shape and doesn't bend."
+        },
+        {
+          "prompt": "Plastic is ___. You can bend it easily.",
+          "options": [
+            "flexible",
+            "rigid",
+            "rough"
+          ],
+          "answer": "flexible",
+          "explanation": "Plastic is flexible — it can bend without breaking."
+        },
+        {
+          "prompt": "Paper is very ___. It doesn't weigh much.",
+          "options": [
+            "light",
+            "heavy",
+            "rough"
+          ],
+          "answer": "light",
+          "explanation": "Paper is light — it weighs very little."
+        },
+        {
+          "prompt": "Bricks have a ___ surface. They are not smooth.",
+          "options": [
+            "rough",
+            "smooth",
+            "flexible"
+          ],
+          "answer": "rough",
+          "explanation": "Bricks are rough — their surface is uneven."
+        },
+        {
+          "prompt": "A slide made of metal is ___. It feels nice to touch.",
+          "options": [
+            "smooth",
+            "rough",
+            "heavy"
+          ],
+          "answer": "smooth",
+          "explanation": "Metal can be very smooth — polished metal has an even surface."
+        },
+        {
+          "prompt": "A newspaper is ___. You can pick it up with one hand.",
+          "options": [
+            "light",
+            "heavy",
+            "rigid"
+          ],
+          "answer": "light",
+          "explanation": "A newspaper is made of paper, which is very light."
+        },
+        {
+          "prompt": "A brick wall is ___. It cannot bend.",
+          "options": [
+            "rigid",
+            "flexible",
+            "light"
+          ],
+          "answer": "rigid",
+          "explanation": "Bricks and walls are rigid — they are stiff and don't bend."
+        },
+        {
+          "prompt": "Rubber is ___. You can stretch it.",
+          "options": [
+            "flexible",
+            "rigid",
+            "rough"
+          ],
+          "answer": "flexible",
+          "explanation": "Rubber is flexible — you can bend and stretch it."
+        },
+        {
+          "prompt": "A house made of bricks is ___. Bricks weigh a lot.",
+          "options": [
+            "heavy",
+            "light",
+            "smooth"
+          ],
+          "answer": "heavy",
+          "explanation": "Bricks are heavy — a brick wall weighs a lot."
+        },
+        {
+          "prompt": "Glass is ___. You can see through it.",
+          "options": [
+            "smooth",
+            "rough",
+            "heavy"
+          ],
+          "answer": "smooth",
+          "explanation": "Glass has a smooth, even surface."
+        },
+        {
+          "prompt": "A feather is very ___. It floats in the air.",
+          "options": [
+            "light",
+            "heavy",
+            "rigid"
+          ],
+          "answer": "light",
+          "explanation": "Feathers are extremely light."
+        },
+        {
+          "prompt": "Sandpaper has a ___ surface. It is used for rubbing wood.",
+          "options": [
+            "rough",
+            "smooth",
+            "flexible"
+          ],
+          "answer": "rough",
+          "explanation": "Sandpaper is rough — that's why it's used for sanding."
+        },
+        {
+          "prompt": "A steel beam is ___. It keeps its shape under pressure.",
+          "options": [
+            "rigid",
+            "flexible",
+            "light"
+          ],
+          "answer": "rigid",
+          "explanation": "Steel is rigid — it is strong and stiff."
+        },
+        {
+          "prompt": "Wool is ___ and warm. You can wrap it around your neck.",
+          "options": [
+            "flexible",
+            "rigid",
+            "rough"
+          ],
+          "answer": "flexible",
+          "explanation": "Wool is flexible — it is soft and can be wrapped and folded."
+        },
+        {
+          "prompt": "The opposite of 'heavy' is ___.",
+          "options": [
+            "light",
+            "smooth",
+            "rigid"
+          ],
+          "answer": "light"
+        },
+        {
+          "prompt": "The opposite of 'rough' is ___.",
+          "options": [
+            "smooth",
+            "flexible",
+            "heavy"
+          ],
+          "answer": "smooth"
+        },
+        {
+          "prompt": "The opposite of 'rigid' is ___.",
+          "options": [
+            "flexible",
+            "heavy",
+            "rough"
+          ],
+          "answer": "flexible"
+        },
+        {
+          "prompt": "A car made of metal is ___. It weighs hundreds of kilograms.",
+          "options": [
+            "heavy",
+            "light",
+            "smooth"
+          ],
+          "answer": "heavy"
+        },
+        {
+          "prompt": "A piece of string is ___. You can tie it in a knot.",
+          "options": [
+            "flexible",
+            "rigid",
+            "heavy"
+          ],
+          "answer": "flexible"
+        }
+      ]
+    },
+    {
+      "id": "made-of",
+      "title": "Made of (Passive Voice)",
+      "icon": "🔧",
+      "image": "content/4/anglictina/img/unit5-passive.webp",
+      "instructions": "Complete each sentence with the correct form. Remember: It's made of... / They're made of... / What is it made of?",
+      "type": "choice",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "This scarf ___ wool. It's very warm.",
+          "options": [
+            "is made of",
+            "are made of",
+            "made of"
+          ],
+          "answer": "is made of",
+          "explanation": "Singular: This scarf (it) → is made of."
+        },
+        {
+          "prompt": "These shoes ___ leather.",
+          "options": [
+            "are made of",
+            "is made of",
+            "made of"
+          ],
+          "answer": "are made of",
+          "explanation": "Plural: These shoes (they) → are made of."
+        },
+        {
+          "prompt": "The crown ___ gold. It's very heavy.",
+          "options": [
+            "is made of",
+            "are made of",
+            "made of"
+          ],
+          "answer": "is made of",
+          "explanation": "Singular: The crown (it) → is made of."
+        },
+        {
+          "prompt": "The wings ___ paper. They're not very strong.",
+          "options": [
+            "are made of",
+            "is made of",
+            "made of"
+          ],
+          "answer": "are made of",
+          "explanation": "Plural: The wings (they) → are made of."
+        },
+        {
+          "prompt": "What ___ your helmet ___?",
+          "options": [
+            "is … made of",
+            "are … made of",
+            "does … made of"
+          ],
+          "answer": "is … made of",
+          "explanation": "Question form singular: What is (it) made of?"
+        },
+        {
+          "prompt": "My table ___ wood.",
+          "options": [
+            "is made of",
+            "are made of",
+            "made of"
+          ],
+          "answer": "is made of",
+          "explanation": "Singular: My table (it) → is made of."
+        },
+        {
+          "prompt": "These balls ___ glass. Be careful!",
+          "options": [
+            "are made of",
+            "is made of",
+            "made of"
+          ],
+          "answer": "are made of",
+          "explanation": "Plural: These balls (they) → are made of."
+        },
+        {
+          "prompt": "The eraser ___ rubber.",
+          "options": [
+            "is made of",
+            "are made of",
+            "made of"
+          ],
+          "answer": "is made of",
+          "explanation": "Singular: The eraser (it) → is made of."
+        },
+        {
+          "prompt": "My trousers ___ cotton.",
+          "options": [
+            "are made of",
+            "is made of",
+            "made of"
+          ],
+          "answer": "are made of",
+          "explanation": "Plural: My trousers (they) → are made of."
+        },
+        {
+          "prompt": "What ___ the costume ___? It's made of paper and card.",
+          "options": [
+            "is … made of",
+            "are … made of",
+            "does … made of"
+          ],
+          "answer": "is … made of",
+          "explanation": "Question form singular: What is (the costume) made of?"
+        },
+        {
+          "prompt": "This bag ___ plastic.",
+          "options": [
+            "is made of",
+            "are made of",
+            "made of"
+          ],
+          "answer": "is made of",
+          "explanation": "Singular: This bag (it) → is made of."
+        },
+        {
+          "prompt": "The windows ___ glass.",
+          "options": [
+            "are made of",
+            "is made of",
+            "made of"
+          ],
+          "answer": "are made of",
+          "explanation": "Plural: The windows (they) → are made of."
+        },
+        {
+          "prompt": "My ring ___ silver.",
+          "options": [
+            "is made of",
+            "are made of",
+            "made of"
+          ],
+          "answer": "is made of",
+          "explanation": "Singular: My ring (it) → is made of."
+        },
+        {
+          "prompt": "These tyres ___ rubber.",
+          "options": [
+            "are made of",
+            "is made of",
+            "made of"
+          ],
+          "answer": "are made of",
+          "explanation": "Plural: These tyres (they) → are made of."
+        },
+        {
+          "prompt": "The newspaper ___ paper.",
+          "options": [
+            "is made of",
+            "are made of",
+            "made of"
+          ],
+          "answer": "is made of",
+          "explanation": "Singular: The newspaper (it) → is made of."
+        },
+        {
+          "prompt": "Letters ___ by the postman every day.",
+          "options": [
+            "are delivered",
+            "is delivered",
+            "delivers"
+          ],
+          "answer": "are delivered",
+          "explanation": "Passive plural: Letters (they) + are + past participle."
+        },
+        {
+          "prompt": "English ___ in many countries.",
+          "options": [
+            "is spoken",
+            "are spoken",
+            "speaks"
+          ],
+          "answer": "is spoken",
+          "explanation": "Passive singular: English (it) + is + past participle."
+        },
+        {
+          "prompt": "Cars ___ in factories.",
+          "options": [
+            "are made",
+            "is made",
+            "makes"
+          ],
+          "answer": "are made",
+          "explanation": "Passive plural: Cars (they) + are + past participle."
+        },
+        {
+          "prompt": "Football ___ all over the world.",
+          "options": [
+            "is played",
+            "are played",
+            "plays"
+          ],
+          "answer": "is played",
+          "explanation": "Passive singular: Football (it) + is + past participle."
+        },
+        {
+          "prompt": "The rooms ___ every day by the cleaner.",
+          "options": [
+            "are cleaned",
+            "is cleaned",
+            "cleans"
+          ],
+          "answer": "are cleaned",
+          "explanation": "Passive plural: The rooms (they) + are + past participle."
+        },
+        {
+          "prompt": "Rice ___ in China and India.",
+          "options": [
+            "is grown",
+            "are grown",
+            "grows"
+          ],
+          "answer": "is grown",
+          "explanation": "Passive singular: Rice (it) + is + past participle."
+        },
+        {
+          "prompt": "The songs ___ by a famous singer.",
+          "options": [
+            "are sung",
+            "is sung",
+            "sings"
+          ],
+          "answer": "are sung",
+          "explanation": "Passive plural: The songs (they) + are + past participle."
+        },
+        {
+          "prompt": "This castle ___ by thousands of tourists every year.",
+          "options": [
+            "is visited",
+            "are visited",
+            "visits"
+          ],
+          "answer": "is visited",
+          "explanation": "Passive singular: This castle (it) + is + past participle."
+        },
+        {
+          "prompt": "Bananas ___ in tropical countries.",
+          "options": [
+            "are grown",
+            "is grown",
+            "grows"
+          ],
+          "answer": "are grown",
+          "explanation": "Passive plural: Bananas (they) + are + past participle."
+        },
+        {
+          "prompt": "Cheese ___ from milk.",
+          "options": [
+            "is made",
+            "are made",
+            "makes"
+          ],
+          "answer": "is made",
+          "explanation": "Passive singular: Cheese (it) + is + past participle."
+        },
+        {
+          "prompt": "The homework ___ by the teacher every Friday.",
+          "options": [
+            "is checked",
+            "are checked",
+            "checks"
+          ],
+          "answer": "is checked",
+          "explanation": "Passive singular: The homework (it) + is + past participle."
+        },
+        {
+          "prompt": "The exams ___ at the end of the year.",
+          "options": [
+            "are given",
+            "is given",
+            "gives"
+          ],
+          "answer": "are given",
+          "explanation": "Passive plural: The exams (they) + are + past participle."
+        },
+        {
+          "prompt": "Tea ___ with milk in England.",
+          "options": [
+            "is drunk",
+            "are drunk",
+            "drinks"
+          ],
+          "answer": "is drunk",
+          "explanation": "Passive singular: Tea (it) + is + past participle."
+        },
+        {
+          "prompt": "The presents ___ in colourful paper.",
+          "options": [
+            "are wrapped",
+            "is wrapped",
+            "wraps"
+          ],
+          "answer": "are wrapped",
+          "explanation": "Passive plural: The presents (they) + are + past participle."
+        },
+        {
+          "prompt": "The dog ___ for a walk every evening.",
+          "options": [
+            "is taken",
+            "are taken",
+            "takes"
+          ],
+          "answer": "is taken",
+          "explanation": "Passive singular: The dog (it) + is + past participle."
+        }
+      ]
+    },
+    {
+      "id": "suggestions",
+      "title": "Making Suggestions",
+      "icon": "💡",
+      "instructions": "Choose the correct way to make a suggestion. Remember: 'Shall we...?', 'Let's...', 'We could...'",
+      "type": "choice",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "___ go to the cinema tonight!",
+          "options": [
+            "Let's",
+            "Shall",
+            "Could"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' + base verb is used to suggest doing something together."
+        },
+        {
+          "prompt": "___ we design some props for the show?",
+          "options": [
+            "Shall",
+            "Let's",
+            "We"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' is a polite question to suggest an activity."
+        },
+        {
+          "prompt": "___ use blue paper for the sea.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' + base verb suggests a possible idea."
+        },
+        {
+          "prompt": "___ make a mask for the play!",
+          "options": [
+            "Let's",
+            "Shall",
+            "Could we"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' + base verb is a suggestion to do it together."
+        },
+        {
+          "prompt": "___ we watch a film?",
+          "options": [
+            "Shall",
+            "Let's",
+            "We could"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' asks for agreement about doing something."
+        },
+        {
+          "prompt": "___ buy Julia a ring for her birthday.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' suggests a possibility."
+        },
+        {
+          "prompt": "___ play hide and seek!",
+          "options": [
+            "Let's",
+            "Shall we",
+            "We could we"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' is a direct suggestion to do something together."
+        },
+        {
+          "prompt": "___ we have a party?",
+          "options": [
+            "Shall",
+            "Let's",
+            "Could"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' is a question form for suggestions."
+        },
+        {
+          "prompt": "___ go swimming after school.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' offers a suggestion or possibility."
+        },
+        {
+          "prompt": "___ try the new restaurant!",
+          "options": [
+            "Let's",
+            "Shall",
+            "We"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' + base verb to suggest an activity."
+        },
+        {
+          "prompt": "___ we go to the park this afternoon?",
+          "options": [
+            "Shall",
+            "Let's",
+            "We could we"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' politely asks for agreement."
+        },
+        {
+          "prompt": "___ invite Tom to the party.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' suggests a possibility — it's softer than 'let's'."
+        },
+        {
+          "prompt": "___ design the set together!",
+          "options": [
+            "Let's",
+            "Shall",
+            "Could"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' is a suggestion for a shared action."
+        },
+        {
+          "prompt": "___ we make costumes for the show?",
+          "options": [
+            "Shall",
+            "Let's",
+            "We could we"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' suggests and asks for agreement."
+        },
+        {
+          "prompt": "___ paint the clouds with white paint.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' is a softer suggestion."
+        },
+        {
+          "prompt": "___ bake a cake for the school fair!",
+          "options": [
+            "Let's",
+            "Shall",
+            "We"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' + base verb."
+        },
+        {
+          "prompt": "___ we visit the museum tomorrow?",
+          "options": [
+            "Shall",
+            "Let's",
+            "Could"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' for a polite suggestion."
+        },
+        {
+          "prompt": "___ use this old T-shirt for the costume.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' offers an idea."
+        },
+        {
+          "prompt": "___ watch a funny film!",
+          "options": [
+            "Let's",
+            "Shall we",
+            "We could we"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' for a direct suggestion."
+        },
+        {
+          "prompt": "___ we do our homework together?",
+          "options": [
+            "Shall",
+            "Let's",
+            "Could"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' asks the other person to agree."
+        },
+        {
+          "prompt": "___ write a play for the school festival.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' offers a possibility."
+        },
+        {
+          "prompt": "___ practise the dance one more time!",
+          "options": [
+            "Let's",
+            "Shall",
+            "We"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' suggests doing it now."
+        },
+        {
+          "prompt": "___ we recycle these old costumes?",
+          "options": [
+            "Shall",
+            "Let's",
+            "Could we"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' for a polite suggestion."
+        },
+        {
+          "prompt": "___ make a card for our teacher.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' proposes an idea."
+        },
+        {
+          "prompt": "___ go to the library after lunch!",
+          "options": [
+            "Let's",
+            "Shall",
+            "We could we"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' for a suggestion."
+        },
+        {
+          "prompt": "___ we sit in the front row?",
+          "options": [
+            "Shall",
+            "Let's",
+            "Could"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' asks whether we should."
+        },
+        {
+          "prompt": "___ ask the teacher for help.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' is a softer suggestion."
+        },
+        {
+          "prompt": "___ start the performance!",
+          "options": [
+            "Let's",
+            "Shall",
+            "We"
+          ],
+          "answer": "Let's",
+          "explanation": "'Let's' to start doing something together."
+        },
+        {
+          "prompt": "___ we buy some new paint for the props?",
+          "options": [
+            "Shall",
+            "Let's",
+            "Could"
+          ],
+          "answer": "Shall",
+          "explanation": "'Shall we...?' is a question to suggest."
+        },
+        {
+          "prompt": "___ take a photo of the set.",
+          "options": [
+            "We could",
+            "Shall",
+            "Let's we"
+          ],
+          "answer": "We could",
+          "explanation": "'We could' offers a possibility."
+        }
+      ]
+    },
+    {
+      "id": "describing-clothes",
+      "title": "Describing Clothes & Costumes",
+      "icon": "👗",
+      "instructions": "Choose the correct word to describe clothes or costumes.",
+      "type": "choice",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "She's wearing a ___ orange scarf.",
+          "options": [
+            "bright",
+            "spotted",
+            "striped"
+          ],
+          "answer": "bright",
+          "explanation": "'Bright' means a strong, vivid colour."
+        },
+        {
+          "prompt": "He's wearing a ___ blue T-shirt with white lines.",
+          "options": [
+            "striped",
+            "spotted",
+            "dark"
+          ],
+          "answer": "striped",
+          "explanation": "'Striped' means having lines/stripes."
+        },
+        {
+          "prompt": "The clown is wearing a ___ shirt with dots on it.",
+          "options": [
+            "spotted",
+            "striped",
+            "bright"
+          ],
+          "answer": "spotted",
+          "explanation": "'Spotted' means having spots/dots."
+        },
+        {
+          "prompt": "She's wearing a ___ dress. It's almost black.",
+          "options": [
+            "dark",
+            "bright",
+            "spotted"
+          ],
+          "answer": "dark",
+          "explanation": "'Dark' means a colour that is close to black."
+        },
+        {
+          "prompt": "The king is wearing a ___ crown. It's shiny and precious.",
+          "options": [
+            "gold",
+            "dark",
+            "spotted"
+          ],
+          "answer": "gold",
+          "explanation": "'Gold' describes the colour and material — yellow and precious."
+        },
+        {
+          "prompt": "The queen is wearing a ___ necklace. It's grey-white and shiny.",
+          "options": [
+            "silver",
+            "gold",
+            "bright"
+          ],
+          "answer": "silver",
+          "explanation": "'Silver' is a grey-white, shiny precious material."
+        },
+        {
+          "prompt": "He's wearing ___ orange trousers. You can see them from far away.",
+          "options": [
+            "bright",
+            "dark",
+            "striped"
+          ],
+          "answer": "bright",
+          "explanation": "'Bright' colours are very vivid and easy to see."
+        },
+        {
+          "prompt": "She's wearing a ___ green jumper. It's a very deep green.",
+          "options": [
+            "dark",
+            "bright",
+            "spotted"
+          ],
+          "answer": "dark",
+          "explanation": "'Dark' green is a deep, strong shade of green."
+        },
+        {
+          "prompt": "The tiger costume has ___ fur — orange with black lines.",
+          "options": [
+            "striped",
+            "spotted",
+            "dark"
+          ],
+          "answer": "striped",
+          "explanation": "Tigers have stripes — lines on their fur."
+        },
+        {
+          "prompt": "The dalmatian costume is white with black ___.",
+          "options": [
+            "spots",
+            "stripes",
+            "wings"
+          ],
+          "answer": "spots",
+          "explanation": "Dalmatian dogs have spots — round dots on their fur."
+        },
+        {
+          "prompt": "The fairy costume has beautiful ___ on the back.",
+          "options": [
+            "wings",
+            "spots",
+            "stripes"
+          ],
+          "answer": "wings",
+          "explanation": "Fairy costumes usually have wings to look like they can fly."
+        },
+        {
+          "prompt": "The costume is ___ of paper and card.",
+          "options": [
+            "made",
+            "wore",
+            "dressed"
+          ],
+          "answer": "made",
+          "explanation": "'Made of' tells you what material something is from."
+        },
+        {
+          "prompt": "He's ___ a bright yellow hat.",
+          "options": [
+            "wearing",
+            "making",
+            "doing"
+          ],
+          "answer": "wearing",
+          "explanation": "'Wearing' describes what clothes someone has on."
+        },
+        {
+          "prompt": "The zebra has black and white ___.",
+          "options": [
+            "stripes",
+            "spots",
+            "wings"
+          ],
+          "answer": "stripes",
+          "explanation": "Zebras have stripes — alternating black and white lines."
+        },
+        {
+          "prompt": "The ladybird costume is red with black ___.",
+          "options": [
+            "spots",
+            "stripes",
+            "bright"
+          ],
+          "answer": "spots",
+          "explanation": "Ladybirds have spots — round dots on their wings."
+        },
+        {
+          "prompt": "My helmet is ___ of gold paper. It looks shiny!",
+          "options": [
+            "made",
+            "wore",
+            "dressed"
+          ],
+          "answer": "made",
+          "explanation": "'Made of' tells what material is used."
+        },
+        {
+          "prompt": "The pirate is wearing a ___ hat and a striped shirt.",
+          "options": [
+            "dark",
+            "spotted",
+            "gold"
+          ],
+          "answer": "dark",
+          "explanation": "Pirates typically wear dark-coloured hats."
+        },
+        {
+          "prompt": "She's wearing ___ pink shoes. They are really vivid.",
+          "options": [
+            "bright",
+            "dark",
+            "striped"
+          ],
+          "answer": "bright",
+          "explanation": "'Bright' means very vivid, easy to notice."
+        },
+        {
+          "prompt": "My robot costume is ___ of silver card and plastic.",
+          "options": [
+            "made",
+            "wore",
+            "dressed"
+          ],
+          "answer": "made",
+          "explanation": "'Made of' describes the material."
+        },
+        {
+          "prompt": "The butterfly has beautiful colourful ___.",
+          "options": [
+            "wings",
+            "spots",
+            "stripes"
+          ],
+          "answer": "wings",
+          "explanation": "Butterflies are known for their colourful wings."
+        },
+        {
+          "prompt": "The cowboy is wearing a ___ belt with a silver buckle.",
+          "options": [
+            "dark",
+            "spotted",
+            "bright"
+          ],
+          "answer": "dark",
+          "explanation": "Cowboy belts are usually dark-coloured leather."
+        },
+        {
+          "prompt": "The bee costume is ___ — yellow with black lines.",
+          "options": [
+            "striped",
+            "spotted",
+            "dark"
+          ],
+          "answer": "striped",
+          "explanation": "Bees have stripes — alternating yellow and black."
+        },
+        {
+          "prompt": "He's ___ a spotted tie and a striped jacket.",
+          "options": [
+            "wearing",
+            "making",
+            "doing"
+          ],
+          "answer": "wearing",
+          "explanation": "'Wearing' describes what someone has on."
+        },
+        {
+          "prompt": "The mask is ___ of papier-mâché.",
+          "options": [
+            "made",
+            "wore",
+            "dressed"
+          ],
+          "answer": "made",
+          "explanation": "'Made of' tells the material — papier-mâché (paper, glue, water)."
+        },
+        {
+          "prompt": "The superhero costume is ___ red with a gold star.",
+          "options": [
+            "bright",
+            "dark",
+            "spotted"
+          ],
+          "answer": "bright",
+          "explanation": "Superhero costumes are typically bright and colourful."
+        }
+      ]
+    },
+    {
+      "id": "listening",
+      "title": "Listening",
+      "icon": "🎧",
+      "instructions": "Press Listen, then answer the question about what you heard.",
+      "type": "choice",
+      "pick": "auto",
+      "items": [
+        {
+          "prompt": "What are TWO properties of the mask?",
+          "say": "The mask is made of papier-mâché. It's flexible and light.",
+          "options": [
+            "Flexible and light",
+            "Heavy and rigid",
+            "Rough and dark"
+          ],
+          "answer": "Flexible and light"
+        },
+        {
+          "prompt": "What is the speaker suggesting?",
+          "say": "Shall we use gold paper for the crown?",
+          "options": [
+            "Using gold paper",
+            "Buying a crown",
+            "Painting the crown"
+          ],
+          "answer": "Using gold paper"
+        },
+        {
+          "prompt": "Why should you be careful?",
+          "say": "The costume wings are made of paper, so be careful with them.",
+          "options": [
+            "Paper tears easily",
+            "They are heavy",
+            "They are sharp"
+          ],
+          "answer": "Paper tears easily"
+        },
+        {
+          "prompt": "What will they use for costumes?",
+          "say": "We could recycle old T-shirts to make the costumes.",
+          "options": [
+            "Old T-shirts",
+            "New fabric",
+            "Paper bags"
+          ],
+          "answer": "Old T-shirts"
+        },
+        {
+          "prompt": "What are bricks used for?",
+          "say": "The bricks are heavy and rough. They're used for building walls.",
+          "options": [
+            "Building walls",
+            "Making roads",
+            "Decorating rooms"
+          ],
+          "answer": "Building walls"
+        },
+        {
+          "prompt": "What does the speaker want to do together?",
+          "say": "Let's design the set for the school play together!",
+          "options": [
+            "Design the set",
+            "Write the script",
+            "Learn the lines"
+          ],
+          "answer": "Design the set"
+        },
+        {
+          "prompt": "What is the problem with glass?",
+          "say": "Glass is smooth but it breaks easily, so handle it with care.",
+          "options": [
+            "It breaks easily",
+            "It's too heavy",
+            "It's too rough"
+          ],
+          "answer": "It breaks easily"
+        },
+        {
+          "prompt": "Why did the ball bounce?",
+          "say": "The rubber ball bounced because rubber is flexible.",
+          "options": [
+            "Rubber is flexible",
+            "Rubber is rigid",
+            "Rubber is heavy"
+          ],
+          "answer": "Rubber is flexible"
+        }
+      ]
+    },
+    {
+      "id": "icarus",
+      "title": "Reading: The Myth of Icarus",
+      "icon": "🪶",
+      "instructions": "Read the myth of Icarus, then answer the questions.",
+      "type": "choice",
+      "pick": "auto",
+      "passage": "One morning on the island of Crete, Icarus and his father Daedalus were in their workshop. Daedalus was an inventor. Suddenly, King Minos arrived and he spoke to Daedalus.\n\n'I'd like you to build me a labyrinth,' he said. 'I want to put the Minotaur inside it.' The Minotaur was a terrible monster. He had the head of a bull and the body of a man.\n\nKing Minos was pleased when he saw Daedalus's work. He put the Minotaur inside the labyrinth. Then he locked Daedalus and Icarus inside a tower. 'What are you doing?' said Daedalus. 'Well,' said the King, 'you know the secret of how to get out of the labyrinth. And I don't want anyone else to know it.'\n\nDaedalus and his son felt sad. Days passed, then Daedalus had an idea. He collected feathers from the birds that flew to the window of the tower. Then he made wings from a candle to stick the feathers together.\n\nDaedalus told Icarus what to do. 'Follow me. Don't go too high because the sun will melt the wax in your wings. Don't go too low because the sea will make the feathers in your wings wet. Are you ready? Go!' Daedalus and Icarus jumped out of the window. They flew away from the island, and away from King Minos.\n\nDaedalus flew in front. Icarus followed behind. Icarus loved flying. He was just like a bird! He forgot his father's words and he flew higher and higher. But as he got nearer to the sun, the wax between the feathers began to melt.\n\nWhen Daedalus looked behind him, he couldn't see his son. 'Icarus!' he shouted. 'Icarus! Where are you?' Daedalus looked down. There were feathers in the sea. Daedalus went to the nearest island. He sat and looked at the sea for a long time, and he felt sad for his son.",
+      "items": [
+        {
+          "prompt": "Where did Daedalus and Icarus live?",
+          "options": [
+            "On the island of Crete",
+            "In Athens",
+            "In Rome",
+            "On the island of Sicily"
+          ],
+          "answer": "On the island of Crete"
+        },
+        {
+          "prompt": "What was Daedalus?",
+          "options": [
+            "A king",
+            "An inventor",
+            "A soldier",
+            "A teacher"
+          ],
+          "answer": "An inventor"
+        },
+        {
+          "prompt": "What did King Minos want Daedalus to build?",
+          "options": [
+            "A castle",
+            "A labyrinth",
+            "A tower",
+            "A bridge"
+          ],
+          "answer": "A labyrinth"
+        },
+        {
+          "prompt": "What was the Minotaur?",
+          "options": [
+            "A dragon",
+            "A monster with a bull's head and man's body",
+            "A giant bird",
+            "A horse"
+          ],
+          "answer": "A monster with a bull's head and man's body"
+        },
+        {
+          "prompt": "Why did King Minos lock Daedalus and Icarus in a tower?",
+          "options": [
+            "They were dangerous",
+            "Daedalus knew the secret of the labyrinth",
+            "They tried to escape",
+            "They helped the Minotaur"
+          ],
+          "answer": "Daedalus knew the secret of the labyrinth"
+        },
+        {
+          "prompt": "What did Daedalus use to make wings?",
+          "options": [
+            "Wood and string",
+            "Feathers and wax",
+            "Paper and glue",
+            "Metal and cloth"
+          ],
+          "answer": "Feathers and wax"
+        },
+        {
+          "prompt": "What did Daedalus tell Icarus NOT to do?",
+          "options": [
+            "Don't fly too high or too low",
+            "Don't look down",
+            "Don't fly at night",
+            "Don't fly over the sea"
+          ],
+          "answer": "Don't fly too high or too low"
+        },
+        {
+          "prompt": "Why shouldn't Icarus fly too high?",
+          "options": [
+            "The wind was too strong",
+            "The sun would melt the wax",
+            "He would get lost",
+            "The birds would attack him"
+          ],
+          "answer": "The sun would melt the wax"
+        },
+        {
+          "prompt": "What happened to Icarus?",
+          "options": [
+            "He flew to safety",
+            "The wax melted and he fell into the sea",
+            "He returned to the tower",
+            "He landed on another island"
+          ],
+          "answer": "The wax melted and he fell into the sea"
+        },
+        {
+          "prompt": "Why did Icarus fly too high?",
+          "options": [
+            "He was scared",
+            "He loved flying and forgot his father's words",
+            "The wind pushed him up",
+            "He wanted to touch the sun"
+          ],
+          "answer": "He loved flying and forgot his father's words"
+        },
+        {
+          "prompt": "What did Daedalus find in the sea?",
+          "options": [
+            "Icarus",
+            "The wings",
+            "Feathers",
+            "Wax"
+          ],
+          "answer": "Feathers"
+        },
+        {
+          "prompt": "How did Daedalus feel at the end of the story?",
+          "options": [
+            "Happy",
+            "Angry",
+            "Sad",
+            "Excited"
+          ],
+          "answer": "Sad"
+        }
+      ]
+    },
+    {
+      "id": "theatre-workshop",
+      "title": "Reading: A Theatre Workshop",
+      "icon": "🎭",
+      "instructions": "Read the text about the theatre workshop, then answer the questions.",
+      "type": "choice",
+      "pick": "auto",
+      "passage": "In our drama group, we use different materials to make our costumes, props and sets. We use materials with different properties. Some materials are flexible and light. Some materials are rigid and strong. It's important to use materials that are safe.\n\nWe make masks with papier-mâché. It's flexible and light because it is made of paper, glue and water. You can paint the masks and decorate them with lots of different things.\n\nToday we're making Greek masks. Theatre was very important in Ancient Greece. Most cities had a theatre and people went there to watch comedies (funny shows) or tragedies (sad or serious shows). The actors used masks to show different emotions more clearly. Some masks were double-sided, which means they could have one face on one side and a different one on the other side. Let's make happy and sad double-sided masks!\n\nTo make a mask, you need newspaper cut into strips. Mix some white glue in a bowl with water. Put the paper strips one by one into the bowl and cover them with glue. Put the strips on a plastic shape, like a balloon. When it's dry, paint it and decorate it.",
+      "items": [
+        {
+          "prompt": "What does the drama group make?",
+          "options": [
+            "Only costumes",
+            "Costumes, props and sets",
+            "Only masks",
+            "Only sets"
+          ],
+          "answer": "Costumes, props and sets"
+        },
+        {
+          "prompt": "What is papier-mâché made of?",
+          "options": [
+            "Paper, glue and water",
+            "Wood and paint",
+            "Plastic and metal",
+            "Card and tape"
+          ],
+          "answer": "Paper, glue and water"
+        },
+        {
+          "prompt": "What are the properties of papier-mâché?",
+          "options": [
+            "Heavy and rigid",
+            "Flexible and light",
+            "Rough and heavy",
+            "Smooth and rigid"
+          ],
+          "answer": "Flexible and light"
+        },
+        {
+          "prompt": "Where was theatre very important in ancient times?",
+          "options": [
+            "In Rome",
+            "In Egypt",
+            "In Greece",
+            "In China"
+          ],
+          "answer": "In Greece"
+        },
+        {
+          "prompt": "What did people watch at the theatre?",
+          "options": [
+            "Films",
+            "Comedies and tragedies",
+            "Music concerts",
+            "Sports"
+          ],
+          "answer": "Comedies and tragedies"
+        },
+        {
+          "prompt": "Why did actors use masks?",
+          "options": [
+            "To hide their faces",
+            "To show different emotions clearly",
+            "To look scary",
+            "To keep warm"
+          ],
+          "answer": "To show different emotions clearly"
+        },
+        {
+          "prompt": "What were double-sided masks?",
+          "options": [
+            "Masks with two different faces",
+            "Masks for two people",
+            "Masks made of two materials",
+            "Masks worn twice"
+          ],
+          "answer": "Masks with two different faces"
+        },
+        {
+          "prompt": "What do you put the paper strips on?",
+          "options": [
+            "A table",
+            "A plastic shape like a balloon",
+            "A piece of wood",
+            "A metal frame"
+          ],
+          "answer": "A plastic shape like a balloon"
+        },
+        {
+          "prompt": "What is a comedy?",
+          "options": [
+            "A sad show",
+            "A funny show",
+            "A scary show",
+            "A musical show"
+          ],
+          "answer": "A funny show"
+        },
+        {
+          "prompt": "What is a tragedy?",
+          "options": [
+            "A funny show",
+            "A sad or serious show",
+            "A happy show",
+            "A short show"
+          ],
+          "answer": "A sad or serious show"
+        },
+        {
+          "prompt": "What do you do after the mask is dry?",
+          "options": [
+            "Throw it away",
+            "Paint and decorate it",
+            "Cover it with more paper",
+            "Put it in water"
+          ],
+          "answer": "Paint and decorate it"
+        },
+        {
+          "prompt": "Why is it important to use safe materials?",
+          "options": [
+            "So they look nice",
+            "Because the text says so",
+            "So nobody gets hurt",
+            "So they are cheap"
+          ],
+          "answer": "So nobody gets hurt"
+        }
+      ]
+    }
+  ]
+});
