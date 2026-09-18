@@ -89,3 +89,21 @@ test("every section type renders and can be answered", async ({ page }) => {
   }
   for (const t of ["choice", "match", "write", "spell", "order"]) expect([...seen]).toContain(t);
 });
+
+test("lesson shows material, then practice", async ({ page }) => {
+  await createProfile(page, "Petr", 5);
+  await page.click(".subject-tile[data-subject=anglictina]");
+  await page.click(".item-card[data-id='5-anglictina-may-might-some-any'] a:has-text('Otevřít')");
+  await expect(page.locator(".lesson-table")).toHaveCount(2);
+  await page.click("a:has-text('Procvičit')");
+  await page.click("#start-btn");
+  await finishRun(page);
+  await expect(page.locator(".results-grade")).toHaveCount(0);
+});
+
+test("5th grade English test runs to a school grade", async ({ page }) => {
+  await createProfile(page, "Petr", 5);
+  await startItem(page, "5-anglictina-test-2026-09-22");
+  await finishRun(page);
+  await expect(page.locator(".results-grade")).toBeVisible();
+});

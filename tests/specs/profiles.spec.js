@@ -9,7 +9,7 @@ test("first visit asks for a profile, then shows own grade", async ({ page }) =>
   await expect(page.locator(".subject-tile")).toHaveCount(5);
   await expect(page.locator("a.subject-tile")).toHaveCount(0);
   // other grades are reachable
-  await expect(page.locator(".grade-switch .chip")).toHaveCount(2);
+  await expect(page.locator(".grade-switch .chip")).toHaveCount(3);
 });
 
 test("older grade uses standard UI and can switch profiles", async ({ page }) => {

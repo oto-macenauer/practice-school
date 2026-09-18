@@ -160,5 +160,25 @@ School.CATALOG = [
     "description": "dělení vody, tok řeky, rybník × přehrada × jezero, úmoří ČR, povodí, řeky, počasí a podnebí, podnebné pásy",
     "icon": "💧",
     "file": "content/4/vlastiveda/voda-a-podnebi.js"
+  },
+  {
+    "id": "5-anglictina-may-might-some-any",
+    "grade": 5,
+    "subject": "anglictina",
+    "kind": "lesson",
+    "title": "May / might + every- / some- / any- / no-",
+    "description": "vysvětlení učiva k testu 22. 9. s krátkým procvičením",
+    "icon": "📖",
+    "file": "content/5/anglictina/may-might-some-any.js"
+  },
+  {
+    "id": "5-anglictina-test-2026-09-22",
+    "grade": 5,
+    "subject": "anglictina",
+    "kind": "test",
+    "title": "Test 22. 9. – may / might, everything / something / nowhere…",
+    "description": "may / might (možná), every- / some- / any- / no- + thing / body / one / where; poslech a čtení",
+    "icon": "📝",
+    "file": "content/5/anglictina/test-2026-09-22.js"
   }
 ];
