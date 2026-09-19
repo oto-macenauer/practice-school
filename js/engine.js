@@ -1,7 +1,12 @@
 /**
  * Question engine: turns a content item into a serializable "run"
- * (list of cards), renders cards one by one with instant feedback,
- * persists state after every answer and reports results.
+ * (list of cards), renders cards one by one, persists state after
+ * every answer and reports results.
+ *
+ * Flow: practice/lesson/mistakes — correct answer shows feedback and
+ * advances automatically; wrong answer keeps feedback + explanation until
+ * the kid taps anywhere / presses Enter. Tests give no feedback during the
+ * run and show a full answer review on the results screen.
  *
  * Section types: choice, match, write, spell, order, gap-text (see docs/PLAN.md §4).
  */
@@ -11,6 +16,9 @@ School.engine = (() => {
   const XP_CORRECT = 10;
   const XP_STREAK_BONUS = 5;
   const MATCH_OPTIONS = 4;
+  const ADVANCE_MS = 1200;       // after a correct answer in practice
+  const ADVANCE_MS_YOUNG = 1800;
+  const TEST_ADVANCE_MS = 350;   // just long enough to see the tapped choice
 
   // ---------------------------------------------------------------- keys
 
@@ -22,6 +30,8 @@ School.engine = (() => {
     let base = item.prompt;
     if (section.type === "spell") base = item.word;
     else if (section.type === "order") base = item.answer;
+    // Grid puzzles share a prompt ("Co patří místo otazníku?"); the grid tells them apart.
+    if (item.grid) base += "|" + item.grid.map((r) => r.join(" ")).join("/");
     return section.id + "|" + base;
   }
 
@@ -278,6 +288,7 @@ School.engine = (() => {
     const lang = content.subjectInfo.speechLang;
     const young = ctx.young;
     const mistakesMode = state.mode === "mistakes";
+    const testMode = content.kind === "test" && !mistakesMode;
 
     const persist = () => Store.saveSession(profile.id, content.id, state.mode, state);
 
@@ -311,16 +322,20 @@ School.engine = (() => {
 
       root.appendChild(el("div", "progress", `<div class="progress-fill" style="width:${(state.current / n) * 100}%"></div>`));
 
-      const hud = el("div", "hud");
-      hud.innerHTML = young
-        ? `<div class="hud-item"><span class="hud-label">Hvězdičky</span><span class="hud-value" id="hud-score">⭐ ${state.score}</span></div>`
-        : `<div class="hud-item"><span class="hud-label">XP</span><span class="hud-value" id="hud-xp">${state.xp}</span></div>` +
-          `<div class="hud-item"><span class="hud-label">Správně</span><span class="hud-value" id="hud-score">${state.score}</span></div>` +
-          `<div class="hud-item"><span class="hud-label">Série</span><span class="hud-value" id="hud-streak">${state.streak}</span></div>`;
-      root.appendChild(hud);
+      // Tests don't reveal the score mid-run.
+      if (!testMode) {
+        const hud = el("div", "hud");
+        hud.innerHTML = young
+          ? `<div class="hud-item"><span class="hud-label">Hvězdičky</span><span class="hud-value" id="hud-score">⭐ ${state.score}</span></div>`
+          : `<div class="hud-item"><span class="hud-label">XP</span><span class="hud-value" id="hud-xp">${state.xp}</span></div>` +
+            `<div class="hud-item"><span class="hud-label">Správně</span><span class="hud-value" id="hud-score">${state.score}</span></div>` +
+            `<div class="hud-item"><span class="hud-label">Série</span><span class="hud-value" id="hud-streak">${state.streak}</span></div>`;
+        root.appendChild(hud);
+      }
 
       const qc = el("div", "question-card");
       qc.dataset.type = card.type;
+      qc.dataset.index = state.current;
       const head = el("div", "section-head");
       head.innerHTML = `<span class="section-icon">${esc(section.icon || content.subjectInfo.icon)}</span><span>${esc(section.title)}</span>`;
       qc.appendChild(head);
@@ -350,7 +365,19 @@ School.engine = (() => {
       const next = el("button", "btn btn-primary btn-big next-btn", state.current < n - 1 ? "Další otázka →" : "Zobrazit výsledky");
       next.id = "next-btn";
       next.hidden = true;
-      next.addEventListener("click", () => {
+      next.addEventListener("click", advance);
+      root.appendChild(next);
+
+      // Tap-anywhere / Enter listeners after a wrong answer; aborted on advance or navigation.
+      const listeners = new AbortController();
+      let advanced = false;
+
+      function advance() {
+        if (advanced) return;
+        advanced = true;
+        listeners.abort();
+        // Navigated away meanwhile: the answer is saved, resume moves on.
+        if (!qc.isConnected) return;
         state.current++;
         state.answered = false;
         persist();
@@ -360,15 +387,40 @@ School.engine = (() => {
         } else {
           finish();
         }
-      });
-      root.appendChild(next);
+      }
 
-      RENDERERS[card.type](body, card, { lang, young, section, done });
+      function waitForContinue() {
+        next.hidden = false;
+        next.focus({ preventScroll: true });
+        const signal = listeners.signal;
+        window.addEventListener("hashchange", () => listeners.abort(), { signal });
+        // Deferred so the answering tap itself doesn't count.
+        setTimeout(() => {
+          if (signal.aborted) return;
+          document.addEventListener("click", (e) => {
+            if (!e.target.closest("button, a, input, select, summary, label")) advance();
+          }, { signal });
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && !e.target.closest("button, a, input, select, textarea")) {
+              e.preventDefault();
+              advance();
+            }
+          }, { signal });
+        }, 0);
+      }
 
-      /** Called by renderers with points earned (0..card.points) and a correct-answer text. */
-      function done(points, correctText) {
+      RENDERERS[card.type](body, card, { lang, young, section, done, reveal: !testMode });
+
+      /**
+       * Called by renderers with points earned (0..card.points), a correct-answer
+       * text and the kid's answer as text (kept on the card for the test review).
+       */
+      function done(points, correctText, given) {
         if (state.answered) return;
         state.answered = true;
+        card.earned = points;
+        card.given = given;
+        card.correctText = correctText;
         const allRight = points === card.points;
         const ps = state.perSection[card.s] || { correct: 0, total: 0 };
         ps.correct += points;
@@ -383,7 +435,7 @@ School.engine = (() => {
           const gained = points * XP_CORRECT + (state.streak > 1 ? state.streak * XP_STREAK_BONUS : 0);
           state.xp += gained;
           Store.addXp(profile.id, content.id, gained);
-          popup(qc, young ? "⭐" : "+" + gained + " XP");
+          if (!testMode) popup(qc, young ? "⭐" : "+" + gained + " XP");
           if (mistakesMode) keys.forEach((k) => { state.fixed.push(k); Store.removeMistake(profile.id, content.id, k); });
         } else {
           state.streak = 0;
@@ -392,6 +444,12 @@ School.engine = (() => {
             if (state.mistakes.indexOf(k) === -1) state.mistakes.push(k);
             Store.addMistake(profile.id, content.id, k);
           });
+        }
+
+        persist();
+        if (testMode) {
+          setTimeout(advance, TEST_ADVANCE_MS);
+          return;
         }
 
         feedback.className = "feedback visible " + (allRight ? "ok" : "fail");
@@ -409,9 +467,8 @@ School.engine = (() => {
         if (hs) hs.textContent = young ? "⭐ " + state.score : state.score;
         if (hst) hst.textContent = state.streak;
 
-        next.hidden = false;
-        next.focus({ preventScroll: true });
-        persist();
+        if (allRight) setTimeout(advance, young ? ADVANCE_MS_YOUNG : ADVANCE_MS);
+        else waitForContinue();
       }
     }
 
@@ -422,7 +479,7 @@ School.engine = (() => {
       await Store.recordRun(profile.id, content.id, {
         score: state.score, total: state.total, mistakes: state.mistakes, grade, mode: state.mode
       });
-      renderResults(root, ctx, state, pct, grade);
+      renderResults(root, ctx, state, pct, grade, testMode);
     }
   }
 
@@ -432,7 +489,31 @@ School.engine = (() => {
     setTimeout(() => p.remove(), 900);
   }
 
-  function renderResults(root, ctx, state, pct, grade) {
+  function reviewPrompt(card, section) {
+    const it = card.item;
+    if (card.type === "spell") return "🔊 " + (it.hint || "Napiš slovo, které slyšíš");
+    if (card.type === "order") return "Seřaď slova: " + it.words.join(" / ");
+    if (card.type === "gap-text") return section.title;
+    return it.prompt || it.say || "";
+  }
+
+  /** Test answer review: every question with the kid's answer, correct answer and explanation. */
+  function reviewHtml(content, state) {
+    const rows = state.cards.map((card, i) => {
+      const ok = card.earned === card.points;
+      const it = card.item;
+      return `<li class="review-item ${ok ? "ok" : "fail"}">` +
+        `<div class="review-q"><span class="review-mark">${ok ? "✅" : "❌"}</span> <span>${i + 1}. ${promptHtml(reviewPrompt(card, content.sections[card.s]))}</span></div>` +
+        (it.grid ? School.util.gridHtml(it.grid) : "") +
+        `<div class="review-a">Tvoje odpověď: <strong>${esc(card.given || "—")}</strong></div>` +
+        (!ok && card.correctText ? `<div class="review-a">Správně: <span class="correct-answer">${esc(card.correctText)}</span></div>` : "") +
+        (it.explanation ? `<div class="explanation">${esc(it.explanation)}</div>` : "") +
+        "</li>";
+    }).join("");
+    return `<div class="review" id="review"><h3>Projdi si odpovědi</h3><ol class="review-list">${rows}</ol></div>`;
+  }
+
+  function renderResults(root, ctx, state, pct, grade, testMode) {
     const { content } = ctx;
     const s = stars(pct);
     const msg = pct === 100 ? ["🏆", "Výborně! Máš všechno správně!"]
@@ -469,7 +550,9 @@ School.engine = (() => {
       `<button class="btn btn-primary" id="again-btn">Zkusit znovu</button>` +
       (mistakesLeft ? `<a class="btn btn-warning" href="#/run/${id}/mistakes">Procvičit chyby (${mistakesLeft})</a>` : "") +
       `<a class="btn btn-secondary" href="#/g/${content.grade}/${content.subject}">Zpět</a>` +
-      "</div></div>";
+      "</div>" +
+      (testMode ? reviewHtml(content, state) : "") +
+      "</div>";
 
     root.querySelector("#again-btn").addEventListener("click", () => {
       if (state.mode === "mistakes") location.hash = "#/run/" + id;
@@ -497,27 +580,31 @@ School.engine = (() => {
     if (gap) gap.textContent = value;
   }
 
-  function renderOptionButtons(body, options, answer, done) {
-    const box = el("div", "answers");
+  /** `reveal` false (tests): only mark the chosen option, don't show right/wrong. */
+  function renderOptionButtons(body, options, answer, done, reveal) {
+    // Picture options (emoji, short numbers) get big centered tiles.
+    const pictures = options.every((o) => o.length <= 16 && !/\p{L}/u.test(o));
+    const box = el("div", "answers" + (pictures ? " answers-pictures" : ""));
     options.forEach((opt) => {
       const b = el("button", "answer-btn", esc(opt));
       b.type = "button";
       b.addEventListener("click", () => {
         box.querySelectorAll(".answer-btn").forEach((x) => {
           x.disabled = true;
-          if (x.textContent === answer) x.classList.add("correct");
+          if (reveal && x.textContent === answer) x.classList.add("correct");
         });
         const right = opt === answer;
-        if (!right) b.classList.add("incorrect");
-        fillGap(body, answer);
-        done(right ? 1 : 0, answer);
+        if (!reveal) b.classList.add("chosen");
+        else if (!right) b.classList.add("incorrect");
+        fillGap(body, reveal ? answer : opt);
+        done(right ? 1 : 0, answer, opt);
       });
       box.appendChild(b);
     });
     body.appendChild(box);
   }
 
-  function renderTextInput(body, check, done, placeholder) {
+  function renderTextInput(body, check, done, placeholder, reveal) {
     const form = el("form", "write-form");
     form.innerHTML =
       `<input type="text" class="write-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${esc(placeholder)}">` +
@@ -529,8 +616,8 @@ School.engine = (() => {
       const res = check(input.value);
       input.disabled = true;
       form.querySelector("button").disabled = true;
-      input.classList.add(res.ok ? "correct" : "incorrect");
-      done(res.ok ? 1 : 0, res.ok ? "" : res.answer);
+      if (reveal) input.classList.add(res.ok ? "correct" : "incorrect");
+      done(res.ok ? 1 : 0, res.ok ? "" : res.answer, input.value.trim());
     });
     body.appendChild(form);
     setTimeout(() => input.focus({ preventScroll: true }), 0);
@@ -545,12 +632,13 @@ School.engine = (() => {
         body.appendChild(row);
       }
       addPrompt(body, it.prompt, opts);
-      renderOptionButtons(body, it.options, it.answer, opts.done);
+      if (it.grid) body.appendChild(el("div", "grid-wrap", School.util.gridHtml(it.grid)));
+      renderOptionButtons(body, it.options, it.answer, opts.done, opts.reveal);
     },
 
     match(body, card, opts) {
       addPrompt(body, card.item.prompt, opts);
-      renderOptionButtons(body, card.item.options, card.item.answer, opts.done);
+      renderOptionButtons(body, card.item.options, card.item.answer, opts.done, opts.reveal);
     },
 
     write(body, card, opts) {
@@ -559,7 +647,7 @@ School.engine = (() => {
       renderTextInput(body, (val) => {
         const accepted = [it.answer].concat(it.accept || []);
         return { ok: accepted.some((a) => normalize(a) === normalize(val)), answer: it.answer };
-      }, opts.done, "Napiš odpověď…");
+      }, opts.done, "Napiš odpověď…", opts.reveal);
     },
 
     spell(body, card, opts) {
@@ -568,7 +656,7 @@ School.engine = (() => {
       row.appendChild(speakButton(it.word, opts.lang, "Poslechni si slovo"));
       body.appendChild(row);
       if (it.hint) body.appendChild(el("p", "hint", "💡 " + esc(it.hint)));
-      renderTextInput(body, (val) => ({ ok: normalize(val) === normalize(it.word), answer: it.word }), opts.done, "Napiš slovo…");
+      renderTextInput(body, (val) => ({ ok: normalize(val) === normalize(it.word), answer: it.word }), opts.done, "Napiš slovo…", opts.reveal);
     },
 
     order(body, card, opts) {
@@ -611,10 +699,10 @@ School.engine = (() => {
         locked = true;
         const built = placed.map((i) => it.words[i]).join(" ");
         const ok = sameSentence(built, it.answer);
-        answerArea.classList.add(ok ? "correct" : "incorrect");
+        if (opts.reveal) answerArea.classList.add(ok ? "correct" : "incorrect");
         draw();
         check.hidden = true;
-        opts.done(ok ? 1 : 0, it.answer);
+        opts.done(ok ? 1 : 0, it.answer, built);
       });
       draw();
     },
@@ -643,6 +731,7 @@ School.engine = (() => {
       body.appendChild(check);
       check.addEventListener("click", () => {
         let points = 0;
+        const missed = [];
         card.wrongKeys = [];
         selects.forEach((sel) => {
           const n = parseInt(sel.dataset.blank, 10);
@@ -650,14 +739,14 @@ School.engine = (() => {
           if (ok) points++;
           else card.wrongKeys.push(card.keys[n - 1]);
           sel.disabled = true;
+          if (!ok) missed.push(n + ") " + it.blanks[n - 1]);
+          if (!opts.reveal) return;
           sel.classList.add(ok ? "correct" : "incorrect");
           if (!ok) sel.title = "Správně: " + it.blanks[n - 1];
         });
         check.hidden = true;
-        const missed = selects
-          .filter((s) => s.classList.contains("incorrect"))
-          .map((s) => s.dataset.blank + ") " + it.blanks[parseInt(s.dataset.blank, 10) - 1]);
-        opts.done(points, missed.join(", "));
+        const given = selects.map((s) => s.dataset.blank + ") " + (s.value || "…"));
+        opts.done(points, missed.join(", "), given.join(", "));
       });
     }
   };

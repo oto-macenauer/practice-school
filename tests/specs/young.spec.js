@@ -6,8 +6,8 @@ test("young UI: big two-column answers, stars instead of XP", async ({ page }) =
   await page.goto("/#/g/2/cestina");
   await expect(page.locator(".item-card")).toHaveCount(1);
   await startItem(page, "2-cestina-ctvrtletni-2026-03-31");
-  await expect(page.locator("#hud-xp")).toHaveCount(0);
-  await expect(page.locator("#hud-score")).toContainText("⭐");
+  // tests hide the score HUD mid-run
+  await expect(page.locator(".hud")).toHaveCount(0);
 
   const answers = page.locator(".answers");
   await expect(answers).toBeVisible();

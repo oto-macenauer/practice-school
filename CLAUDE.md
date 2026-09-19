@@ -2,7 +2,7 @@
 
 ## Project overview
 
-Procvičování — one practice app for several kids in different school grades (currently 3rd and 5th; 2nd and 4th kept for review). Subjects: Čeština, Angličtina, Matematika, Vlastivěda, Přírodověda. Static site (vanilla HTML/CSS/JS, no build), hosted on GitHub Pages; later Docker + SQLite. Architecture and decisions: `docs/PLAN.md`.
+Procvičování — one practice app for several kids in different school grades (currently 3rd and 5th; 2nd and 4th kept for review). Subjects: Čeština, Angličtina, Matematika, Vlastivěda, Přírodověda, Logika (Logická olympiáda prep). Static site (vanilla HTML/CSS/JS, no build), hosted on GitHub Pages; later Docker + SQLite. Architecture and decisions: `docs/PLAN.md`.
 
 Replaces practice-history, practice-english and practice-czech. `tools/migrate/convert.js` regenerates migrated content from those repos — don't rerun it over hand-edited content.
 
@@ -35,7 +35,7 @@ Profiles are local (name, grade, avatar). Grade ≤ 3 → `body.young` (bigger U
 3. Images go to `content/<grade>/<subject>/img/`.
 4. `node tools/validate.js`.
 
-Section types (full schema in `docs/PLAN.md` §4): `choice` `{prompt, options, answer, explanation?, say?}` (answer is the option string, `___` = gap), `match` `{prompt, answer}`, `write` `{prompt, answer, accept?}`, `spell` `{word, hint?}`, `order` `{words, answer}`, `gap-text` (section-level `text`/`wordBank`/`blanks`). Section options: `pick` (number or `"auto"`), `group` + item-level `groups`, `passage` / `passages`.
+Section types (full schema in `docs/PLAN.md` §4): `choice` `{prompt, options, answer, explanation?, say?, grid?}` (answer is the option string, `___` = gap, `grid` = emoji/number table with `"?"` cell for logic puzzles), `match` `{prompt, answer}`, `write` `{prompt, answer, accept?}`, `spell` `{word, hint?}`, `order` `{words, answer}`, `gap-text` (section-level `text`/`wordBank`/`blanks`). Section options: `pick` (number or `"auto"`), `group` + item-level `groups`, `passage` / `passages`.
 
 **Content ids and section ids are progress keys** — renaming them loses kids' results and mistakes.
 

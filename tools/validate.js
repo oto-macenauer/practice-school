@@ -39,11 +39,17 @@ function itemKey(type, item, sectionId, n) {
   if (type === "gap-text") return `${sectionId}|#${n}`;
   if (type === "spell") return `${sectionId}|${item.word}`;
   if (type === "order") return `${sectionId}|${item.answer}`;
-  return `${sectionId}|${item.prompt}`;
+  const grid = item.grid ? "|" + item.grid.map((r) => r.join(" ")).join("/") : "";
+  return `${sectionId}|${item.prompt}${grid}`;
 }
 
 function checkChoice(where, it) {
   if (typeof it.prompt !== "string" || !it.prompt) err(where, "choice: missing prompt");
+  if (it.grid !== undefined) {
+    const ok = Array.isArray(it.grid) && it.grid.length &&
+      it.grid.every((r) => Array.isArray(r) && r.length && r.every((c) => typeof c === "string"));
+    if (!ok) err(where, "choice: grid must be a non-empty array of rows of strings");
+  }
   if (!Array.isArray(it.options) || it.options.length < 2) return err(where, "choice: needs ≥2 options");
   if (new Set(it.options).size !== it.options.length) err(where, `choice: duplicate options ${JSON.stringify(it.options)}`);
   if (!it.options.includes(it.answer)) err(where, `choice: answer ${JSON.stringify(it.answer)} not in options`);

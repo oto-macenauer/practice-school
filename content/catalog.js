@@ -180,5 +180,45 @@ School.CATALOG = [
     "description": "may / might (možná), every- / some- / any- / no- + thing / body / one / where; poslech a čtení",
     "icon": "📝",
     "file": "content/5/anglictina/test-2026-09-22.js"
+  },
+  {
+    "id": "3-logika-procvicovani",
+    "grade": 3,
+    "subject": "logika",
+    "kind": "practice",
+    "title": "Logická olympiáda – procvičování",
+    "description": "Obrázkové řady, tabulky, skrytá slova, číselné řady, úvahy, co nepatří, co k čemu patří",
+    "icon": "🧩",
+    "file": "content/3/logika/procvicovani.js"
+  },
+  {
+    "id": "3-logika-test",
+    "grade": 3,
+    "subject": "logika",
+    "kind": "test",
+    "title": "Logická olympiáda – zkušební test",
+    "description": "15 úloh ve stylu základního kola (kategorie A)",
+    "icon": "🏅",
+    "file": "content/3/logika/test.js"
+  },
+  {
+    "id": "5-logika-procvicovani",
+    "grade": 5,
+    "subject": "logika",
+    "kind": "practice",
+    "title": "Logická olympiáda – procvičování",
+    "description": "Řady, tabulky s prázdnými políčky, skrytá slova, číselné řady, úvahy, co nepatří, analogie",
+    "icon": "🧩",
+    "file": "content/5/logika/procvicovani.js"
+  },
+  {
+    "id": "5-logika-test",
+    "grade": 5,
+    "subject": "logika",
+    "kind": "test",
+    "title": "Logická olympiáda – zkušební test",
+    "description": "15 úloh ve stylu základního kola (kategorie A)",
+    "icon": "🏅",
+    "file": "content/5/logika/test.js"
   }
 ];

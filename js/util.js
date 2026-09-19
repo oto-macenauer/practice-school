@@ -54,19 +54,54 @@ School.util = (() => {
 
   const speechSupported = "speechSynthesis" in window;
 
+  // Referenced while speaking: Chrome may garbage-collect a playing utterance and drop its events.
+  let utterance = null;
+
+  function findVoice(voices, lang) {
+    // Android reports "en_GB"; normalize before matching.
+    const norm = (l) => String(l || "").replace("_", "-").toLowerCase();
+    const want = norm(lang);
+    return voices.find((v) => norm(v.lang) === want) ||
+      voices.find((v) => norm(v.lang).slice(0, 2) === want.slice(0, 2));
+  }
+
   function speak(text, lang, onEnd) {
-    if (!speechSupported || !text) { if (onEnd) onEnd(); return; }
+    let finished = false;
+    const finish = () => { if (!finished) { finished = true; if (onEnd) onEnd(); } };
+    if (!speechSupported || !text) { finish(); return; }
     const synth = window.speechSynthesis;
-    synth.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = lang || "cs-CZ";
-    u.rate = lang && lang.indexOf("en") === 0 ? 0.85 : 0.95;
-    const prefix = u.lang.slice(0, 2);
-    const voices = synth.getVoices();
-    const voice = voices.find((v) => v.lang === u.lang) || voices.find((v) => v.lang.indexOf(prefix) === 0);
-    if (voice) u.voice = voice;
-    u.onend = u.onerror = () => { if (onEnd) onEnd(); };
-    synth.speak(u);
+    lang = lang || "cs-CZ";
+
+    const say = (retry) => {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = lang;
+      u.rate = lang.indexOf("en") === 0 ? 0.85 : 0.95;
+      const voice = findVoice(synth.getVoices(), lang);
+      if (voice) u.voice = voice;
+      let started = false;
+      u.onstart = () => { started = true; };
+      u.onend = u.onerror = () => { if (utterance === u) utterance = null; finish(); };
+      utterance = u;
+      if (synth.paused) synth.resume();
+      synth.speak(u);
+      // Chrome sometimes queues an utterance that never starts; kick it once.
+      setTimeout(() => {
+        if (started || finished || utterance !== u) return;
+        synth.cancel();
+        if (retry) setTimeout(() => say(false), 100);
+        else finish();
+      }, 1500);
+    };
+
+    // cancel() immediately followed by speak() drops the utterance on Chrome/Android,
+    // so only cancel when something is playing and give it a moment. The first call
+    // stays synchronous — iOS only allows speech started directly from a tap.
+    if (synth.speaking || synth.pending) {
+      synth.cancel();
+      setTimeout(() => say(true), 100);
+    } else {
+      say(true);
+    }
   }
 
   /** Button that speaks `text` when clicked. */
@@ -81,6 +116,18 @@ School.util = (() => {
     return btn;
   }
 
+  /**
+   * Picture grid for logic puzzles: rows of short cells (emoji, letters, numbers).
+   * A "?" cell is the one to find; an empty string leaves the cell blank.
+   */
+  function gridHtml(grid) {
+    const cols = Math.max(...grid.map((r) => r.length));
+    return `<table class="puzzle-grid" style="--cols:${cols}"><tbody>` +
+      grid.map((row) => "<tr>" + row.map((c) =>
+        `<td${c === "?" ? ' class="grid-q"' : ""}>${esc(c)}</td>`).join("") + "</tr>").join("") +
+      "</tbody></table>";
+  }
+
   /** Czech plural helper: plural(3, "otázka", "otázky", "otázek"). */
   function plural(n, one, few, many) {
     if (n === 1) return one;
@@ -88,5 +135,5 @@ School.util = (() => {
     return many;
   }
 
-  return { shuffle, esc, el, normalize, sameSentence, uid, speak, speakButton, speechSupported, plural };
+  return { shuffle, esc, el, normalize, sameSentence, uid, speak, speakButton, speechSupported, gridHtml, plural };
 })();

@@ -21,6 +21,38 @@ async function startItem(page, id, length = 3) {
 }
 
 /**
+ * Wait until the answered card is resolved: either the run moved on by itself
+ * (correct answer / test) or it waits on the next button (wrong answer).
+ * Returns "moved" or "waiting".
+ */
+async function settle(page, index) {
+  let outcome;
+  await expect(async () => {
+    if (await page.locator(`#results, .question-card:not([data-index="${index}"])`).count()) outcome = "moved";
+    else if (await page.locator("#next-btn").isVisible()) outcome = "waiting";
+    expect(outcome).toBeTruthy();
+  }).toPass({ timeout: 5000 });
+  return outcome;
+}
+
+/** After an answer: click through if the run waits on the next button. */
+async function continueRun(page) {
+  if (await page.locator("#next-btn").isVisible()) await page.click("#next-btn");
+}
+
+/** Click the option matching `pick(text)` on a choice/match card; returns settle() outcome. */
+async function clickOption(page, pick) {
+  const card = page.locator(".question-card");
+  const index = await card.getAttribute("data-index");
+  const buttons = card.locator(".answer-btn");
+  const n = await buttons.count();
+  for (let b = 0; b < n; b++) {
+    if (pick(await buttons.nth(b).textContent())) { await buttons.nth(b).click(); break; }
+  }
+  return settle(page, index);
+}
+
+/**
  * Answer the current card with the first available input (right or wrong)
  * and return the card type.
  */
@@ -28,6 +60,7 @@ async function answerCurrent(page) {
   const card = page.locator(".question-card");
   await expect(page.locator("#next-btn")).toBeHidden();
   const type = await card.getAttribute("data-type");
+  const index = await card.getAttribute("data-index");
   if (type === "choice" || type === "match") {
     await card.locator(".answer-btn").first().click();
   } else if (type === "write" || type === "spell") {
@@ -44,7 +77,7 @@ async function answerCurrent(page) {
   } else {
     throw new Error("unknown card type " + type);
   }
-  await expect(page.locator("#feedback")).toBeVisible();
+  await settle(page, index);
   return type;
 }
 
@@ -54,9 +87,9 @@ async function finishRun(page) {
   for (let i = 0; i < 300; i++) {
     if (await page.locator("#results").count()) return seen;
     seen.add(await answerCurrent(page));
-    await page.click("#next-btn");
+    await continueRun(page);
   }
   throw new Error("run did not finish");
 }
 
-module.exports = { createProfile, startItem, answerCurrent, finishRun };
+module.exports = { createProfile, startItem, answerCurrent, continueRun, clickOption, settle, finishRun };

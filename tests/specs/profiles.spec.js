@@ -5,9 +5,10 @@ test("first visit asks for a profile, then shows own grade", async ({ page }) =>
   await createProfile(page, "Anička", 3);
   await expect(page.locator("body")).toHaveClass(/young/);
   await expect(page.locator("#profile-chip")).toContainText("Anička");
-  // 3rd grade has no content yet: every subject tile is disabled
-  await expect(page.locator(".subject-tile")).toHaveCount(5);
-  await expect(page.locator("a.subject-tile")).toHaveCount(0);
+  // 3rd grade has only Logika so far: the other subject tiles are disabled
+  await expect(page.locator(".subject-tile")).toHaveCount(6);
+  await expect(page.locator("a.subject-tile")).toHaveCount(1);
+  await expect(page.locator("a.subject-tile[data-subject=logika]")).toBeVisible();
   // other grades are reachable
   await expect(page.locator(".grade-switch .chip")).toHaveCount(3);
 });

@@ -34,5 +34,12 @@ School.SUBJECTS = [
     "icon": "🌿",
     "color": "#00b894",
     "speechLang": "cs-CZ"
+  },
+  {
+    "id": "logika",
+    "name": "Logika",
+    "icon": "🧩",
+    "color": "#e84393",
+    "speechLang": "cs-CZ"
   }
 ];

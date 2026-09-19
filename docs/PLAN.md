@@ -27,6 +27,9 @@ for several kids in different school grades.
 | `matematika` | Matematika | cs-CZ |
 | `vlastiveda` | Vlastivěda | cs-CZ |
 | `prirodoveda` | Přírodověda | cs-CZ |
+| `logika` | Logika | cs-CZ |
+
+Logika prepares for the Mensa [Logická olympiáda](https://www.logickaolympiada.cz/soutez): category A = 3.–5. třída (30 min online test), A2 = 2. třída, A1 = 1. třída (20 min). Task types follow the official samples: picture/number grids, sequences, hidden words, verbal reasoning.
 
 ## 3. Folder layout
 
@@ -96,7 +99,7 @@ School.register({
 
 | type | item | notes |
 |---|---|---|
-| `choice` | `{ prompt, options[], answer, explanation?, say? }` | `answer` is the option **string**. `___` in prompt renders as a highlighted gap. `say` = text spoken by the listen button (listening). |
+| `choice` | `{ prompt, options[], answer, explanation?, say? }` | `answer` is the option **string**. `___` in prompt renders as a highlighted gap. `say` = text spoken by the listen button (listening). Optional `grid` = rows of short strings (emoji, letters, numbers) shown as a picture table; `"?"` marks the cell to find, `""` a blank cell. Options without letters render as big picture tiles. |
 | `match` | `{ prompt, answer }` | Options = answer + 3 distinct answers from other items in section. Print: two columns. |
 | `write` | `{ prompt, answer, accept?[] }` | Typed answer, case/space-insensitive. Not allowed for grades 1–3. |
 | `spell` | `{ word, hint? }` | Word is spoken, kid types it. Not allowed for grades 1–3. |
@@ -105,7 +108,7 @@ School.register({
 
 Old-type mapping: history MC → `choice`; czech `fill-choice` → `choice` (`before___after`); czech `syllable-split`/`match-pair`/`reading-comprehension` → `choice`; czech `word-order` → `order`; english `fill-choice`/`reading`/`listen-comprehension` → `choice`; english `match` → `match`; `fill-write` → `write`; `spell` → `spell`; `gap-fill` → `gap-text`.
 
-Mistake key per item: `<sectionId>|<text>` where text = `prompt` (choice/match/write), `word` (spell), `answer` (order); gap-text blanks use `<sectionId>|#<n>`. The section prefix keeps identical prompts in different sections apart; old history mistakes (question text) import as `otazky|<text>`.
+Mistake key per item: `<sectionId>|<text>` where text = `prompt` (choice/match/write), `word` (spell), `answer` (order); gap-text blanks use `<sectionId>|#<n>`. Items with a `grid` append `|<rows joined by " ", rows by "/">` because grid puzzles share prompts. The section prefix keeps identical prompts in different sections apart; old history mistakes (question text) import as `otazky|<text>`.
 
 ## 5. Store API (async, adapter-swappable)
 
@@ -138,7 +141,7 @@ Future `ApiStore` implements the same calls against `/api/profiles`, `/api/progr
 
 ## 7. Runner behavior
 
-- Item-by-item cards with instant feedback + explanation (history style) for all kinds.
+- Item-by-item cards. Lesson/practice/mistakes: correct answer shows feedback and auto-advances; wrong answer keeps feedback + explanation until tap anywhere / Enter. Tests: no feedback or score mid-run, auto-advance, full answer review (your answer, correct answer, explanation) on the results screen.
 - XP: 10 per correct + streak bonus (streak × 5). Level = xp / 500. Young UI shows stars.
 - Results: score, %, stars; `test` also shows Czech grade 1–5 (≥90 / ≥75 / ≥60 / ≥30 / else); per-section breakdown; "Procvičit chyby (n)".
 - Session saved after every answer; reload resumes.
