@@ -93,6 +93,7 @@ School.print = (() => {
       const listen = it.say ? `<em>(poslech: „${esc(it.say)}“)</em><br>` : "";
       div.innerHTML = n + listen + gap(it.prompt || "") +
         (it.grid ? School.util.gridHtml(it.grid) : "") +
+        (it.staff ? School.notation.render(it.staff) : "") +
         '<div class="print-options">' + it.options.map((o, i) => `<span>${String.fromCharCode(97 + i)}) ${esc(o)}</span>`).join("") + "</div>";
     } else if (c.type === "write") {
       div.innerHTML = n + gap(it.prompt) + (/_{2,}/.test(it.prompt) ? "" : '<div class="print-line"></div>');

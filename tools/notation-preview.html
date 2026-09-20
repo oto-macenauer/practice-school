@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- Náhled kreslení not: otevři přes `npm run serve` na /tools/notation-preview.html -->
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <title>Náhled notace</title>
+  <link rel="stylesheet" href="../css/app.css">
+  <style>
+    body { padding: 1rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
+    figure { margin: 0; }
+    figcaption { font-size: .8rem; color: var(--muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Náhled notace</h1>
+  <div class="row" id="out"></div>
+  <script>window.School = {};</script>
+  <script src="../js/notation.js"></script>
+  <script>
+    const N = School.notation;
+    const cases = [
+      ["houslový klíč c1–c2", { clef: "houslovy", items: "c1 d1 e1 f1 g1 a1 h1 c2".split(" ").map((n) => ({ note: n, dur: "q" })) }],
+      ["basový klíč C–c", { clef: "basovy", items: "C D E F G A H c".split(" ").map((n) => ({ note: n, dur: "q" })) }],
+      ["délky not", { clef: "houslovy", items: [{ note: "g1", dur: "w" }, { note: "g1", dur: "h" }, { note: "g1", dur: "q" }, { note: "g1", dur: "e" }, { note: "g1", dur: "s" }] }],
+      ["pomlky", { clef: "houslovy", items: [{ rest: "w" }, { rest: "h" }, { rest: "q" }, { rest: "e" }, { rest: "s" }] }],
+      ["tečka, staccato, tenuto", { clef: "houslovy", items: [{ note: "h1", dur: "h", dot: true }, { note: "e1", dur: "q", staccato: true }, { note: "c2", dur: "q", tenuto: true }] }],
+      ["posuvky", { clef: "houslovy", items: [{ note: "f1", dur: "q", acc: "#" }, { note: "h1", dur: "q", acc: "b" }, { note: "f1", dur: "q", acc: "n" }] }],
+      ["G dur (1 křížek)", { clef: "houslovy", keySig: { sharps: 1 }, items: [{ note: "g1", dur: "q" }, { note: "a1", dur: "q" }, { note: "h1", dur: "q" }] }],
+      ["F dur (1 béčko)", { clef: "houslovy", keySig: { flats: 1 }, items: [{ note: "f1", dur: "q" }, { note: "g1", dur: "q" }, { note: "a1", dur: "q" }] }],
+      ["D dur v basu (2 křížky)", { clef: "basovy", keySig: { sharps: 2 }, items: [{ note: "d", dur: "q" }, { note: "f", dur: "q", acc: "#" }] }],
+      ["pomocné linky", { clef: "houslovy", items: [{ note: "c1", dur: "q" }, { note: "a", dur: "q" }, { note: "a2", dur: "q" }, { note: "c3", dur: "q" }] }]
+    ];
+    document.getElementById("out").innerHTML = cases.map(([t, s]) =>
+      `<figure>${N.render(s)}<figcaption>${t}</figcaption></figure>`).join("");
+  </script>
+</body>
+</html>

@@ -182,6 +182,66 @@ School.CATALOG = [
     "file": "content/5/anglictina/test-2026-09-22.js"
   },
   {
+    "id": "3-hudebni-noty-v-houslovem-klici",
+    "grade": 3,
+    "subject": "hudebni",
+    "kind": "lesson",
+    "title": "Noty v houslovém klíči – výklad",
+    "description": "Notová osnova, houslový klíč, noty c1–c2, délky not, pomlky, tečka u noty",
+    "icon": "🎼",
+    "file": "content/3/hudebni/noty-v-houslovem-klici.js"
+  },
+  {
+    "id": "3-hudebni-cteni-not",
+    "grade": 3,
+    "subject": "hudebni",
+    "kind": "practice",
+    "title": "Čtení not – procvičování",
+    "description": "Čtení not c1–c2, linky a mezery, délky not, pomlky, tečky, krátké melodie",
+    "icon": "🎵",
+    "file": "content/3/hudebni/cteni-not.js"
+  },
+  {
+    "id": "3-hudebni-test",
+    "grade": 3,
+    "subject": "hudebni",
+    "kind": "test",
+    "title": "Noty a délky – test",
+    "description": "Čtení not v houslovém klíči, délky not, pomlky, tečky",
+    "icon": "📝",
+    "file": "content/3/hudebni/test.js"
+  },
+  {
+    "id": "5-hudebni-noty-stupnice-tempa",
+    "grade": 5,
+    "subject": "hudebni",
+    "kind": "lesson",
+    "title": "Klíče, stupnice a tempa – výklad",
+    "description": "Houslový a basový klíč, délky not a pomlky, půltóny a posuvky, stupnice s předznamenáním, tempa",
+    "icon": "🎼",
+    "file": "content/5/hudebni/noty-stupnice-tempa.js"
+  },
+  {
+    "id": "5-hudebni-cteni-not",
+    "grade": 5,
+    "subject": "hudebni",
+    "kind": "practice",
+    "title": "Čtení not – procvičování",
+    "description": "Čtení not v houslovém i basovém klíči, melodie, délky a pomlky, půltóny a posuvky, stupnice, tempa",
+    "icon": "🎵",
+    "file": "content/5/hudebni/cteni-not.js"
+  },
+  {
+    "id": "5-hudebni-test",
+    "grade": 5,
+    "subject": "hudebni",
+    "kind": "test",
+    "title": "Noty, stupnice a tempa – test",
+    "description": "Čtení not v obou klíčích, délky, posuvky, předznamenání, tempa",
+    "icon": "📝",
+    "file": "content/5/hudebni/test.js"
+  },
+  {
     "id": "3-logika-procvicovani",
     "grade": 3,
     "subject": "logika",

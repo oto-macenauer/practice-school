@@ -171,6 +171,20 @@ test("logic puzzles show a picture grid and picture answers", async ({ page }) =
   await expect(page.locator("#review .puzzle-grid").first()).toBeVisible();
 });
 
+test("music: lesson and drills draw a staff, review keeps it", async ({ page }) => {
+  await createProfile(page, "Petr", 5);
+  await page.click(".subject-tile[data-subject=hudebni]");
+  await page.click(".item-card[data-id='5-hudebni-noty-stupnice-tempa'] a:has-text('Otevřít')");
+  await expect(page.locator(".lesson svg.staff").first()).toBeVisible();
+  expect(await page.locator(".lesson svg.staff").count()).toBeGreaterThan(5);
+  await expect(page.locator(".lesson svg.staff").first().locator("ellipse")).not.toHaveCount(0);
+
+  await startItem(page, "5-hudebni-test");
+  await expect(page.locator(".question-card svg.staff")).toBeVisible();
+  await finishRun(page);
+  await expect(page.locator("#review svg.staff").first()).toBeVisible();
+});
+
 test("5th grade English test runs to a school grade", async ({ page }) => {
   await createProfile(page, "Petr", 5);
   await startItem(page, "5-anglictina-test-2026-09-22");

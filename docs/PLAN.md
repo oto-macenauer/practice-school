@@ -27,6 +27,7 @@ for several kids in different school grades.
 | `matematika` | Matematika | cs-CZ |
 | `vlastiveda` | Vlastivěda | cs-CZ |
 | `prirodoveda` | Přírodověda | cs-CZ |
+| `hudebni` | Hudební výchova | cs-CZ |
 | `logika` | Logika | cs-CZ |
 
 Logika prepares for the Mensa [Logická olympiáda](https://www.logickaolympiada.cz/soutez): category A = 3.–5. třída (30 min online test), A2 = 2. třída, A1 = 1. třída (20 min). Task types follow the official samples: picture/number grids, sequences, hidden words, verbal reasoning.
@@ -99,7 +100,7 @@ School.register({
 
 | type | item | notes |
 |---|---|---|
-| `choice` | `{ prompt, options[], answer, explanation?, say? }` | `answer` is the option **string**. `___` in prompt renders as a highlighted gap. `say` = text spoken by the listen button (listening). Optional `grid` = rows of short strings (emoji, letters, numbers) shown as a picture table; `"?"` marks the cell to find, `""` a blank cell. Options without letters render as big picture tiles. |
+| `choice` | `{ prompt, options[], answer, explanation?, say? }` | `answer` is the option **string**. `___` in prompt renders as a highlighted gap. `say` = text spoken by the listen button (listening). Optional `grid` = rows of short strings (emoji, letters, numbers) shown as a picture table; `"?"` marks the cell to find, `""` a blank cell. Options without letters render as big picture tiles. Optional `staff` = notová osnova drawn by `js/notation.js` (see below). |
 | `match` | `{ prompt, answer }` | Options = answer + 3 distinct answers from other items in section. Print: two columns. |
 | `write` | `{ prompt, answer, accept?[] }` | Typed answer, case/space-insensitive. Not allowed for grades 1–3. |
 | `spell` | `{ word, hint? }` | Word is spoken, kid types it. Not allowed for grades 1–3. |
@@ -108,7 +109,19 @@ School.register({
 
 Old-type mapping: history MC → `choice`; czech `fill-choice` → `choice` (`before___after`); czech `syllable-split`/`match-pair`/`reading-comprehension` → `choice`; czech `word-order` → `order`; english `fill-choice`/`reading`/`listen-comprehension` → `choice`; english `match` → `match`; `fill-write` → `write`; `spell` → `spell`; `gap-fill` → `gap-text`.
 
-Mistake key per item: `<sectionId>|<text>` where text = `prompt` (choice/match/write), `word` (spell), `answer` (order); gap-text blanks use `<sectionId>|#<n>`. Items with a `grid` append `|<rows joined by " ", rows by "/">` because grid puzzles share prompts. The section prefix keeps identical prompts in different sections apart; old history mistakes (question text) import as `otazky|<text>`.
+### Notová osnova (`js/notation.js`)
+
+`School.notation.render({ clef, keySig?, items, label?, alt? })` returns inline SVG; content files call it directly for lesson figures, the engine/print render it from an item's `staff`.
+
+- `clef`: `"houslovy"` (default) or `"basovy"`.
+- `keySig`: `{ sharps: n }` or `{ flats: n }` — předznamenání right after the clef.
+- `items`: `{ note, dur?, acc?, dot?, staccato?, tenuto? }` or `{ rest: dur }`.
+- `note`: velká oktáva `C`–`H`, malá `c`–`h`, then `c1`–`h1`, `c2`… Czech naming, so `h` not `b`.
+- `dur`: `w` celá, `h` půlová, `q` čtvrťová (default), `e` osminová, `s` šestnáctinová. `acc`: `#`, `b`, `n`.
+
+`School.notation.key(staff)` gives the staff's part of the mistake key; `School.notation.step(note)` parses a note name (the validator uses it to catch typos).
+
+Mistake key per item: `<sectionId>|<text>` where text = `prompt` (choice/match/write), `word` (spell), `answer` (order); gap-text blanks use `<sectionId>|#<n>`. Items with a `grid` or `staff` append the picture's own key, because such puzzles share prompts. The section prefix keeps identical prompts in different sections apart; old history mistakes (question text) import as `otazky|<text>`.
 
 ## 5. Store API (async, adapter-swappable)
 

@@ -36,6 +36,13 @@ School.SUBJECTS = [
     "speechLang": "cs-CZ"
   },
   {
+    "id": "hudebni",
+    "name": "Hudební výchova",
+    "icon": "🎵",
+    "color": "#0abde3",
+    "speechLang": "cs-CZ"
+  },
+  {
     "id": "logika",
     "name": "Logika",
     "icon": "🧩",

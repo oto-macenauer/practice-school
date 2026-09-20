@@ -10,6 +10,7 @@ const PRECACHE = [
   "js/util.js",
   "js/store.js",
   "js/catalog.js",
+  "js/notation.js",
   "js/engine.js",
   "js/print.js",
   "js/legacy-import.js",

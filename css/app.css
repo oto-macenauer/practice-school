@@ -287,6 +287,15 @@ a.subject-tile:hover { transform: translateY(-2px); }
 .listen-btn.speaking { animation: pulse 1s infinite; }
 @keyframes pulse { 50% { transform: scale(1.05); } }
 
+.staff-wrap { margin: .6rem 0 1.2rem; text-align: center; }
+svg.staff { height: auto; color: var(--text); }
+svg.staff .staff-label { fill: var(--muted); stroke: none; }
+/* Osnova se kreslí v pevné velikosti, jen se vejde do šířky obrazovky. */
+.staff-wrap svg.staff { max-width: 100%; }
+body.young .staff-wrap svg.staff { transform: scale(1.15); transform-origin: center; margin: .8rem 0 1.4rem; }
+.lesson svg.staff { display: block; margin: .9rem auto; max-width: 100%; }
+.review svg.staff { width: min(100%, 300px); }
+
 .grid-wrap { margin: .5rem 0 1rem; overflow-x: auto; }
 .puzzle-grid { border-collapse: collapse; margin: 0 auto; }
 .puzzle-grid td {
@@ -450,4 +459,6 @@ body.young .next-btn { min-height: 68px; font-size: 1.3rem; }
   .container { max-width: none; padding: 0; }
   .print-sheet, .print-key { border: 0; padding: 0; }
   .print-key { break-before: page; }
+  svg.staff { display: block; width: 62mm; height: auto; margin: 2mm 0 3mm; color: #000; }
+  .print-item { break-inside: avoid; }
 }

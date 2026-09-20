@@ -2,7 +2,7 @@
 
 ## Project overview
 
-Procvičování — one practice app for several kids in different school grades (currently 3rd and 5th; 2nd and 4th kept for review). Subjects: Čeština, Angličtina, Matematika, Vlastivěda, Přírodověda, Logika (Logická olympiáda prep). Static site (vanilla HTML/CSS/JS, no build), hosted on GitHub Pages; later Docker + SQLite. Architecture and decisions: `docs/PLAN.md`.
+Procvičování — one practice app for several kids in different school grades (currently 3rd and 5th; 2nd and 4th kept for review). Subjects: Čeština, Angličtina, Matematika, Vlastivěda, Přírodověda, Hudební výchova (čtení not), Logika (Logická olympiáda prep). Static site (vanilla HTML/CSS/JS, no build), hosted on GitHub Pages; later Docker + SQLite. Architecture and decisions: `docs/PLAN.md`.
 
 Replaces practice-history, practice-english and practice-czech. `tools/migrate/convert.js` regenerates migrated content from those repos — don't rerun it over hand-edited content.
 
@@ -18,11 +18,12 @@ npx playwright test --config tests/playwright.config.js   # UI tests (desktop + 
 
 ## Architecture
 
-Single page (`index.html`), hash router in `js/app.js`. Classic scripts, global `School` namespace — **load order in index.html matters**: util → store → content/subjects → content/catalog → catalog → engine → print → legacy-import → views → app.
+Single page (`index.html`), hash router in `js/app.js`. Classic scripts, global `School` namespace — **load order in index.html matters**: util → store → content/subjects → content/catalog → catalog → notation → engine → print → legacy-import → views → app.
 
 - `js/store.js` — **all persistence goes through `School.Store`** (async). Never touch localStorage from views/engine. `LocalStore` now; a REST adapter will replace it.
 - `js/catalog.js` — reads `School.CATALOG`; lazy-loads item files via `<script>` injection.
 - `js/engine.js` — builds a serializable run (cards), renders one card at a time, saves session after every answer.
+- `js/notation.js` — draws a notová osnova as inline SVG (`School.notation.render`); used by item `staff`, lesson figures and print. Preview: `tools/notation-preview.html`.
 - `js/print.js` — A4 worksheet + answer key.
 - `js/views.js` — profiles, home, subject list, lesson, settings.
 
@@ -35,7 +36,7 @@ Profiles are local (name, grade, avatar). Grade ≤ 3 → `body.young` (bigger U
 3. Images go to `content/<grade>/<subject>/img/`.
 4. `node tools/validate.js`.
 
-Section types (full schema in `docs/PLAN.md` §4): `choice` `{prompt, options, answer, explanation?, say?, grid?}` (answer is the option string, `___` = gap, `grid` = emoji/number table with `"?"` cell for logic puzzles), `match` `{prompt, answer}`, `write` `{prompt, answer, accept?}`, `spell` `{word, hint?}`, `order` `{words, answer}`, `gap-text` (section-level `text`/`wordBank`/`blanks`). Section options: `pick` (number or `"auto"`), `group` + item-level `groups`, `passage` / `passages`.
+Section types (full schema in `docs/PLAN.md` §4): `choice` `{prompt, options, answer, explanation?, say?, grid?}` (answer is the option string, `___` = gap, `grid` = emoji/number table with `"?"` cell for logic puzzles, `staff` = notová osnova drawn by `js/notation.js`), `match` `{prompt, answer}`, `write` `{prompt, answer, accept?}`, `spell` `{word, hint?}`, `order` `{words, answer}`, `gap-text` (section-level `text`/`wordBank`/`blanks`). Section options: `pick` (number or `"auto"`), `group` + item-level `groups`, `passage` / `passages`.
 
 **Content ids and section ids are progress keys** — renaming them loses kids' results and mistakes.
 

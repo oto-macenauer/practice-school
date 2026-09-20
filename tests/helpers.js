@@ -27,11 +27,17 @@ async function startItem(page, id, length = 3) {
  */
 async function settle(page, index) {
   let outcome;
+  let nudged = false;
   await expect(async () => {
     if (await page.locator(`#results, .question-card:not([data-index="${index}"])`).count()) outcome = "moved";
     else if (await page.locator("#next-btn").isVisible()) outcome = "waiting";
+    else if (!nudged) {
+      // Correct answer: the pause before the next question can be skipped by a tap.
+      nudged = true;
+      await page.locator(".question-card .section-head").click();
+    }
     expect(outcome).toBeTruthy();
-  }).toPass({ timeout: 5000 });
+  }).toPass({ timeout: 8000, intervals: [200, 400, 800, 1000, 1000, 1000, 1000, 1000] });
   return outcome;
 }
 

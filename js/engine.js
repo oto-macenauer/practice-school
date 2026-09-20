@@ -30,8 +30,9 @@ School.engine = (() => {
     let base = item.prompt;
     if (section.type === "spell") base = item.word;
     else if (section.type === "order") base = item.answer;
-    // Grid puzzles share a prompt ("Co patří místo otazníku?"); the grid tells them apart.
+    // Grid and staff puzzles share a prompt ("Jaká je to nota?"); the picture tells them apart.
     if (item.grid) base += "|" + item.grid.map((r) => r.join(" ")).join("/");
+    if (item.staff) base += "|" + School.notation.key(item.staff);
     return section.id + "|" + base;
   }
 
@@ -389,9 +390,16 @@ School.engine = (() => {
         }
       }
 
-      function waitForContinue() {
-        next.hidden = false;
-        next.focus({ preventScroll: true });
+      /**
+       * Let the kid move on by tapping anywhere or pressing Enter. `showButton`
+       * adds the visible button too (wrong answer); after a correct answer the
+       * tap only skips the short pause before the next question.
+       */
+      function waitForContinue(showButton) {
+        if (showButton) {
+          next.hidden = false;
+          next.focus({ preventScroll: true });
+        }
         const signal = listeners.signal;
         window.addEventListener("hashchange", () => listeners.abort(), { signal });
         // Deferred so the answering tap itself doesn't count.
@@ -467,8 +475,8 @@ School.engine = (() => {
         if (hs) hs.textContent = young ? "⭐ " + state.score : state.score;
         if (hst) hst.textContent = state.streak;
 
+        waitForContinue(!allRight);
         if (allRight) setTimeout(advance, young ? ADVANCE_MS_YOUNG : ADVANCE_MS);
-        else waitForContinue();
       }
     }
 
@@ -505,6 +513,7 @@ School.engine = (() => {
       return `<li class="review-item ${ok ? "ok" : "fail"}">` +
         `<div class="review-q"><span class="review-mark">${ok ? "✅" : "❌"}</span> <span>${i + 1}. ${promptHtml(reviewPrompt(card, content.sections[card.s]))}</span></div>` +
         (it.grid ? School.util.gridHtml(it.grid) : "") +
+        (it.staff ? School.notation.render(it.staff) : "") +
         `<div class="review-a">Tvoje odpověď: <strong>${esc(card.given || "—")}</strong></div>` +
         (!ok && card.correctText ? `<div class="review-a">Správně: <span class="correct-answer">${esc(card.correctText)}</span></div>` : "") +
         (it.explanation ? `<div class="explanation">${esc(it.explanation)}</div>` : "") +
@@ -633,6 +642,7 @@ School.engine = (() => {
       }
       addPrompt(body, it.prompt, opts);
       if (it.grid) body.appendChild(el("div", "grid-wrap", School.util.gridHtml(it.grid)));
+      if (it.staff) body.appendChild(el("div", "staff-wrap", School.notation.render(it.staff)));
       renderOptionButtons(body, it.options, it.answer, opts.done, opts.reveal);
     },
 

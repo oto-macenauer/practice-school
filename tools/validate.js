@@ -14,6 +14,7 @@ const KINDS = ["lesson", "practice", "test"];
 const TYPES = ["choice", "match", "write", "spell", "order", "gap-text"];
 const LESSON_BLOCKS = ["text", "image", "table"];
 
+let notation = null;   // School.notation, loaded from js/notation.js below
 const errors = [];
 const warnings = [];
 const err = (where, msg) => errors.push(`${where}: ${msg}`);
@@ -40,7 +41,29 @@ function itemKey(type, item, sectionId, n) {
   if (type === "spell") return `${sectionId}|${item.word}`;
   if (type === "order") return `${sectionId}|${item.answer}`;
   const grid = item.grid ? "|" + item.grid.map((r) => r.join(" ")).join("/") : "";
-  return `${sectionId}|${item.prompt}${grid}`;
+  const staff = item.staff ? "|" + notation.key(item.staff) : "";
+  return `${sectionId}|${item.prompt}${grid}${staff}`;
+}
+
+const DURATIONS = ["w", "h", "q", "e", "s"];
+
+/** Notová osnova: klíč, délky a názvy not (School.notation umí názvy ověřit). */
+function checkStaff(where, staff) {
+  if (!staff || typeof staff !== "object") return err(where, "staff must be an object");
+  if (["houslovy", "basovy"].indexOf(staff.clef || "houslovy") === -1) err(where, `staff: unknown clef ${JSON.stringify(staff.clef)}`);
+  if (!Array.isArray(staff.items) || !staff.items.length) return err(where, "staff: needs items[]");
+  staff.items.forEach((it, i) => {
+    const w = `${where} staff item ${i + 1}`;
+    const dur = it.rest || it.dur || "q";
+    if (DURATIONS.indexOf(dur) === -1) err(w, `unknown duration ${JSON.stringify(dur)}`);
+    if (it.rest) return;
+    if (it.acc !== undefined && ["#", "b", "n"].indexOf(it.acc) === -1) err(w, `unknown accidental ${JSON.stringify(it.acc)}`);
+    try {
+      notation.step(it.note);
+    } catch (e) {
+      err(w, e.message);
+    }
+  });
 }
 
 function checkChoice(where, it) {
@@ -50,6 +73,7 @@ function checkChoice(where, it) {
       it.grid.every((r) => Array.isArray(r) && r.length && r.every((c) => typeof c === "string"));
     if (!ok) err(where, "choice: grid must be a non-empty array of rows of strings");
   }
+  if (it.staff !== undefined) checkStaff(where, it.staff);
   if (!Array.isArray(it.options) || it.options.length < 2) return err(where, "choice: needs ≥2 options");
   if (new Set(it.options).size !== it.options.length) err(where, `choice: duplicate options ${JSON.stringify(it.options)}`);
   if (!it.options.includes(it.answer)) err(where, `choice: answer ${JSON.stringify(it.answer)} not in options`);
@@ -140,6 +164,10 @@ function checkSection(where, s, grade, keys) {
 function main() {
   const School = { register: (o) => registered.push(o) };
   let registered = [];
+
+  // Content files may draw staves (lesson figures), so the renderer must exist.
+  load("js/notation.js", School);
+  notation = School.notation;
 
   load("content/subjects.js", School);
   load("content/catalog.js", School);
