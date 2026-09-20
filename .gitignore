@@ -15,5 +15,8 @@ playwright-report/
 # Secrets for tools/generate_images.py
 .env
 
+# Reference material for authoring content (not ours to publish)
+.source/
+
 # Python
 __pycache__/
