@@ -290,5 +290,95 @@ School.CATALOG = [
     "description": "15 úloh ve stylu základního kola (kategorie A)",
     "icon": "🏅",
     "file": "content/5/logika/test.js"
+  },
+  {
+    "id": "5-cestina-stavba-slova",
+    "grade": 5,
+    "subject": "cestina",
+    "kind": "practice",
+    "title": "Hlásky, slabiky a stavba slova",
+    "description": "Hlásky a slabiky, kořen slova, předpony, přípony a koncovky, slova příbuzná, tvoření slov",
+    "icon": "🌱",
+    "file": "content/5/cestina/stavba-slova.js"
+  },
+  {
+    "id": "5-cestina-slovni-druhy",
+    "grade": 5,
+    "subject": "cestina",
+    "kind": "practice",
+    "title": "Slovní druhy",
+    "description": "Deset slovních druhů, určování ve větě, podstatná a přídavná jména, slovesa, neohebná slova",
+    "icon": "🔤",
+    "file": "content/5/cestina/slovni-druhy.js"
+  },
+  {
+    "id": "5-cestina-test-zari",
+    "grade": 5,
+    "subject": "cestina",
+    "kind": "test",
+    "title": "Čeština – test ze září",
+    "description": "Hláska a slabika, stavba slova, slova příbuzná, slovní druhy, shoda podmětu s přísudkem",
+    "icon": "📝",
+    "file": "content/5/cestina/test-zari.js"
+  },
+  {
+    "id": "5-matematika-prevody-a-pocitani",
+    "grade": 5,
+    "subject": "matematika",
+    "kind": "practice",
+    "title": "Převody jednotek a počítání",
+    "description": "Jednotky délky, hmotnosti a objemu, jednotky času, odhady vzdáleností, početní operace a slovní úlohy",
+    "icon": "📏",
+    "file": "content/5/matematika/prevody-a-pocitani.js"
+  },
+  {
+    "id": "5-matematika-primky-a-usecky",
+    "grade": 5,
+    "subject": "matematika",
+    "kind": "practice",
+    "title": "Přímky, úsečky a jejich poloha",
+    "description": "Bod, přímka, polopřímka a úsečka, značení, rovnoběžky, různoběžky a kolmice, délky úseček, kružnice",
+    "icon": "📐",
+    "file": "content/5/matematika/primky-a-usecky.js"
+  },
+  {
+    "id": "5-matematika-test-zari",
+    "grade": 5,
+    "subject": "matematika",
+    "kind": "test",
+    "title": "Matematika – test ze září",
+    "description": "Převody jednotek, odhady, početní operace, geometrie a slovní úlohy",
+    "icon": "📝",
+    "file": "content/5/matematika/test-zari.js"
+  },
+  {
+    "id": "5-prirodoveda-rostliny-a-houby",
+    "grade": 5,
+    "subject": "prirodoveda",
+    "kind": "practice",
+    "title": "Rostliny a houby",
+    "description": "Části rostlin a fotosyntéza, byliny, keře a stromy, výtrusné a semenné rostliny, houby a lišejníky",
+    "icon": "🍄",
+    "file": "content/5/prirodoveda/rostliny-a-houby.js"
+  },
+  {
+    "id": "5-prirodoveda-zivocichove",
+    "grade": 5,
+    "subject": "prirodoveda",
+    "kind": "practice",
+    "title": "Živočichové",
+    "description": "Obratlovci a bezobratlí, pět tříd obratlovců, hmyz a měkkýši, potravní vztahy a potravní řetězec",
+    "icon": "🐾",
+    "file": "content/5/prirodoveda/zivocichove.js"
+  },
+  {
+    "id": "5-prirodoveda-test-zari",
+    "grade": 5,
+    "subject": "prirodoveda",
+    "kind": "test",
+    "title": "Přírodověda – test ze září",
+    "description": "Rostliny, houby a živočichové – opakování probrané látky",
+    "icon": "📝",
+    "file": "content/5/prirodoveda/test-zari.js"
   }
 ];
