@@ -66,7 +66,7 @@ School.register({
         { prompt: "čolek", answer: "obojživelník", explanation: "Ve vodě i na suchu." },
         { prompt: "zmije", answer: "plaz", explanation: "Šupinatá suchá kůže." },
         { prompt: "sýkora", answer: "pták", explanation: "Peří a zobák." },
-        { prompt: "srna", answer: "savec", explanation: "Srst, mléko pro mladé." },
+        { prompt: "srna", answer: "savec", explanation: "Srst, mláďata kojená mlékem." },
         { prompt: "hřib smrkový", answer: "houba", explanation: "Plodnice s rourkami." },
         { prompt: "kapradina", answer: "rostlina", explanation: "Výtrusná rostlina." },
         { prompt: "želva", answer: "plaz", explanation: "Krunýř, vejce na suchu." },
@@ -90,7 +90,7 @@ School.register({
         { prompt: "Mládě žáby se jmenuje ___.", answer: "pulec", explanation: "Dýchá žábrami." },
         { prompt: "Živočich, který jí jen rostliny, je ___.", answer: "býložravec", explanation: "Srna, zajíc, kráva." },
         { prompt: "Soužití, ze kterého mají prospěch oba organismy, je ___.", answer: "symbióza", explanation: "Houba a strom, houba a řasa." },
-        { prompt: "Proces tvorby cukrů ze světla se nazývá ___.", answer: "fotosyntéza", explanation: "Probíhá v listech." }
+        { prompt: "Tvorba cukrů z vody a oxidu uhličitého pomocí světla se nazývá ___.", answer: "fotosyntéza", explanation: "Probíhá v listech." }
       ]
     }
   ]

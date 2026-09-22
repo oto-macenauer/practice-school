@@ -29,7 +29,7 @@ School.register({
       pick: 6,
       items: [
         { prompt: "Jaký je kořen slova PODMOŘSKÝ?", options: ["moř", "pod", "podmoř", "ský"], answer: "moř", explanation: "POD-moř-SKÝ." },
-        { prompt: "Jaká je předpona ve slově ODPOČÍTAT?", options: ["od-", "o-", "poč-", "-tat"], answer: "od-", explanation: "OD-počítat. Předpona od- se píše s d." },
+        { prompt: "Jaká je předpona ve slově ODNÉST?", options: ["od-", "o-", "nés-", "-t"], answer: "od-", explanation: "OD-nést. Předpona od- se píše vždy s d, i když slyšíme t." },
         { prompt: "Jaká je přípona ve slově ZAHRADNÍK?", options: ["-ník", "za-", "hrad-", "-ík"], answer: "-ník", explanation: "ZA-hrad-NÍK." },
         { prompt: "Které slovo nepatří ke slovu MRÁZ?", options: ["mrak", "mrazivý", "zmrzlý", "mrazík"], answer: "mrak", explanation: "MRAK je na nebi, s mrazem nesouvisí." },
         { prompt: "Kolik má slovo NEPŘEHLEDNÝ předpon?", options: ["2", "1", "3", "žádnou"], answer: "2", explanation: "NE-PŘE-hled-NÝ: předpony ne- a pře-." },
@@ -89,7 +89,7 @@ School.register({
         { prompt: "Stromy se ohýbal___ ve větru.", options: ["y", "i", "í", "a"], answer: "y", explanation: "Mužský rod neživotný → -y." },
         { prompt: "Kočky spal___ na okně.", options: ["y", "i", "í", "a"], answer: "y", explanation: "Ženský rod → -y." },
         { prompt: "Kuřata pípal___ v kurníku.", options: ["a", "i", "y", "o"], answer: "a", explanation: "Střední rod v množném čísle → -a." },
-        { prompt: "Děti se smál___ vtipu.", options: ["y", "i", "a", "í"], answer: "y", explanation: "Slovo děti je ženského rodu (ta děti = pomnožné) → -y." },
+        { prompt: "Děti se smál___ vtipu.", options: ["y", "i", "a", "í"], answer: "y", explanation: "V množném čísle je slovo děti rodu ženského (ty děti, vzor kost) → -y." },
         { prompt: "Auta zastavil___ před přechodem.", options: ["a", "y", "i", "o"], answer: "a", explanation: "Střední rod množné číslo → -a." },
         { prompt: "Ptáci odlétal___ na jih.", options: ["i", "y", "a", "í"], answer: "i", explanation: "Mužský rod životný → -i." }
       ]
@@ -104,10 +104,10 @@ School.register({
       items: [
         { prompt: "Napiš kořen slova PŘESTAVBA (samotný kořen).", answer: "stav", explanation: "PŘE-stav-BA." },
         { prompt: "Přidej ke slovu ŠKOLA příponu -NÍK a napiš vzniklé slovo.", answer: "školník", explanation: "škol- + -ník = školník." },
-        { prompt: "Napiš zdrobnělinu slova KVĚT.", answer: "kvíteček", accept: ["kvítek", "květinka"], explanation: "květ → kvítek → kvíteček." },
-        { prompt: "Jak se nazývá 5. slovní druh? (dvě slova nebo jedno slovo)", answer: "slovesa", accept: ["sloveso"], explanation: "1. podstatná jména, 2. přídavná jména, 3. zájmena, 4. číslovky, 5. slovesa." },
-        { prompt: "Napiš opak slova ODJÍT (s předponou při-).", answer: "přijít", explanation: "při- + jít = přijít." },
-        { prompt: "Doplň správně: Sestry si spolu hrál__ .", answer: "hrály", explanation: "Ženský rod v množném čísle → hrály." }
+        { prompt: "Napiš zdrobnělinu slova KVĚT.", answer: "kvítek", accept: ["kvíteček", "kvítko"], explanation: "květ → kvítek → kvíteček." },
+        { prompt: "Jak se nazývá 5. slovní druh?", answer: "slovesa", accept: ["sloveso"], explanation: "1. podstatná jména, 2. přídavná jména, 3. zájmena, 4. číslovky, 5. slovesa." },
+        { prompt: "Napiš opak slova ODEJÍT (s předponou při-).", answer: "přijít", explanation: "při- + jít = přijít." },
+        { prompt: "Doplň správně: Sestry si spolu hrál__.", answer: "hrály", explanation: "Ženský rod v množném čísle → hrály." }
       ]
     }
   ]

@@ -20,7 +20,7 @@ School.register({
         { prompt: "Který slovní druh se časuje?", options: ["slovesa", "podstatná jména", "číslovky", "příslovce"], answer: "slovesa", explanation: "Slovesa se časují (jdu, jdeš, jde). Ostatní ohebné druhy se skloňují." },
         { prompt: "Který slovní druh vyjadřuje počet nebo pořadí?", options: ["číslovky", "zájmena", "příslovce", "částice"], answer: "číslovky", explanation: "Číslovky: pět, dvakrát, třetí, mnoho." },
         { prompt: "Který slovní druh zastupuje podstatné jméno?", options: ["zájmena", "číslovky", "spojky", "citoslovce"], answer: "zájmena", explanation: "Zájmeno ukazuje nebo zastupuje: já, ty, on, ten, svůj, kdo." },
-        { prompt: "Který slovní druh napodobuje zvuky?", options: ["citoslovce", "částice", "příslovce", "spojky"], answer: "citoslovce", explanation: "Citoslovce: haf, bum, mňau, ach. Často se od nich oddělují čárkou." }
+        { prompt: "Který slovní druh napodobuje zvuky?", options: ["citoslovce", "částice", "příslovce", "spojky"], answer: "citoslovce", explanation: "Citoslovce: haf, bum, mňau, ach. Oddělujeme je čárkou: Ach, to bolí!" }
       ]
     },
     {
@@ -90,8 +90,8 @@ School.register({
         { prompt: "Jaké je číslo slova STROMY?", options: ["množné", "jednotné", "obojí", "nelze určit"], answer: "množné", explanation: "Stromy = více stromů, číslo množné." },
         { prompt: "Jaký druh je přídavné jméno OTCŮV?", options: ["přivlastňovací", "tvrdé", "měkké", "číselné"], answer: "přivlastňovací", explanation: "Přídavná jména přivlastňovací: otcův, matčin, bratrův." },
         { prompt: "Který tvar přídavného jména je měkký?", options: ["psí", "zdravý", "malý", "dobrý"], answer: "psí", explanation: "Měkká přídavná jména končí v 1. pádě na -í (vzor jarní)." },
-        { prompt: "Doplň: v lese rostou vysok___ smrky.", options: ["é", "í", "ý", "ých"], answer: "é", explanation: "Smrky jsou neživotné mužské, 1. pád množného čísla: vysoké smrky." },
-        { prompt: "Doplň: na louce běhal___ koně.", options: ["i", "y", "í", "e"], answer: "i", explanation: "Koně = mužský rod životný, v množném čísle píšeme -i." }
+        { prompt: "Doplň: V lese rostou vysok___ smrky.", options: ["é", "í", "ý", "ých"], answer: "é", explanation: "Smrky jsou neživotné mužské, 1. pád množného čísla: vysoké smrky." },
+        { prompt: "Doplň: Na louce běhal___ koně.", options: ["i", "y", "í", "e"], answer: "i", explanation: "Koně = mužský rod životný, v množném čísle píšeme -i." }
       ]
     },
     {

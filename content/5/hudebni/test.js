@@ -42,7 +42,7 @@
         instructions: "Počítej doby a všímej si posuvek.",
         items: [
           { prompt: "Jak se jmenuje tato nota?", staff: treble([{ note: "h1", dur: "s" }]), options: ["šestnáctinová", "osminová", "čtvrťová", "půlová"], answer: "šestnáctinová", explanation: "Dva praporky = šestnáctinová." },
-          { prompt: "Kolik dob trvá tato nota?", staff: treble([{ note: "g1", dur: "q", dot: true }]), options: ["1", "1,5", "2", "3"], answer: "1,5", explanation: "Čtvrťová (1) + polovina (0,5)." },
+          { prompt: "Kolik dob trvá tato nota?", staff: treble([{ note: "g1", dur: "q", dot: true }]), options: ["1", "1 a půl", "2", "3"], answer: "1 a půl", explanation: "Čtvrťová (1) + polovina = 1 a půl doby." },
           { prompt: "Jak se jmenuje tato nota?", staff: treble([{ note: "f1", dur: "q", acc: "#" }]), options: ["fis1", "f1", "ges1", "fes1"], answer: "fis1", explanation: "Křížek zvýší f o půltón." },
           { prompt: "Jak se jmenuje tato nota?", staff: treble([{ note: "h1", dur: "q", acc: "b" }]), options: ["b1", "h1", "as1", "his1"], answer: "b1", explanation: "Snížené h je v češtině b." },
           { prompt: "Mezi kterými tóny je půltón?", options: ["c–d", "e–f", "g–a", "a–h"], answer: "e–f", explanation: "Půltóny jsou mezi e–f a h–c." }

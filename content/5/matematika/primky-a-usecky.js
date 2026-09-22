@@ -51,15 +51,15 @@ School.register({
       instructions: "Počítej s délkami úseček. Pomůže ti obrázek v hlavě nebo náčrtek na papír.",
       pick: "auto",
       items: [
-        { prompt: "Bod B leží mezi A a C. |AB| = 4 cm, |BC| = 3 cm. Jak dlouhá je AC?", options: ["7 cm", "1 cm", "12 cm", "3,5 cm"], answer: "7 cm", explanation: "Délky se sčítají: 4 + 3 = 7 cm." },
-        { prompt: "|AC| = 10 cm, bod B leží mezi A a C, |AB| = 6 cm. Jak dlouhá je BC?", options: ["4 cm", "16 cm", "6 cm", "5 cm"], answer: "4 cm", explanation: "10 − 6 = 4 cm." },
-        { prompt: "Bod S je střed úsečky KL, |KL| = 9 cm. Jak dlouhá je KS?", options: ["4,5 cm", "9 cm", "18 cm", "3 cm"], answer: "4,5 cm", explanation: "Střed dělí úsečku na dvě stejné poloviny: 9 : 2 = 4,5 cm." },
-        { prompt: "|MN| = 35 mm. Kolik je to centimetrů?", options: ["3,5 cm", "35 cm", "0,35 cm", "350 cm"], answer: "3,5 cm", explanation: "10 mm = 1 cm, tedy 35 mm = 3,5 cm." },
+        { prompt: "Bod B leží mezi A a C. |AB| = 4 cm, |BC| = 3 cm. Jak dlouhá je úsečka AC?", options: ["7 cm", "1 cm", "12 cm", "34 cm"], answer: "7 cm", explanation: "Délky se sčítají: 4 + 3 = 7 cm." },
+        { prompt: "|AC| = 10 cm, bod B leží mezi A a C, |AB| = 6 cm. Jak dlouhá je úsečka BC?", options: ["4 cm", "16 cm", "6 cm", "5 cm"], answer: "4 cm", explanation: "10 − 6 = 4 cm." },
+        { prompt: "Bod S je střed úsečky KL, |KL| = 8 cm. Jak dlouhá je KS?", options: ["4 cm", "8 cm", "16 cm", "3 cm"], answer: "4 cm", explanation: "Střed dělí úsečku na dvě stejné poloviny: 8 : 2 = 4 cm." },
+        { prompt: "|MN| = 60 mm. Kolik je to centimetrů?", options: ["6 cm", "60 cm", "600 cm", "16 cm"], answer: "6 cm", explanation: "10 mm = 1 cm, tedy 60 mm = 6 cm." },
         { prompt: "Obdélník má strany 6 cm a 4 cm. Jaký je jeho obvod?", options: ["20 cm", "24 cm", "10 cm", "16 cm"], answer: "20 cm", explanation: "Obvod = 2 × (6 + 4) = 20 cm." },
         { prompt: "Čtverec má stranu 7 cm. Jaký je jeho obvod?", options: ["28 cm", "14 cm", "49 cm", "21 cm"], answer: "28 cm", explanation: "Obvod čtverce = 4 × 7 = 28 cm." },
         { prompt: "Trojúhelník má strany 5 cm, 6 cm a 8 cm. Jaký je obvod?", options: ["19 cm", "18 cm", "20 cm", "11 cm"], answer: "19 cm", explanation: "5 + 6 + 8 = 19 cm." },
         { prompt: "Úsečka je dlouhá 12 cm. Rozdělíme ji na 4 stejné části. Jak dlouhá je jedna část?", options: ["3 cm", "4 cm", "6 cm", "48 cm"], answer: "3 cm", explanation: "12 : 4 = 3 cm." },
-        { prompt: "Obdélník má obvod 30 cm a jednu stranu 10 cm. Jak dlouhá je druhá strana?", options: ["5 cm", "10 cm", "20 cm", "15 cm"], answer: "5 cm", explanation: "30 : 2 = 15 cm je součet dvou různých stran, 15 − 10 = 5 cm." }
+        { prompt: "Obdélník má obvod 30 cm a jednu stranu 10 cm. Jak dlouhá je druhá strana?", options: ["5 cm", "10 cm", "20 cm", "15 cm"], answer: "5 cm", explanation: "30 : 2 = 15 cm je součet délek dvou sousedních stran, 15 − 10 = 5 cm." }
       ]
     },
     {
@@ -72,10 +72,10 @@ School.register({
       items: [
         { prompt: "Čím narýsujeme kružnici?", options: ["kružítkem", "pravítkem", "trojúhelníkem", "úhloměrem"], answer: "kružítkem", explanation: "Kružítko drží pořád stejnou vzdálenost od středu." },
         { prompt: "Co je to poloměr kružnice?", options: ["Úsečka od středu k bodu na kružnici", "Úsečka přes celý kruh", "Délka celé kružnice", "Bod uprostřed"], answer: "Úsečka od středu k bodu na kružnici", explanation: "Poloměr značíme r, průměr d = 2 × r." },
-        { prompt: "Poloměr kružnice je 3 cm. Jaký je průměr?", options: ["6 cm", "3 cm", "1,5 cm", "9 cm"], answer: "6 cm", explanation: "Průměr je dvojnásobek poloměru." },
-        { prompt: "Průměr kružnice je 10 cm. Jaký je poloměr?", options: ["5 cm", "20 cm", "10 cm", "2,5 cm"], answer: "5 cm", explanation: "10 : 2 = 5 cm." },
+        { prompt: "Poloměr kružnice je 3 cm. Jaký je průměr?", options: ["6 cm", "3 cm", "9 cm", "12 cm"], answer: "6 cm", explanation: "Průměr je dvojnásobek poloměru." },
+        { prompt: "Průměr kružnice je 10 cm. Jaký je poloměr?", options: ["5 cm", "20 cm", "10 cm", "15 cm"], answer: "5 cm", explanation: "10 : 2 = 5 cm." },
         { prompt: "Jak označíme kružnici se středem S a poloměrem 4 cm?", options: ["k(S; 4 cm)", "S(k; 4 cm)", "|S4|", "k = S + 4"], answer: "k(S; 4 cm)", explanation: "Nejdřív název kružnice, pak střed a poloměr." },
-        { prompt: "Kolik bodů má kružnice společných se svým středem?", options: ["žádný", "jeden", "dva", "nekonečně mnoho"], answer: "žádný", explanation: "Střed neleží na kružnici – kružnice je jen ta čára." },
+        { prompt: "Leží střed S na kružnici k?", options: ["Ne, leží uvnitř", "Ano, leží na ní", "Leží mimo kruh", "Kružnice nemá střed"], answer: "Ne, leží uvnitř", explanation: "Kružnice je jen ta čára. Střed leží uvnitř, ale ne na kružnici." },
         { prompt: "Jaký je rozdíl mezi kružnicí a kruhem?", options: ["Kruh je i vnitřní plocha", "Žádný, je to totéž", "Kružnice je vždy větší", "Kruh se rýsuje pravítkem"], answer: "Kruh je i vnitřní plocha", explanation: "Kružnice = čára, kruh = čára i celá plocha uvnitř." },
         { prompt: "Čím měříme velikost úhlu?", options: ["úhloměrem", "kružítkem", "pravítkem", "kalkulačkou"], answer: "úhloměrem", explanation: "Úhloměr měří ve stupních (°)." },
         { prompt: "Jak velký je pravý úhel?", options: ["90°", "45°", "180°", "100°"], answer: "90°", explanation: "Pravý úhel = 90°, přímý = 180°." }

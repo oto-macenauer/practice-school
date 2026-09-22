@@ -123,7 +123,7 @@
           { prompt: "Co znamená tečka vedle noty?", options: ["prodlouží ji o polovinu", "zkrátí ji na polovinu", "znamená ticho místo noty", "hraj krátce"], answer: "prodlouží ji o polovinu", explanation: "Tečka za hlavičkou přidá polovinu původní délky." },
           { prompt: "Co znamená tečka pod notou nebo nad notou?", options: ["hraj krátce (staccato)", "prodlouží notu o polovinu", "hraj nahlas", "nota se nehraje"], answer: "hraj krátce (staccato)", explanation: "Je to staccato – krátce a odsazeně." },
           { prompt: "Jak se hraje tato nota?", staff: { clef: "houslovy", items: [{ note: "g1", dur: "q", staccato: true }] }, options: ["krátce a odsazeně", "dlouze a vázaně", "třikrát hned za sebou", "vůbec se nehraje"], answer: "krátce a odsazeně", explanation: "Tečka pod notou = staccato." },
-          { prompt: "Kolik dob trvá čtvrťová nota s tečkou?", options: ["1", "1,5", "2", "3"], answer: "1,5", explanation: "1 doba + polovina (0,5) = 1,5 doby." },
+          { prompt: "Kolik dob trvá čtvrťová nota s tečkou?", options: ["1", "1 a půl", "2", "3"], answer: "1 a půl", explanation: "1 doba + polovina = 1 a půl doby." },
           { prompt: "Mění tečka pod notou délku noty?", options: ["ne, mění jen způsob hraní", "ano, prodlouží ji o polovinu", "ano, zkrátí ji na polovinu", "ano, zdvojnásobí ji"], answer: "ne, mění jen způsob hraní", explanation: "Staccato délku nemění – nota se jen zahraje krátce." }
         ]
       },

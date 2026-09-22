@@ -68,7 +68,7 @@
           "<p><b>Tečka vedle noty</b> (za hlavičkou) notu <b>prodlouží o polovinu</b>. " +
           "Půlová s tečkou tedy trvá 2 + 1 = <b>3 doby</b>.</p>" +
           staff([{ note: "g1", dur: "h", dot: true }, { note: "g1", dur: "q", dot: true }],
-            { label: "půlová s tečkou = 3 doby, čtvrťová s tečkou = 1,5 doby" }) +
+            { label: "půlová s tečkou = 3 doby, čtvrťová s tečkou = 1 a půl doby" }) +
           "<p><b>Tečka pod notou nebo nad notou</b> je něco jiného! Znamená <b>staccato</b> – " +
           "notu zahraj <b>krátce a odsazeně</b>, jako bys ji uštípl. Délku nemění.</p>" +
           staff([{ note: "e1", dur: "q", staccato: true }, { note: "g1", dur: "q", staccato: true }, { note: "c2", dur: "q", staccato: true }],

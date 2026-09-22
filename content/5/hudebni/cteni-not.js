@@ -105,8 +105,8 @@
         items: [
           { prompt: "Jak se jmenuje tato nota?", staff: treble([{ note: "h1", dur: "s" }]), options: ["šestnáctinová", "osminová", "čtvrťová", "půlová"], answer: "šestnáctinová", explanation: "Dva praporky = šestnáctinová nota." },
           { prompt: "Jak se jmenuje tato nota?", staff: treble([{ note: "h1", dur: "e" }]), options: ["osminová", "šestnáctinová", "čtvrťová", "celá"], answer: "osminová", explanation: "Jeden praporek = osminová nota." },
-          { prompt: "Kolik dob trvá tato nota?", staff: treble([{ note: "g1", dur: "h", dot: true }]), options: ["2", "2,5", "3", "4"], answer: "3", explanation: "Půlová (2) + tečka (polovina, tedy 1) = 3 doby." },
-          { prompt: "Kolik dob trvá tato nota?", staff: treble([{ note: "g1", dur: "q", dot: true }]), options: ["1", "1,5", "2", "3"], answer: "1,5", explanation: "Čtvrťová (1) + polovina (0,5) = 1,5 doby." },
+          { prompt: "Kolik dob trvá tato nota?", staff: treble([{ note: "g1", dur: "h", dot: true }]), options: ["2", "2 a půl", "3", "4"], answer: "3", explanation: "Půlová (2) + tečka (polovina, tedy 1) = 3 doby." },
+          { prompt: "Kolik dob trvá tato nota?", staff: treble([{ note: "g1", dur: "q", dot: true }]), options: ["1", "1 a půl", "2", "3"], answer: "1 a půl", explanation: "Čtvrťová (1) + polovina = 1 a půl doby." },
           { prompt: "Kolik šestnáctinových not se vejde do jedné čtvrťové?", options: ["2", "3", "4", "8"], answer: "4", explanation: "Čtvrťová = 2 osminové = 4 šestnáctinové." },
           { prompt: "Kolik osminových not se vejde do celé noty?", options: ["4", "6", "8", "16"], answer: "8", explanation: "Celá = 4 čtvrťové = 8 osminových." },
           { prompt: "Co je na osnově zapsané?", staff: treble([{ rest: "s" }]), options: ["šestnáctinová pomlka", "osminová pomlka", "čtvrťová pomlka", "půlová pomlka"], answer: "šestnáctinová pomlka", explanation: "Pomlka se dvěma praporky je šestnáctinová." },

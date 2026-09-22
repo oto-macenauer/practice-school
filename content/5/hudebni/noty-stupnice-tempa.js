@@ -37,7 +37,7 @@
             { label: "celá 4 – půlová 2 – čtvrťová 1 – osminová ½ – šestnáctinová ¼ doby" }) +
           staff([{ rest: "w" }, { rest: "h" }, { rest: "q" }, { rest: "e" }, { rest: "s" }],
             { label: "stejně dlouhé pomlky (ticho)" }) +
-          "<p><b>Tečka vedle noty</b> prodlouží notu o polovinu: půlová s tečkou = 3 doby, čtvrťová s tečkou = 1,5 doby. " +
+          "<p><b>Tečka vedle noty</b> prodlouží notu o polovinu: půlová s tečkou = 3 doby, čtvrťová s tečkou = 1 a půl doby. " +
           "<b>Tečka nad notou nebo pod notou</b> je <b>staccato</b> – nota se zahraje krátce a odsazeně, délka se nemění.</p>" +
           staff([{ note: "g1", dur: "h", dot: true }, { note: "g1", dur: "q", staccato: true }, { note: "g1", dur: "q", tenuto: true }],
             { label: "půlová s tečkou – staccato – tenuto (drž plnou délku)" })
