@@ -212,6 +212,16 @@ School.CATALOG = [
     "file": "content/3/hudebni/test.js"
   },
   {
+    "id": "5-vlastiveda-vlada-habsburku",
+    "grade": 5,
+    "subject": "vlastiveda",
+    "kind": "practice",
+    "title": "Vláda Habsburků v českých zemích",
+    "description": "Nástup Habsburků, Rudolf II. a renesance, pražská defenestrace, stavovské povstání, bitva na Bílé hoře, doba pobělohorská, třicetiletá válka, život poddaných a šlechty",
+    "icon": "🏰",
+    "file": "content/5/vlastiveda/vlada-habsburku.js"
+  },
+  {
     "id": "5-hudebni-noty-stupnice-tempa",
     "grade": 5,
     "subject": "hudebni",
