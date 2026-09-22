@@ -133,7 +133,7 @@ Store.getActiveProfileId() / setActiveProfileId(id)   // always device-local
 Store.getProgress(profileId)         → { xp, items: { [contentId]: { attempts, bestPct, bestGrade, lastAt, mistakes: [key] } } }
 Store.addXp(profileId, contentId, n)
 Store.recordRun(profileId, contentId, { score, total, mistakes, mode })
-Store.getSettings(profileId) / saveSettings(profileId, s)   // { length: 3|5|10, speech: bool }
+Store.getSettings(profileId) / saveSettings(profileId, s)   // { length: 3|5|10, speech: bool, confirm: bool, autoNext: bool }
 Store.getSession(profileId, contentId, mode) / saveSession(…, state) / clearSession(…)   // device-local
 ```
 

@@ -11,7 +11,9 @@ School.LocalStore = (() => {
   const ACTIVE_KEY = "practice-school:active-profile";
   const SESSION_PREFIX = "practice-school:session:";
 
-  const DEFAULT_SETTINGS = { length: 5, speech: true };
+  // confirm: tapping an option only selects it, a "Potvrdit" button evaluates.
+  // autoNext: after a correct answer the next question comes by itself.
+  const DEFAULT_SETTINGS = { length: 5, speech: true, confirm: false, autoNext: true };
 
   function load() {
     try {

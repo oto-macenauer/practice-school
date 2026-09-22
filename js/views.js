@@ -287,6 +287,11 @@ School.views = (() => {
 
   // ---------------------------------------------------------------- settings
 
+  function checkRow(id, on, label, hint) {
+    return `<label class="check-row check-row-hint"><input type="checkbox" id="${id}"${on ? " checked" : ""}>` +
+      `<span>${esc(label)}<span class="check-hint">${esc(hint)}</span></span></label>`;
+  }
+
   async function settings(profile) {
     profile = profile || await activeProfile();
     setTitle("Nastavení");
@@ -299,10 +304,20 @@ School.views = (() => {
       "<h2>Procvičování</h2>" +
       '<label>Počet otázek v části <select id="set-length">' +
       [[3, "Krátce (3)"], [5, "Středně (5)"], [10, "Dlouze (10)"]].map(([n, l]) => `<option value="${n}"${n === s.length ? " selected" : ""}>${l}</option>`).join("") +
-      "</select></label>";
+      "</select></label>" +
+      checkRow("set-confirm", s.confirm === true, "Potvrzovat odpověď",
+        "Klepnutí odpověď jen vybere, vyhodnotí ji až tlačítko Potvrdit.") +
+      checkRow("set-autonext", s.autoNext !== false, "Pokračovat automaticky",
+        "Po správné odpovědi se další otázka ukáže sama. Po chybě se čeká vždy.");
     prefs.querySelector("#set-length").addEventListener("change", async (e) => {
       s.length = parseInt(e.target.value, 10);
       await Store.saveSettings(profile.id, s);
+    });
+    [["#set-confirm", "confirm"], ["#set-autonext", "autoNext"]].forEach(([sel, key]) => {
+      prefs.querySelector(sel).addEventListener("change", async (e) => {
+        s[key] = e.target.checked;
+        await Store.saveSettings(profile.id, s);
+      });
     });
     root.appendChild(prefs);
 

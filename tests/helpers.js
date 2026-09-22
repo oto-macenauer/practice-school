@@ -46,6 +46,12 @@ async function continueRun(page) {
   if (await page.locator("#next-btn").isVisible()) await page.click("#next-btn");
 }
 
+/** With the "Potvrzovat odpověď" setting on, a picked option still needs Potvrdit. */
+async function confirmIfNeeded(card) {
+  const btn = card.locator(".confirm-btn");
+  if (await btn.count()) await btn.click();
+}
+
 /** Click the option matching `pick(text)` on a choice/match card; returns settle() outcome. */
 async function clickOption(page, pick) {
   const card = page.locator(".question-card");
@@ -55,6 +61,7 @@ async function clickOption(page, pick) {
   for (let b = 0; b < n; b++) {
     if (pick(await buttons.nth(b).textContent())) { await buttons.nth(b).click(); break; }
   }
+  await confirmIfNeeded(card);
   return settle(page, index);
 }
 
@@ -69,6 +76,7 @@ async function answerCurrent(page) {
   const index = await card.getAttribute("data-index");
   if (type === "choice" || type === "match") {
     await card.locator(".answer-btn").first().click();
+    await confirmIfNeeded(card);
   } else if (type === "write" || type === "spell") {
     await card.locator(".write-input").fill("abc");
     await card.locator(".write-form button").click();
@@ -98,4 +106,13 @@ async function finishRun(page) {
   throw new Error("run did not finish");
 }
 
-module.exports = { createProfile, startItem, answerCurrent, continueRun, clickOption, settle, finishRun };
+/** Flip an answer-flow checkbox in Nastavení ("#set-confirm" / "#set-autonext"). */
+async function setPref(page, id, on) {
+  await page.goto("/#/settings");
+  const box = page.locator(id);
+  await expect(box).toBeVisible();
+  if (on) await box.check();
+  else await box.uncheck();
+}
+
+module.exports = { createProfile, startItem, answerCurrent, continueRun, clickOption, settle, finishRun, setPref };

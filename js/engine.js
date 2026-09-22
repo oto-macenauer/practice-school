@@ -8,6 +8,10 @@
  * the kid taps anywhere / presses Enter. Tests give no feedback during the
  * run and show a full answer review on the results screen.
  *
+ * Two settings shape that flow (js/store.js, Nastavení): `confirm` puts a
+ * "Potvrdit" button between choosing an option and evaluating it, `autoNext`
+ * (on by default) moves on by itself once the answer was right.
+ *
  * Section types: choice, match, write, spell, order, gap-text (see docs/PLAN.md §4).
  */
 School.engine = (() => {
@@ -290,6 +294,9 @@ School.engine = (() => {
     const young = ctx.young;
     const mistakesMode = state.mode === "mistakes";
     const testMode = content.kind === "test" && !mistakesMode;
+    const prefs = ctx.settings || {};
+    const needConfirm = prefs.confirm === true;
+    const autoNext = prefs.autoNext !== false;
 
     const persist = () => Store.saveSession(profile.id, content.id, state.mode, state);
 
@@ -417,7 +424,7 @@ School.engine = (() => {
         }, 0);
       }
 
-      RENDERERS[card.type](body, card, { lang, young, section, done, reveal: !testMode });
+      RENDERERS[card.type](body, card, { lang, young, section, done, reveal: !testMode, confirm: needConfirm });
 
       /**
        * Called by renderers with points earned (0..card.points), a correct-answer
@@ -456,7 +463,8 @@ School.engine = (() => {
 
         persist();
         if (testMode) {
-          setTimeout(advance, TEST_ADVANCE_MS);
+          if (autoNext) setTimeout(advance, TEST_ADVANCE_MS);
+          else waitForContinue(true);
           return;
         }
 
@@ -475,8 +483,9 @@ School.engine = (() => {
         if (hs) hs.textContent = young ? "⭐ " + state.score : state.score;
         if (hst) hst.textContent = state.streak;
 
-        waitForContinue(!allRight);
-        if (allRight) setTimeout(advance, young ? ADVANCE_MS_YOUNG : ADVANCE_MS);
+        // A wrong answer always waits, so the explanation gets read.
+        waitForContinue(!allRight || !autoNext);
+        if (allRight && autoNext) setTimeout(advance, young ? ADVANCE_MS_YOUNG : ADVANCE_MS);
       }
     }
 
@@ -589,28 +598,53 @@ School.engine = (() => {
     if (gap) gap.textContent = value;
   }
 
-  /** `reveal` false (tests): only mark the chosen option, don't show right/wrong. */
-  function renderOptionButtons(body, options, answer, done, reveal) {
+  /**
+   * `reveal` false (tests): only mark the chosen option, don't show right/wrong.
+   * `confirm` true: a tap only selects, the "Potvrdit" button evaluates — so a
+   * mistap can be taken back. The other types already have such a button.
+   */
+  function renderOptionButtons(body, options, answer, { done, reveal, confirm }) {
     // Picture options (emoji, short numbers) get big centered tiles.
     const pictures = options.every((o) => o.length <= 16 && !/\p{L}/u.test(o));
     const box = el("div", "answers" + (pictures ? " answers-pictures" : ""));
+    let check = null;
+    let chosen = null;
+
+    function submit(opt, btn) {
+      box.querySelectorAll(".answer-btn").forEach((x) => {
+        x.disabled = true;
+        x.classList.remove("selected");
+        if (reveal && x.textContent === answer) x.classList.add("correct");
+      });
+      const right = opt === answer;
+      if (!reveal) btn.classList.add("chosen");
+      else if (!right) btn.classList.add("incorrect");
+      fillGap(body, reveal ? answer : opt);
+      if (check) check.hidden = true;
+      done(right ? 1 : 0, answer, opt);
+    }
+
     options.forEach((opt) => {
       const b = el("button", "answer-btn", esc(opt));
       b.type = "button";
       b.addEventListener("click", () => {
-        box.querySelectorAll(".answer-btn").forEach((x) => {
-          x.disabled = true;
-          if (reveal && x.textContent === answer) x.classList.add("correct");
-        });
-        const right = opt === answer;
-        if (!reveal) b.classList.add("chosen");
-        else if (!right) b.classList.add("incorrect");
-        fillGap(body, reveal ? answer : opt);
-        done(right ? 1 : 0, answer, opt);
+        if (!confirm) return submit(opt, b);
+        chosen = { opt, btn: b };
+        box.querySelectorAll(".answer-btn").forEach((x) => x.classList.toggle("selected", x === b));
+        fillGap(body, opt);
+        check.disabled = false;
       });
       box.appendChild(b);
     });
     body.appendChild(box);
+
+    if (confirm) {
+      check = el("button", "btn btn-primary confirm-btn", "Potvrdit");
+      check.type = "button";
+      check.disabled = true;
+      check.addEventListener("click", () => { if (chosen) submit(chosen.opt, chosen.btn); });
+      body.appendChild(check);
+    }
   }
 
   function renderTextInput(body, check, done, placeholder, reveal) {
@@ -643,12 +677,12 @@ School.engine = (() => {
       addPrompt(body, it.prompt, opts);
       if (it.grid) body.appendChild(el("div", "grid-wrap", School.util.gridHtml(it.grid)));
       if (it.staff) body.appendChild(el("div", "staff-wrap", School.notation.render(it.staff)));
-      renderOptionButtons(body, it.options, it.answer, opts.done, opts.reveal);
+      renderOptionButtons(body, it.options, it.answer, opts);
     },
 
     match(body, card, opts) {
       addPrompt(body, card.item.prompt, opts);
-      renderOptionButtons(body, card.item.options, card.item.answer, opts.done, opts.reveal);
+      renderOptionButtons(body, card.item.options, card.item.answer, opts);
     },
 
     write(body, card, opts) {

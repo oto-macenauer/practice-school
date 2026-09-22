@@ -151,7 +151,10 @@ input[type=text], input:not([type]), select {
 input:focus, select:focus, .btn:focus-visible, .answer-btn:focus-visible { outline: 3px solid var(--primary-soft); outline-offset: 1px; }
 
 .check-row { display: flex; align-items: center; gap: .6rem; font-weight: 500; min-height: 40px; margin: 0; cursor: pointer; }
-.check-row input { width: 22px; height: 22px; }
+.check-row input { width: 22px; height: 22px; flex: none; }
+.check-row-hint { align-items: flex-start; padding: .5rem 0; }
+.check-row-hint input { margin-top: .15rem; }
+.check-hint { display: block; font-size: .85rem; font-weight: 400; color: var(--muted); }
 
 /* ---------- profiles ---------- */
 
@@ -320,6 +323,8 @@ body.young .staff-wrap svg.staff { transform: scale(1.15); transform-origin: cen
 .answer-btn.correct { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); font-weight: 700; }
 .answer-btn.incorrect { border-color: var(--bad); background: var(--bad-soft); color: var(--bad); }
 .answer-btn.chosen { border-color: var(--primary); background: var(--primary-soft); color: var(--primary-text); font-weight: 700; }
+.answer-btn.selected { border-color: var(--primary); background: var(--primary-soft); color: var(--primary-text); font-weight: 700; }
+.confirm-btn { margin-top: .75rem; width: 100%; }
 
 .write-form { display: flex; gap: .5rem; flex-wrap: wrap; }
 .write-form input { flex: 1; min-width: 200px; margin: 0; font-size: 1.1rem; }
