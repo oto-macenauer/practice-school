@@ -250,6 +250,7 @@ a.subject-tile:hover { transform: translateY(-2px); }
 .intro-icon { font-size: 3rem; }
 .section-picker { text-align: left; border: 1px solid var(--border); border-radius: 12px; margin: 1rem 0; padding: .5rem 1rem; }
 .section-picker legend { font-weight: 700; padding: 0 .4rem; }
+.bulk-buttons { display: flex; flex-wrap: wrap; gap: .5rem; flex-basis: 100%; margin: .2rem 0 .4rem; }
 .length-picker { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem; margin: 1rem 0; }
 .intro-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
 
@@ -457,6 +458,19 @@ body.young .next-btn { min-height: 68px; font-size: 1.3rem; }
 .print-match li { margin: .3rem 0; }
 .print-key-list { columns: 2; font-size: .9rem; }
 
+/* Drill sheets: full A4 pages of math examples in columns (print.js renderDrill) */
+.drill-sections { display: flex; flex-wrap: wrap; gap: .2rem 1rem; border: 1px solid var(--border); border-radius: 8px; padding: .4rem .8rem; }
+.drill-out { display: flex; flex-direction: column; gap: 1rem; }
+.drill-subtitle { margin: .2rem 0 0; font-size: .9rem; }
+.drill-pageno { text-align: right; }
+.drill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 1.5rem; font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+.drill-item { display: flex; align-items: baseline; gap: .4rem; padding: .45rem 0; white-space: nowrap; }
+.drill-num { min-width: 2.2em; color: #888; font-size: .6em; text-align: right; }
+.drill-box { display: inline-block; width: 3em; border-bottom: 1px solid #000; }
+.drill-key .drill-grid { grid-template-columns: repeat(4, 1fr); font-size: .9rem; margin-bottom: .6rem; }
+.drill-key .drill-item { padding: .1rem 0; }
+.drill-key h3 { font-size: 1rem; margin: .6rem 0 .2rem; }
+
 @media print {
   @page { size: A4; margin: 15mm; }
   body { background: #fff; --fs: 12pt; }
@@ -466,4 +480,10 @@ body.young .next-btn { min-height: 68px; font-size: 1.3rem; }
   .print-key { break-before: page; }
   svg.staff { display: block; width: 62mm; height: auto; margin: 2mm 0 3mm; color: #000; }
   .print-item { break-inside: avoid; }
+  .drill-out { display: block; }
+  .drill-page { break-after: page; }
+  .drill-page .drill-grid { font-size: 16pt; }
+  .drill-page .drill-item { height: 13mm; padding: 0; align-items: center; }
+  .drill-key { break-before: auto; }
+  .drill-key .drill-grid { font-size: 10pt; }
 }

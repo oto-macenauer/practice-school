@@ -232,6 +232,7 @@ School.engine = (() => {
         box.appendChild(label);
         checkboxes.push(label.querySelector("input"));
       });
+      box.insertBefore(School.util.bulkButtons(checkboxes), box.children[1]);
       card.appendChild(box);
     }
 

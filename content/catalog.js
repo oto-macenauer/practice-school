@@ -212,6 +212,26 @@ School.CATALOG = [
     "file": "content/3/hudebni/test.js"
   },
   {
+    "id": "3-matematika-scitani-a-odcitani",
+    "grade": 3,
+    "subject": "matematika",
+    "kind": "practice",
+    "title": "Sčítání a odčítání",
+    "description": "Do 20 a do 100, bez přechodu i s přechodem přes desítku – dá se vytisknout jako pracovní list",
+    "icon": "➕",
+    "file": "content/3/matematika/scitani-a-odcitani.js"
+  },
+  {
+    "id": "3-matematika-nasobilka",
+    "grade": 3,
+    "subject": "matematika",
+    "kind": "practice",
+    "title": "Malá násobilka",
+    "description": "Násobení 2 až 10 a dělení 2 až 10 zvlášť – dá se vytisknout jako pracovní list",
+    "icon": "✖️",
+    "file": "content/3/matematika/nasobilka.js"
+  },
+  {
     "id": "5-vlastiveda-vlada-habsburku",
     "grade": 5,
     "subject": "vlastiveda",

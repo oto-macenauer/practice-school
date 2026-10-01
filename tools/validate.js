@@ -119,6 +119,10 @@ function checkSection(where, s, grade, keys) {
   }
   if (s.pick !== undefined && s.pick !== "auto" && !(Number.isInteger(s.pick) && s.pick > 0)) err(where, `bad pick ${JSON.stringify(s.pick)}`);
 
+  if (s.drill && (s.type !== "choice" || all.some((it) => !/_{2,}/.test(it.prompt || "")))) {
+    err(where, "drill: needs a choice section whose prompts contain ___ (printed as the answer box)");
+  }
+
   let longest = 0;
   all.forEach((it, i) => {
     const w = `${where} item ${i + 1}`;
@@ -239,7 +243,8 @@ function main() {
       }
     }
 
-    const dup = keys.filter((k, i) => keys.indexOf(k) !== i);
+    const firstSeen = new Set();
+    const dup = keys.filter((k) => firstSeen.has(k) || !firstSeen.add(k));
     if (dup.length) warn(where, `${dup.length} duplicate mistake keys, e.g. ${JSON.stringify(dup[0])}`);
 
     const k = `${c.grade}. třída / ${c.subject} / ${c.kind}`;

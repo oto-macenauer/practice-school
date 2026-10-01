@@ -91,10 +91,16 @@ School.register({
     pick: 5 | "auto",                // optional; "auto" = profile length setting (3/5/10); omitted = all
     group: "reading",                // optional, see groups
     passage: "…" | passages: [{ passage, items }],   // reading: one passage, or pick one at random
+    drill: true,                     // optional, choice only: prompts like "7 + 5 = ___"; if every section is a drill,
+                                     // print shows section checkboxes + page count and fills A4 pages (3 columns × 17)
     items: [ … ]
   }]
 });
 ```
+
+Content files are plain JS, so items may be generated (3rd grade math: every example of a level, distractors
+from typical slips). Use a seeded random generator so prompts and options stay the same on every load —
+prompts are mistake keys.
 
 ### Section types and item shapes
 

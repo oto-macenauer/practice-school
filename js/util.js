@@ -135,5 +135,20 @@ School.util = (() => {
     return many;
   }
 
-  return { shuffle, esc, el, normalize, sameSentence, uid, speak, speakButton, speechSupported, gridHtml, plural };
+  /** "Vybrat vše" / "Zrušit výběr" buttons for a list of checkboxes; onChange runs once per click. */
+  function bulkButtons(boxes, onChange) {
+    const row = el("div", "bulk-buttons");
+    [["Vybrat vše", true, "bulk-all"], ["Zrušit výběr", false, "bulk-none"]].forEach(([label, on, cls]) => {
+      const b = el("button", "chip " + cls, label);
+      b.type = "button";
+      b.addEventListener("click", () => {
+        boxes.forEach((x) => { x.checked = on; });
+        if (onChange) onChange();
+      });
+      row.appendChild(b);
+    });
+    return row;
+  }
+
+  return { bulkButtons, shuffle, esc, el, normalize, sameSentence, uid, speak, speakButton, speechSupported, gridHtml, plural };
 })();

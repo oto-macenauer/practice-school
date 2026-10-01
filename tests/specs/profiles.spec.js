@@ -5,9 +5,10 @@ test("first visit asks for a profile, then shows own grade", async ({ page }) =>
   await createProfile(page, "Anička", 3);
   await expect(page.locator("body")).toHaveClass(/young/);
   await expect(page.locator("#profile-chip")).toContainText("Anička");
-  // 3rd grade has Hudební výchova and Logika so far; the other tiles are disabled
+  // 3rd grade has Matematika, Hudební výchova and Logika so far; the other tiles are disabled
   await expect(page.locator(".subject-tile")).toHaveCount(7);
-  await expect(page.locator("a.subject-tile")).toHaveCount(2);
+  await expect(page.locator("a.subject-tile")).toHaveCount(3);
+  await expect(page.locator("a.subject-tile[data-subject=matematika]")).toBeVisible();
   await expect(page.locator("a.subject-tile[data-subject=logika]")).toBeVisible();
   await expect(page.locator("a.subject-tile[data-subject=hudebni]")).toBeVisible();
   // other grades are reachable

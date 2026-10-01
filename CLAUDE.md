@@ -36,7 +36,7 @@ Profiles are local (name, grade, avatar). Grade ≤ 3 → `body.young` (bigger U
 3. Images go to `content/<grade>/<subject>/img/`.
 4. `node tools/validate.js`.
 
-Section types (full schema in `docs/PLAN.md` §4): `choice` `{prompt, options, answer, explanation?, say?, grid?}` (answer is the option string, `___` = gap, `grid` = emoji/number table with `"?"` cell for logic puzzles, `staff` = notová osnova drawn by `js/notation.js`), `match` `{prompt, answer}`, `write` `{prompt, answer, accept?}`, `spell` `{word, hint?}`, `order` `{words, answer}`, `gap-text` (section-level `text`/`wordBank`/`blanks`). Section options: `pick` (number or `"auto"`), `group` + item-level `groups`, `passage` / `passages`.
+Section types (full schema in `docs/PLAN.md` §4): `choice` `{prompt, options, answer, explanation?, say?, grid?}` (answer is the option string, `___` = gap, `grid` = emoji/number table with `"?"` cell for logic puzzles, `staff` = notová osnova drawn by `js/notation.js`), `match` `{prompt, answer}`, `write` `{prompt, answer, accept?}`, `spell` `{word, hint?}`, `order` `{words, answer}`, `gap-text` (section-level `text`/`wordBank`/`blanks`). Section options: `pick` (number or `"auto"`), `group` + item-level `groups`, `passage` / `passages`, `drill` (choice with `___` prompts; when every section is `drill`, print makes full A4 pages of examples in columns — generated math, e.g. `content/3/matematika/`).
 
 **Content ids and section ids are progress keys** — renaming them loses kids' results and mistakes.
 
