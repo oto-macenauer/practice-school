@@ -75,7 +75,7 @@ School.register({
       instructions: "Doplň i/í, nebo y/ý. Mysli na vyjmenovaná slova.",
       pick: 7,
       items: [
-        { prompt: "Bydlíme v novém b___tě.", options: ["y", "i"], answer: "y", explanation: "Byt – vyjmenované slovo po b." },
+        { prompt: "Stěhujeme se do nového b___tu.", options: ["y", "i"], answer: "y", explanation: "Byt – vyjmenované slovo po b." },
         { prompt: "Na zahradě rostou b___liny.", options: ["y", "i"], answer: "y", explanation: "Bylina – vyjmenované slovo po b." },
         { prompt: "V lese se schovává l___ška.", options: ["i", "y"], answer: "i", explanation: "Liška není vyjmenované slovo." },
         { prompt: "Dědeček je úplně l___sý.", options: ["y", "i"], answer: "y", explanation: "Lysý – vyjmenované slovo po l." },
@@ -100,7 +100,7 @@ School.register({
         { prompt: "K ob___du byla polévka.", options: ["ě", "je"], answer: "ě", explanation: "Oběd – předpona ob- tu není." },
         { prompt: "Kolumbus ob___vil Ameriku.", options: ["je", "ě"], answer: "je", explanation: "Ob-jevit: předpona ob- + kořen jev." },
         { prompt: "Auto zastavilo u v___zdu do garáže.", options: ["je", "ě"], answer: "je", explanation: "V-jezd: předpona v- + kořen jezd." },
-        { prompt: "Na náměstí v ___stě je kašna.", options: ["mě", "mně"], answer: "mě", explanation: "Město – mě." },
+        { prompt: "Bydlíme ve velkém ___stě.", options: ["mě", "mně"], answer: "mě", explanation: "Město – mě." },
         { prompt: "Zapo___l jsem si svačinu.", options: ["mně", "mě"], answer: "mně", explanation: "Zapomněl – příbuzné ke vzpomenout, mn." },
         { prompt: "Podej ___ prosím tužku.", options: ["mně", "mě"], answer: "mně", explanation: "Komu? Mně (3. pád)." },
         { prompt: "Maminka ___ v parku hledala.", options: ["mě", "mně"], answer: "mě", explanation: "Koho? Mě (4. pád)." },
@@ -138,7 +138,7 @@ School.register({
       icon: "📝",
       type: "gap-text",
       instructions: "Doplň slova z nabídky. Pozor na i/y, s/z a ě/je.",
-      text: "O prázdninách jsme {1} na chatě. Kluci {2} na rybník a holky {3} houby. Jednou jsme {4} na kopec a dlouho jsme se {5} do údolí. Večer nám babička {6} ke stolu borůvkové knedlíky. Psi {7} u ohně a my jsme si {8} o pohádkách.",
+      text: "O prázdninách jsme {1} na chatě. Kluci {2} na rybník a holky {3} houby. Jednou jsme všichni {4} na kopec a dlouho jsme se {5} do údolí. Večer nám babička {6} ke stolu borůvkové knedlíky. Psi {7} u ohně a všichni jsme si {8} o pohádkách.",
       wordBank: ["byli", "bili", "chodili", "chodily", "sbíraly", "zbíraly", "vylezli", "vilezli", "dívali", "dívaly", "přinesla", "přinesli", "leželi", "ležely", "povídali", "povídaly"],
       blanks: ["byli", "chodili", "sbíraly", "vylezli", "dívali", "přinesla", "leželi", "povídali"]
     }
