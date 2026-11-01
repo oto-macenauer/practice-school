@@ -342,6 +342,16 @@ School.CATALOG = [
     "file": "content/5/cestina/test-zari.js"
   },
   {
+    "id": "5-cestina-ctvrtletni-pisemka",
+    "grade": 5,
+    "subject": "cestina",
+    "kind": "test",
+    "title": "Čeština – čtvrtletní písemka",
+    "description": "Slovní druhy, diktát s/z, i/y, ě/je, mě/mně, shoda podmětu s přísudkem",
+    "icon": "🗓️",
+    "file": "content/5/cestina/ctvrtletni-pisemka.js"
+  },
+  {
     "id": "5-matematika-prevody-a-pocitani",
     "grade": 5,
     "subject": "matematika",
@@ -372,6 +382,16 @@ School.CATALOG = [
     "file": "content/5/matematika/test-zari.js"
   },
   {
+    "id": "5-matematika-ctvrtletni-pisemka",
+    "grade": 5,
+    "subject": "matematika",
+    "kind": "test",
+    "title": "Matematika – čtvrtletní písemka",
+    "description": "Písemné násobení a dělení, geometrické obrazce, obvod, slovní úlohy",
+    "icon": "🗓️",
+    "file": "content/5/matematika/ctvrtletni-pisemka.js"
+  },
+  {
     "id": "5-prirodoveda-rostliny-a-houby",
     "grade": 5,
     "subject": "prirodoveda",
@@ -400,5 +420,15 @@ School.CATALOG = [
     "description": "Rostliny, houby a živočichové – opakování probrané látky",
     "icon": "📝",
     "file": "content/5/prirodoveda/test-zari.js"
+  },
+  {
+    "id": "5-prirodoveda-ctvrtletni-pisemka",
+    "grade": 5,
+    "subject": "prirodoveda",
+    "kind": "test",
+    "title": "Přírodověda – čtvrtletní písemka",
+    "description": "Živá a neživá příroda, houby a rostliny",
+    "icon": "🗓️",
+    "file": "content/5/prirodoveda/ctvrtletni-pisemka.js"
   }
 ];
