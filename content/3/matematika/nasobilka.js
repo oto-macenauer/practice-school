@@ -71,5 +71,35 @@
     });
   }
 
+  // Smíšená násobilka 0–10 (přidáno na konec, aby se náhoda dřívějších oddílů nezměnila).
+  const mixTimes = [];
+  for (let a = 0; a <= 10; a++) {
+    for (let b = 0; b <= 10; b++) mixTimes.push(item(`${a} · ${b}`, a * b, [-b, b, -a, a, -1, 1]));
+  }
+  const mixDivide = [];
+  for (let b = 1; b <= 10; b++) {
+    for (let k = 0; k <= 10; k++) mixDivide.push(item(`${k * b} : ${b}`, k, [-1, 1, -2, 2]));
+  }
+  sections.push({
+    id: "nasobeni-mix",
+    title: "Násobilka 0–10 smíšeně",
+    icon: "🎲",
+    type: "choice",
+    drill: true,
+    instructions: "Všechny násobilky dohromady. Pamatuj: cokoli krát 0 je 0.",
+    pick: "auto",
+    items: mixTimes
+  });
+  sections.push({
+    id: "deleni-mix",
+    title: "Dělení 1–10 smíšeně",
+    icon: "🎲",
+    type: "choice",
+    drill: true,
+    instructions: "Všechna dělení dohromady. 0 : 5 = 0, protože 0 · 5 = 0.",
+    pick: "auto",
+    items: mixDivide
+  });
+
   School.register({ id: "3-matematika-nasobilka", sections });
 })();

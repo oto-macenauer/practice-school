@@ -4,7 +4,7 @@ const { createProfile, startItem, answerCurrent } = require("../helpers");
 test("generated math examples run as choice cards", async ({ page }) => {
   await createProfile(page, "Anička", 3);
   await page.goto("/#/g/3/matematika");
-  await expect(page.locator(".item-card")).toHaveCount(2);
+  await expect(page.locator(".item-card")).toHaveCount(6);
   await startItem(page, "3-matematika-scitani-a-odcitani");
   await expect(page.locator(".question-card")).toContainText("=");
   await expect(page.locator(".answer-btn")).toHaveCount(4);
@@ -39,10 +39,10 @@ test("drill print fills A4 pages with examples in columns", async ({ page }) => 
 test("drill print mixes chosen tables without repeating an example", async ({ page }) => {
   await createProfile(page, "Anička", 3);
   await page.goto("/#/print/3-matematika-nasobilka");
-  await expect(page.locator(".drill-sections input")).toHaveCount(18);
+  await expect(page.locator(".drill-sections input")).toHaveCount(20);
   await page.click(".drill-sections .bulk-all");
-  await expect(page.locator(".drill-sections input:checked")).toHaveCount(18);
-  await expect(page.locator(".drill-subtitle")).toContainText("Dělení 10");
+  await expect(page.locator(".drill-sections input:checked")).toHaveCount(20);
+  await expect(page.locator(".drill-subtitle")).toContainText("Dělení 1–10 smíšeně");
   const texts = (await page.locator(".drill-page .drill-item").allTextContents()).map((t) => t.replace(/^\d+\.\s*/, ""));
   expect(texts).toHaveLength(51);
   expect(new Set(texts).size).toBe(51);
@@ -64,10 +64,10 @@ test("practice intro: bulk select and unselect sections", async ({ page }) => {
   await createProfile(page, "Anička", 3);
   await page.goto("/#/run/3-matematika-nasobilka");
   const boxes = page.locator(".section-picker input");
-  await expect(boxes).toHaveCount(18);
+  await expect(boxes).toHaveCount(20);
   await page.click(".section-picker .bulk-none");
   await expect(page.locator(".section-picker input:checked")).toHaveCount(0);
   await page.check(".section-picker input[value=nasobeni-3]");
   await page.click(".section-picker .bulk-all");
-  await expect(page.locator(".section-picker input:checked")).toHaveCount(18);
+  await expect(page.locator(".section-picker input:checked")).toHaveCount(20);
 });

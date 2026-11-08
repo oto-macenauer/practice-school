@@ -232,6 +232,86 @@ School.CATALOG = [
     "file": "content/3/matematika/nasobilka.js"
   },
   {
+    "id": "3-matematika-zavorky",
+    "grade": 3,
+    "subject": "matematika",
+    "kind": "practice",
+    "title": "Příklady se závorkami",
+    "description": "Nejdřív závorka: se sčítáním a odčítáním, s násobením a dělením – dá se vytisknout jako pracovní list",
+    "icon": "🧮",
+    "file": "content/3/matematika/zavorky.js"
+  },
+  {
+    "id": "3-matematika-slovni-ulohy",
+    "grade": 3,
+    "subject": "matematika",
+    "kind": "practice",
+    "title": "Slovní úlohy",
+    "description": "O kolik více / méně, kolikrát více / méně, násobení a dělení v úlohách, úlohy na dva kroky",
+    "icon": "📖",
+    "file": "content/3/matematika/slovni-ulohy.js"
+  },
+  {
+    "id": "3-matematika-primka-a-usecka",
+    "grade": 3,
+    "subject": "matematika",
+    "kind": "practice",
+    "title": "Přímka a úsečka",
+    "description": "Bod, přímka, úsečka, body na přímce a mimo ni, délky úseček v cm",
+    "icon": "📏",
+    "file": "content/3/matematika/primka-a-usecka.js"
+  },
+  {
+    "id": "3-matematika-ctvrtletni-pisemka",
+    "grade": 3,
+    "subject": "matematika",
+    "kind": "test",
+    "title": "Matematika – čtvrtletní písemka",
+    "description": "Sčítání a odčítání s přechodem, závorky, násobilka, slovní úlohy, přímka a úsečka",
+    "icon": "📝",
+    "file": "content/3/matematika/ctvrtletni-pisemka.js"
+  },
+  {
+    "id": "3-cestina-byt-bit",
+    "grade": 3,
+    "subject": "cestina",
+    "kind": "lesson",
+    "title": "Být, nebo bít? – výklad",
+    "description": "být × bít, dobýt × dobít, nabýt × nabít, odbýt × odbít, pobýt × pobít, přibýt × přibít, zbýt × zbít, býlí × bílý, bydlo × bidlo",
+    "icon": "🔨",
+    "file": "content/3/cestina/byt-bit.js"
+  },
+  {
+    "id": "3-cestina-vyjmenovana-slova-b",
+    "grade": 3,
+    "subject": "cestina",
+    "kind": "practice",
+    "title": "Vyjmenovaná slova po B",
+    "description": "Řada po B, doplňování i/y ve slovech a větách, slova příbuzná",
+    "icon": "🅱️",
+    "file": "content/3/cestina/vyjmenovana-slova-b.js"
+  },
+  {
+    "id": "3-cestina-opakovani",
+    "grade": 3,
+    "subject": "cestina",
+    "kind": "practice",
+    "title": "Opakování před čtvrtletkou",
+    "description": "Tvrdé a měkké souhlásky, párové souhlásky, ú/ů/u, slova nadřazená, protikladná a souznačná, slova příbuzná, přísloví a přirovnání",
+    "icon": "🔁",
+    "file": "content/3/cestina/opakovani.js"
+  },
+  {
+    "id": "3-cestina-ctvrtletni-pisemka",
+    "grade": 3,
+    "subject": "cestina",
+    "kind": "test",
+    "title": "Čeština – čtvrtletní písemka",
+    "description": "Vyjmenovaná slova po B, být × bít, i/y, párové souhlásky, ú/ů/u, význam slov, přísloví",
+    "icon": "📝",
+    "file": "content/3/cestina/ctvrtletni-pisemka.js"
+  },
+  {
     "id": "5-vlastiveda-vlada-habsburku",
     "grade": 5,
     "subject": "vlastiveda",
