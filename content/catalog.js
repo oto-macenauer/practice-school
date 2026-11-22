@@ -182,6 +182,46 @@ School.CATALOG = [
     "file": "content/5/anglictina/test-2026-09-22.js"
   },
   {
+    "id": "5-anglictina-unit3-present-perfect",
+    "grade": 5,
+    "subject": "anglictina",
+    "kind": "lesson",
+    "title": "Unit 3 – present perfect (I have been, I have seen)",
+    "description": "výklad k testu 24. 11.: have / has + 3. tvar, ever / never, just / already / yet, been × gone; slovíčka soutěže a hudba",
+    "icon": "📖",
+    "file": "content/5/anglictina/unit3-present-perfect.js"
+  },
+  {
+    "id": "5-anglictina-unit3-test",
+    "grade": 5,
+    "subject": "anglictina",
+    "kind": "test",
+    "title": "Test 24. 11. – Unit 3: present perfect",
+    "description": "hlavně present perfect (3. tvar, have / has, ever / never, just / already / yet, been / gone); slovíčka, poslech, příběh, čtení o kytaře a o Rebece",
+    "icon": "📝",
+    "file": "content/5/anglictina/unit3-test.js"
+  },
+  {
+    "id": "5-anglictina-review1-3",
+    "grade": 5,
+    "subject": "anglictina",
+    "kind": "lesson",
+    "title": "Opakování Unit 1–3 – o čem to bylo?",
+    "description": "going to, past simple × past continuous, present perfect, may / might, too / enough; doprava, zvířata, soutěže a hudba",
+    "icon": "📖",
+    "file": "content/5/anglictina/review1-3.js"
+  },
+  {
+    "id": "5-anglictina-review1-3-test",
+    "grade": 5,
+    "subject": "anglictina",
+    "kind": "test",
+    "title": "Opakování Unit 1–3 – test",
+    "description": "poznej gramatiku, grammar mix, too / enough, slovíčka, poslech, čtení: David's interview, Can you remember?",
+    "icon": "📘",
+    "file": "content/5/anglictina/review1-3-test.js"
+  },
+  {
     "id": "3-hudebni-noty-v-houslovem-klici",
     "grade": 3,
     "subject": "hudebni",
