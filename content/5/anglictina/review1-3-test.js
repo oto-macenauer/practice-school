@@ -191,24 +191,6 @@ School.register({
         { prompt: "David has never won a prize.", options: ["right", "wrong"], answer: "right" },
         { prompt: "How many times did David answer 'yes'?", options: ["once", "twice", "never"], answer: "once" }
       ]
-    },
-    {
-      id: "can-you-remember",
-      title: "Can you remember? (Units 1–3)",
-      icon: "🧠",
-      type: "choice",
-      instructions: "Remember the units from the book. Choose the correct answer.",
-      pick: "auto",
-      items: [
-        { prompt: "What's different about people who are nomads?", options: ["They move from place to place.", "They always live in one big city.", "They never leave their house."], answer: "They move from place to place." },
-        { prompt: "What name did sailors give to Ahmad Ibn Majid?", options: ["Lion of the Sea", "King of the Sky", "Tiger of the Sand"], answer: "Lion of the Sea" },
-        { prompt: "What does 'endangered' mean?", options: ["There are very few left.", "There are none left.", "It is a very dangerous animal."], answer: "There are very few left." },
-        { prompt: "Why do people think Tasmanian tigers are extinct?", options: ["Nobody has seen one for years.", "They all live in a zoo in Sydney.", "They have moved to Europe."], answer: "Nobody has seen one for years." },
-        { prompt: "What hasn't Ivan lifted?", options: ["A castle", "A sofa", "A plane"], answer: "A castle" },
-        { prompt: "Where's the oldest type of guitar from?", options: ["Ancient Egypt", "Italy", "Spain"], answer: "Ancient Egypt" },
-        { prompt: "In which months does Brazil celebrate carnival?", options: ["February or March", "December or January", "July or August"], answer: "February or March" },
-        { prompt: "Who didn't think Rebeca should play football?", options: ["Her mum", "Her dad", "Her coach"], answer: "Her mum" }
-      ]
     }
   ]
 });

@@ -216,23 +216,6 @@ School.register({
       ]
     },
     {
-      id: "story-diversicus",
-      title: "Story: Diversicus in Brazil",
-      icon: "🎭",
-      type: "choice",
-      instructions: "Remember the story from the book. Choose the correct answer.",
-      pick: "auto",
-      items: [
-        { prompt: "What game were Ivan, Pablo and Jenny playing on the beach?", options: ["Chess", "Cards", "Tennis"], answer: "Chess" },
-        { prompt: "Where has Ivan gone? 'He's gone to get the …'", options: ["volleyball", "ice cream", "chess set"], answer: "volleyball" },
-        { prompt: "What hasn't Ivan lifted?", options: ["A castle", "A sofa", "A plane"], answer: "A castle", explanation: "Don't be silly. No-one can lift a castle." },
-        { prompt: "Ivan has lifted a sofa with how many people on it?", options: ["four", "two", "ten"], answer: "four" },
-        { prompt: "What has Ivan pulled?", options: ["A plane", "A train", "A boat"], answer: "A plane" },
-        { prompt: "What is next weekend?", options: ["Rio Carnival", "A football match", "A chess race"], answer: "Rio Carnival" },
-        { prompt: "What costume has Ivan decided to wear?", options: ["A king", "A pirate", "A football player"], answer: "A king", explanation: "I'm going to be a king – the king of the castle!" }
-      ]
-    },
-    {
       id: "reading-music-history",
       title: "Reading: Making music history",
       icon: "🎸",
@@ -275,21 +258,6 @@ School.register({
         { prompt: "Where did the team win the competition?", options: ["In Rio de Janeiro", "In São Paulo", "At her school"], answer: "In Rio de Janeiro" },
         { prompt: "What has Rebeca done since the competition? (present perfect!)", options: ["She's made new friends.", "She's stopped playing.", "She's moved to England."], answer: "She's made new friends." },
         { prompt: "Why does Rebeca want to learn English?", options: ["To talk to people abroad.", "Because her mum wants it.", "To become a teacher."], answer: "To talk to people abroad." }
-      ]
-    },
-    {
-      id: "culture",
-      title: "Culture: Music around us",
-      icon: "🎧",
-      type: "choice",
-      instructions: "Remember the culture page. Choose the correct answer.",
-      pick: "auto",
-      items: [
-        { prompt: "We can take music with us everywhere. When did this become possible?", options: ["In the 1980s", "In the 1930s", "In the 1600s"], answer: "In the 1980s" },
-        { prompt: "Why are headphones good?", options: ["Other people can't hear our music.", "The music is louder for everyone.", "They help us to play the drums."], answer: "Other people can't hear our music." },
-        { prompt: "In many countries, which is the most important instrument?", options: ["the drum", "the violin", "the guitar"], answer: "the drum" },
-        { prompt: "When does Brazil celebrate carnival?", options: ["In February or March", "In December or January", "In July or August"], answer: "In February or March" },
-        { prompt: "Which of these is a style of music?", options: ["jazz", "chess", "stage"], answer: "jazz" }
       ]
     }
   ]
